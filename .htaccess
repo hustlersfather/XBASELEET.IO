@@ -1,7 +1,7 @@
 ErrorDocumentn  / index.html
 RewriteEngine on
-RewriteRule ^index.html$  index.php
-RewriteRule ^ajaxinfo.html$  ajax.php
+RewriteRule ^index.php$  index.php
+RewriteRule ^ajax.php$  ajax.php
 RewriteRule ^mailer.html$  mailer.php
 RewriteRule ^shell.html$  shell.php
 RewriteRule ^leads.html$  leads.php
