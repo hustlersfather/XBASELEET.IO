@@ -37,10 +37,6 @@ $s12 = mysqli_query($dbcon, "SELECT * FROM scampages");
 $r12=mysqli_num_rows($s12);
 $s13 = mysqli_query($dbcon, "SELECT * FROM tutorials");
 $r13=mysqli_num_rows($s13);
-$s14 = mysqli_query($dbcon, "SELECT buyer_balance,username FROM user WHERE username='$usrids'");
-$r14=  mysqli_fetch_assoc($s14);
-$r14= $r14['buyer_balance'];
-$r14=mysqli_num_rows($s14);
 
 
 $myObj =new stdClass();
@@ -57,7 +53,7 @@ $myObj->accounts = "$r10";
 $myObj->banks = "$r11";
 $myObj->scampages = "$r12";
 $myObj->tutorials = "$r13";
-$myObj->buyer_balance = "$r14";
+
         $q = mysqli_query($dbcon, "SELECT resseller FROM user WHERE username='$usrid'"); $r = mysqli_fetch_assoc($q);
 		  $reselerif = $r['resseller']; if ($reselerif == "1") { 
         $q = mysqli_query($dbcon, "SELECT soldb FROM resseller WHERE username='$usrid'"); $r = mysqli_fetch_assoc($q);
