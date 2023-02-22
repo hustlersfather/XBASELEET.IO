@@ -7,7 +7,7 @@
   
 
   if(isset($_SESSION['sname']) and isset($_SESSION['spass'])){
-   header("location: index");
+   header("location: index.html");
    exit();
   }
   if (isset($_POST['user'],$_POST['pass'])) {
