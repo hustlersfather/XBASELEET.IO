@@ -66,7 +66,7 @@
         </style>
 </head>
   
-<h4> <b><span class='glyphicon glyphicon-fire'></span> Jerux SHOP - Login</b> </h4>
+<h4> <b><span class='glyphicon glyphicon-fire'></span> Xbaseleet Shop - Login</b> </h4>
 <div id='errorbox'>
 
 </div>
