@@ -402,7 +402,7 @@ s
 ---->
 </div>
 </li>
-<?php echo''.$usrid.'
+<?php echo'
 <li class="nav-item dropdown">
 <a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">'.$usrid.'
 </a>';?>
