@@ -65,32 +65,6 @@
             }
         </style>
 </head>
-  
-<h4> <b><span class='glyphicon glyphicon-fire'></span> Xbaseleet Shop - Login</b> </h4>
-<div id='errorbox'>
-
-</div>
-
-<form method='post' action='loginController.php' class='ajax'>
-
-    <input type='text' id='user' name='user' class='form-control input-sm chat-input' placeholder='Username' required/>
-    <br>
-    
-    <input type='password' id='pass' name='pass' class='form-control input-sm chat-input' placeholder='Password' required/>
-    <h6><a onclick="logindiv(3,'Forget - Jerux SHOP','forget.html',0);"  onMouseOver="this.style.cursor='pointer'">[Forgot your password ?]</a></h6>
-
-    <br>
-   <div class="form-group2">
-<button type="submit" id="divButton" name="login" class="btn btn-primary btn-lg waves-effect waves-light">Login</button>
-    </div>
-</form>
-<br>
-<br>
-<div class='wrapper'>
-    <button type='button' class='btn btn-default btn-xs' onclick="logindiv(2,'Signup - Jerux SHOP','signup',0);">Don`t have an account? Sign Up</button>
-</div>
-
-    </head>
 <body>
 <form method="post" action="loginController.php">
   <div class="container-scroller">
