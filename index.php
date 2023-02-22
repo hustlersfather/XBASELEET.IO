@@ -359,7 +359,7 @@ s
 </a>
 <div class="dropdown-menu dropdown-menu-left" style="color: var(--font-color); background-color: var(--color-nav);" aria-labelledby="navbarDropdown">
 <a class="dropdown-item" href="requests" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-user-plus"></i><?php echo'$usrid'
-</span>;?><span class="badge badge-primary"> 72</span></span></a>
+</span>'; ?><span class="badge badge-primary"> 72</span></span></a>
   
 </div>
 </li> --->
