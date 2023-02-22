@@ -4,11 +4,12 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="alfacoins-site-verification" content="5ef8c2279aa605ef8c2279aa965ef8c2279aacb_ALFAcoins">
-<meta name="revisit-after" content="2 days">
+<meta name="alfacoins-site-verification" content="">
+<meta name="revisit-after" content="3 days">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<script src="/cdn-cgi/apps/head/5OOZijtrf_Bpx-OYIJIWKuxGuQM.js"></script><link rel="shortcut icon" href="../../favicon.ico" />
-<title>OdinShop</title>
+<script src="/cdn-cgi/apps/head/5OOZijtrf_Bpx-OYIJIWKuxGuQM.js">
+</script><link rel="shortcut icon" href="../../favicon.ico" />
+<title>XBASELEET</title>
 <link rel="stylesheet" href="layout/css/bootstrap.min.css">
 <script src="layout/js/jquery-3.4.1.min.js"></script>
 <script src="layout/js/clipboard.min.js"></script>
