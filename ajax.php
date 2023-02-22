@@ -49,9 +49,9 @@ $myObj->cpanel = "$r6";
 $myObj->mailer = "$r7";
 $myObj->smtp = "$r8";
 $myObj->leads = "$r9";
-$myObj->premium = "$r10";
+$myObj->accounts = "$r10";
 $myObj->banks = "$r11";
-$myObj->scams = "$r12";
+$myObj->scampages = "$r12";
 $myObj->tutorials = "$r13";
         $q = mysqli_query($dbcon, "SELECT resseller FROM users WHERE username='$usrid'"); $r = mysqli_fetch_assoc($q);
 		  $reselerif = $r['resseller']; if ($reselerif == "1") { 
