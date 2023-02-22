@@ -37,8 +37,9 @@ $s12 = mysqli_query($dbcon, "SELECT * FROM scampages");
 $r12=mysqli_num_rows($s12);
 $s13 = mysqli_query($dbcon, "SELECT * FROM tutorials");
 $r13=mysqli_num_rows($s13);
+$s14 = mysqli_query($dbcon, "SELECT balance,username FROM users WHERE username='$usrid'");
 $r14=  mysqli_fetch_assoc($s14);
-$r4= $r14['buyer_balance'];
+$r14= $r14['buyer_balance'];
 $r14=mysqli_num_rows($s14);
 
 
