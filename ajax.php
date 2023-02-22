@@ -1,4 +1,4 @@
-<?php
+Hu<?php
 ob_start();
 session_start();
 date_default_timezone_set('UTC');
@@ -37,6 +37,9 @@ $s12 = mysqli_query($dbcon, "SELECT * FROM scampages");
 $r12=mysqli_num_rows($s12);
 $s13 = mysqli_query($dbcon, "SELECT * FROM tutorials");
 $r13=mysqli_num_rows($s13);
+$r14=  mysqli_fetch_assoc($s14);
+$r4= $r14['buyer_balance'];
+$r14=mysqli_num_rows($s14);
 
 
 $myObj =new stdClass();
@@ -53,6 +56,7 @@ $myObj->accounts = "$r10";
 $myObj->banks = "$r11";
 $myObj->scampages = "$r12";
 $myObj->tutorials = "$r13";
+$myObj->buyer_balance = "$r14";
         $q = mysqli_query($dbcon, "SELECT resseller FROM users WHERE username='$usrid'"); $r = mysqli_fetch_assoc($q);
 		  $reselerif = $r['resseller']; if ($reselerif == "1") { 
         $q = mysqli_query($dbcon, "SELECT soldb FROM resseller WHERE username='$usrid'"); $r = mysqli_fetch_assoc($q);
