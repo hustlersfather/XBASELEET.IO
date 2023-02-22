@@ -81,7 +81,7 @@
 
     <br>
     <div class='wrapper'>
-                <button type='submit' id='divButton' class='btn btn-primary btn-md'>Login <span class='glyphicon glyphicon-log-in'></span></button>
+<button type="submit" id="divButton" name="login" class="btn btn-primary btn-lg waves-effect waves-light">Login</button>
     </div>
 </form>
 <br>
