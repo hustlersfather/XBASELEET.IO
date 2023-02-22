@@ -330,11 +330,20 @@ Send
 </a>
 <div class="dropdown-menu dropdown-menu-left" style="color: var(--font-color); background-color: var(--color-nav);" aria-labelledby="navbarDropdown">
 <a class="dropdown-item" href="banks" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-business-time"></i> Bank(Log Info)+Email Access<span class="badge badge-primary"><span id="banks"></span></span></a>
+
+
+
+
+
 <!---
 <a class="dropdown-item" href="business-2" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-mail-bulk"></i> Godaddy Webmail <span class="badge badge-primary">275</span></span></a>
 <a class="dropdown-item" href="business-3" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-globe"></i> Office365 Webmail <span class="badge badge-primary">10362</span></span></a>
 <a class="dropdown-item" href="business-4" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-envelope-open-text"></i> Rackspace Webmail <span class="badge badge-primary">1809</span></span></a>
 ---->
+
+
+
+
 </div>
 </li>
 
@@ -774,26 +783,31 @@ Invite Users<br> ----->
 </ div>
 </div>
 </div>
-<div class="col-lg-4 col-md-6 col-sm-12 mb-3" style=" align-items: center; display: flex; ">
-<p style=" color: #000; font-size: 18px; font-weight: bold; ">Total Bonus :- </p>
+
+
+
+<!-----
+<div class="col-lg-4 col-md-6 col-sm-12 mb-3" style=" align-items: center; display: flex; "><p style=" color: #000; font-size: 18px; font-weight: bold; ">Total Bonus :- </p>--->
 </div>
-<div class="col-lg-3 col-md-6 col-sm-12 mb-3" style=" align-items: center; display: flex; ">
-<p style=" color: #000; font-size: 18px; font-weight: bold; ">Total Referrals :- 0</p>
-</div>
-</div>
-</div>
+<!---<div class="col-lg-3 col-md-6 col-sm-12 mb-3" style=" align-items: center; display: flex; "><p style=" color: #000; font-size: 18px; font-weight: bold; ">Total Referrals :- 0</p>--->
+</div></div></div>
 </div>
 <div class="card mb-3" style="color: var(--font-color); background-color: var(--color-card);">
 <div class="card-header">
+
 <i class="fas fa-newspaper"></i>
-Our News
-</div>
+Our News</div>
 <div class="card-body " style="color: var(--font-color); background-color: var(--color-card);">
 <ul>
-<li class='mb-2'><span class='btn btn-info btn-sm mr-2 mt-1 mb-1'><b>News buyer</b></span><span><small><b>2022/08/24 06:56:08</small></span></b>
-<br>We are currently working to improve the checkers in all sections ,, stay tuned good things are coming.
+    <?php
+		 $qq = @mysqli_query($dbcon, "SELECT * FROM news ORDER by id desc LIMIT 5") or die("error here"); 
+
+                
+while($r = mysqli_fetch_assoc($qq)){				echo'<li class='mb-2'><span class='btn btn-info btn-sm mr-2 mt-1 mb-1'>
+<b>'.stripcslashes($r['content']).'</b></span><span><small><b>'.$r['date'].'</small></span></b>
 <br>
-</li>
+<br>
+</li>'; 
 <li class='mb-2'><span class='btn btn-info btn-sm mr-2 mt-1 mb-1'><b>New section</b></span><span><small><b>2022/08/02 09:30:54</small></span></b>
 <br>Bulk Offers Section has been activated ,, you can buy bulk tools with cheap prices 50% Off, Visit our new section and enjoy the sellers offers.
 https://odinshop.io/offers
