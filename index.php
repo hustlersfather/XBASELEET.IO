@@ -757,6 +757,7 @@ If you have any Question ,Problem, Suggestion or Request Please feel free to Ope
 if you want to report an order , just go to <a class="btn btn-success btn-sm" data-title="My Orders" href="orders"> My Orders <i class="fa fa-shopping-cart"></i></a> then click on Report #[Order Id] button.
 <br>
 Our Domains are <p><span style="color: #ff0000;"><strong>odinshop.io</strong> || <strong>odin.pw</strong> || <strong>odinshop.se</strong> || <strong>odin.pm</strong> ||</span><strong><span style="color: #ff0000;">Tor Mirror odinshoyi3y5clejn3klyggxrmq5sy5efdiremz353z6ucdujgdiccad.onion ||</span> </strong></p> - Please Save them!
+</div>
 <!----
 <br><a href="https://odinshop.se/Tos.php" data-title="Terms Of Service " class="btn btn-primary btn-sm"> Terms Of Service <i class="fa fa-newspaper-o"></i></a>
 <br></div>
@@ -764,14 +765,13 @@ Our Domains are <p><span style="color: #ff0000;"><strong>odinshop.io</strong> ||
 <div class="card mb-3" style="color: var(--font-color); background-color: var(--color-card);"><div class="card-header"><i class="fas fa-users"></i>
 Invite Users<br> ----->
 </div>
+<!-----
 <div class="card-body" style="color: var(--font-color); background-color: var(--color-card);">
 <div class="row">
 <div class="col-lg-5 col-md-6 col-sm-12">
-<div class="input-group mb-3" style="align-items: center;">
-<input type="text" class="form-control form-control-lg" id="code_user" value="https://odinshop.io/?referral=18229" disabled>
-<div class="input-group-append">
-<button class="btn btn-outline-secondary copydiv" data-clipboard-text="https://odinshop.io/?referral=18229" type="button">COPY</button>
-</div>
+<div class="input-group mb-3" style="align-items: center;"><input type="text" class="form-control form-control-lg" id="code_user" value="https://odinshop.io/?referral=18229" disabled><div class="input-group-append">
+<button class="btn btn-outline-secondary copydiv" data-clipboard-text="https://odinshop.io/?referral=18229" type="button">COPY</button>---->
+</ div>
 </div>
 </div>
 <div class="col-lg-4 col-md-6 col-sm-12 mb-3" style=" align-items: center; display: flex; ">
