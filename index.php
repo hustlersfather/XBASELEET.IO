@@ -330,7 +330,7 @@ s
 <a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-tie fa-sm"></i>USA Bank(Fullz Info)
 </a>
 <div class="dropdown-menu dropdown-menu-left" style="color: var(--font-color); background-color: var(--color-nav);" aria-labelledby="navbarDropdown">
-<a class="dropdown-item" href="business-1" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-business-time"></i> Bank(Log Info)+Email Access<span class="badge badge-primary"><span id="banks"></span></span></a>
+<a class="dropdown-item" href="banks" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-business-time"></i> Bank(Log Info)+Email Access<span class="badge badge-primary"><span id="banks"></span></span></a>
 <!---
 <a class="dropdown-item" href="business-2" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-mail-bulk"></i> Godaddy Webmail <span class="badge badge-primary">275</span></span></a>
 <a class="dropdown-item" href="business-3" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-globe"></i> Office365 Webmail <span class="badge badge-primary">10362</span></span></a>
@@ -344,7 +344,7 @@ s
 <a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-tie fa-sm"></i> Others
 </a>
 <div class="dropdown-menu dropdown-menu-left" style="color: var(--font-color); background-color: var(--color-nav);" aria-labelledby="navbarDropdown">
-<a class="dropdown-item" href="scampage" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-scams-time"></i> Scampages<span class="badge badge-primary"><span id="scampage"></span></span></a>
+<a class="dropdown-item" href="scampages" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-scams-time"></i> Scampages<span class="badge badge-primary"><span id="scampages"></span></span></a>
 <a class="dropdown-item" href="tutorials" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-mail-bulk"></i> Tutorials <span class="badge badge-primary"><span id="tutorials"></span></span></a>
 
 	<!---
