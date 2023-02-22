@@ -50,7 +50,7 @@ RewriteRule ^PerfectMoneyPayment.html$  pm3.php
 RewriteRule ^tickets.html$  tickets.php
 RewriteRule ^seller.html$  becomeseller.php
 RewriteRule ^scampage.html$  scampage.php
-RewriteRule ^logout.html$  logout.php
+RewriteRule ^logout$  logout.php
 RewriteRule ^active.html$  active.php
 RewriteRule ^orders.html$  orders.php
 RewriteRule ^setting.html$  setting.php
