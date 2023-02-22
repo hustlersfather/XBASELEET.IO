@@ -358,8 +358,8 @@ s
 <a class="nav-link dropdown-toggle" role="button" style="color: var(--font-color);" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fab fa-drupal text-primary fa-sm"></i> Requests
 </a>
 <div class="dropdown-menu dropdown-menu-left" style="color: var(--font-color); background-color: var(--color-nav);" aria-labelledby="navbarDropdown">
-<a class="dropdown-item" href="requests" style="color: var(--font-color);"><?php echo' <span class="px-2"><i class="fas fa-user-plus"></i>'.$usrid.'
-</span>'; ?><span class="badge badge-primary"> 72</span></span></a>
+<a class="dropdown-item" href="requests" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-user-plus"></i>
+</span><span class="badge badge-primary"> 72</span></span></a>
   
 </div>
 </li> --->
@@ -402,12 +402,11 @@ s
 ---->
 </div>
 </li>
-
+<?php echo'
 
 <li class="nav-item dropdown">
-<a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <?php echo'$usrid';?>
-	<span class="badge badge-primary"> 72</span></span></a> <i class="fa fa-user-secret" style="color: var(--font-color);"></i></a>
-</a>
+<a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">'.$usrid.'
+</a>';?>
 <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="color: var(--font-color); background-color: var(--color-nav);">
 <a class="dropdown-item" href="setting" style="color: var(--font-color);"><span class="px-2">Setting <i class="fa fa-cog"></i></span></a>
 
