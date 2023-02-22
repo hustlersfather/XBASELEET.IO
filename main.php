@@ -246,7 +246,7 @@ input:checked + .slider:before {
                                                           padding-bottom: 0.5rem;
                                                           padding-left: 1rem;
                                                         ">
-<a class="navbar-brand" href="main" style="color: var(--font-color);"><img width="40px" src="layout/images/logo.png"> XBASELEET</a>
+<a class="navbar-brand" href="index.html" style="color: var(--font-color);"><img width="40px" src="layout/images/logo.png"> XBASELEET</a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 <i class="navbar-toggler-icon"></i>
 </button>
@@ -364,8 +364,8 @@ Send
 </li> --->
 
 
-<a class="nav-link" href="../seller/index.html" style="color: var(--font-color);">
-<i class="cfas fa-user-secret text-primary fa-sm">
+<a href="../seller/index.html" style="color: var(--font-color);">
+<i class="fa fa-user-circle icon-primary fa-sm">
 </i> 
 
 </a>
