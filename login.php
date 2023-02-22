@@ -1,12 +1,12 @@
 <?php
   ob_start();
   session_start();
-  include "includes/config.php";
+  include ".includes/config.php";
   date_default_timezone_set('UTC');
 
 
   if(isset($_SESSION['sname']) and isset($_SESSION['spass'])){
-   header("location: main");
+   header("location: index.php");
    exit();
 }
 ?>
@@ -90,41 +90,58 @@
     <button type='button' class='btn btn-default btn-xs' onclick="logindiv(2,'Signup - Jerux SHOP','signup',0);">Don`t have an account? Sign Up</button>
 </div>
 
-    
-<script type="text/javascript">
-          $('form.ajax').on('submit' , function() {
-              $("#divButton").prop('disabled', true);
-                var that = $(this),
-                    url = that.attr('action');
-                    type = that.attr('method');
-                    data = {};
-                that.find('[name]').each(function(main , value) {
-                    var that = $(this),
-                        name = that.attr('name'),
-                        value = that.val();
+    </head>
+<body>
+<form method="post" action="loginController.php">
+  <div class="container-scroller">
+    <div class="container-fluid page-body-wrapper full-page-wrapper">
+      <div class="content-wrapper d-flex align-items-center auth auth-bg-1 theme-one">
+        <div class="row w-100 mx-auto">
+          <div class="col-lg-4 mx-auto">
+            <div class="auto-form-wrapper">
+                <div class="form-group">
+                  <label class="label">Username</label>
+                  <div class="input-group">
+                    <input type="text" name="user" class="form-control" placeholder="Username">
+                    <div class="input-group-append">
+                      <span class="input-group-text"><i class="icon-check"></i></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="label">Password</label>
+                  <div class="input-group">
+                    <input type="password" name="pass" class="form-control" placeholder="*********">
+                    <div class="input-group-append">
+                      <span class="input-group-text"><i class="icon-check"></i></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                <button type="submit" id="divButton" class="btn btn-primary btn-md">Login <span class="glyphicon glyphicon-log-in"></span></button>
+                <input type="hidden" name="log" value="in" />
 
-                    data[name] = value;
+                </div>
+          
+       
+                
+              </form>
+            </div>
 
-                })
-                $.ajax({
-                    url: url,
-                    type: type,
-                    data: data,
-                    success: function(response){
-                        var response = JSON.parse(response);
-                         $("#errorbox").html(response['errorbox'] ).show();
-
-                    if(response['state'] == 0) {             $("#divButton").prop('disabled', false);}
-                    if (response['url'] != 0){
-                        if (response['url'] == 3){setTimeout(function(){ logindiv(4,'Verification - Jerux SHOP','login',0); }, 1500);}
-                        else if (response['url'] == 1){setTimeout(function(){ logindiv(1,'Login - Jerux SHOP','verification.html',0); }, 1500);}
-                        else {setTimeout(function(){ window.location = response['url']; }, 3000);}
-                     }
-
-                    }
-                });
-
-                return false;
-
-            });
-            </script>
+          </div>
+        </div>
+      </div>
+      <!-- content-wrapper ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+  <!-- plugins:js -->
+  <script src="vendors/js/vendor.bundle.base.js"></script>
+  <script src="vendors/js/vendor.bundle.addons.js"></script>
+  <!-- endinject -->
+  <!-- inject:js -->
+  <script src="buyer/js/template.js"></script>
+  <!-- endinject -->
+  </body>
+</html>
