@@ -2,7 +2,7 @@ ErrorDocument 404 /index.html
 RewriteEngine on
 Options -Indexes
 RewriteRule ^main$  main.php
-RewriteRule ^index.php$  index.php
+RewriteRule ^main$  index.php
 RewriteRule ^signup.html$  signup.php
 RewriteRule ^forget.html$  forget.php
 RewriteRule ^reset.html$  resetpass.php
