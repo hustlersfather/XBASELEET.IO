@@ -1113,10 +1113,48 @@ Our Stuff
 </div>
 </div>
 
+<script type="text/javascript" src="layout/js/Chart.min.js"></script>
+<script>var clipboard = new Clipboard('.copydiv');</script>
 <script type="text/javascript">
 
-</div>
-</div>
 
+	            // Set new default font family and font color to mimic Bootstrap's default styling
+	            Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+	            Chart.defaults.global.defaultFontColor = '#2196F3';
+
+	            // Pie Chart Example
+	            var ctx = document.getElementById("myPieChart");
+	            var myPieChart = new Chart(ctx, {
+	              type: 'pie',
+	              data: {
+	                labels: ['cPanels [11084]','Leads [165]','Shells [988]','RDPs [144]','Mailers [566]','Scripts [3]', 'Tutorials [0]', 'Accounts [1625]', 'SMTPs [1764]', 'Webmails [14796]', 'FTPs [86]', 'SSH [149]'],
+	                datasets: [{
+	                  data: ['11084','165','988','144','566','3','0', '1625','1764','14796', '86', '149'],
+	                  backgroundColor: ['#007bff', '#dc3545', '#ffc107', '#28a745','#e1297d','#551a8b', '#D5B0F7', '#B5D2ED', '#212529', '#256633', '#633256', '#97de12' ],
+	                }],
+	              },
+
+	              options:{
+	            	  cutoutPercentage:50,
+	                tooltips: {
+	                callbacks: {
+	                  label: function(tooltipItem, data) {
+	                    var dataset = data.datasets[tooltipItem.datasetIndex];
+	                    var meta = dataset._meta[Object.keys(dataset._meta)[0]];
+	                    var total = meta.total;
+	                    var currentValue = dataset.data[tooltipItem.index];
+	                    var percentage = parseFloat((currentValue/total*100).toFixed(1));
+	                    return currentValue + ' (' + percentage + '%)';
+	                  },
+	                  title: function(tooltipItem, data) {
+	                    return data.labels[tooltipItem[0].index];
+	                  }
+	                }
+	              }
+	            }
+	            });
+	        </script>
+</div>
+</div>
+</body>
 </html>
-
