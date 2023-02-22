@@ -80,7 +80,7 @@
     <h6><a onclick="logindiv(3,'Forget - Jerux SHOP','forget.html',0);"  onMouseOver="this.style.cursor='pointer'">[Forgot your password ?]</a></h6>
 
     <br>
-    <div class='wrapper'>
+   <div class="form-group2">
 <button type="submit" id="divButton" name="login" class="btn btn-primary btn-lg waves-effect waves-light">Login</button>
     </div>
 </form>
