@@ -54,7 +54,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
         gtag('config', 'UA-177092549-1');
         </script>
 <link rel="stylesheet" href="layout/css/all.min.css" />
-<link rel="stylesheet" href="layout/css/main.css?v=12.9" />
+<link rel="stylesheet" href="layout/css/main.css" />
 <link rel="stylesheet" href="layout/css/util.css" />
 <style>body{padding-top:80px}</style>
 <link rel="stylesheet" href="layout/fonts/iconic/css/material-design-iconic-font.min.css">
