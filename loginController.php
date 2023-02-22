@@ -29,7 +29,7 @@
      $_SESSION['spass'] = $userpass;
 	  //$errorbox = "<div class='alert alert-dismissible alert-success'><button type='button' class='close' data-dismiss='alert'>×</button><p>Login successful. Redirecting …</p></div>";
       //echo '{"state":"1","errorbox":"'.$errorbox.'","url":"index"}';
-     header('location:main');
+     header('location:index');
      exit();
 	  }else{
 	  //$errorbox = "<div class='alert alert-dismissible alert-info'><button type='button' class='close' data-dismiss='alert'>×</button><p>Login failed! Please try again! 1</p></div>";
