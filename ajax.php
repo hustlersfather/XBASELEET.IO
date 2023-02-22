@@ -53,16 +53,11 @@ $myObj->premium = "$r10";
 $myObj->banks = "$r11";
 $myObj->scams = "$r12";
 $myObj->tutorials = "$r13";
-        $q = mysqli_query($dbcon, "SELECT resseller FROM users WHERE username='$usrid'");
-          $r = mysqli_fetch_assoc($q);
-		  $reselerif = $r['resseller'];
-       if ($reselerif == "1") { 
-          $q = mysqli_query($dbcon, "SELECT soldb FROM resseller WHERE username='$usrid'");
-          $r = mysqli_fetch_assoc($q);
-$seller = $r['soldb'];
-$myObj->seller = "$$seller";		
-	   } else { }
-$myJSON = json_encode($myObj);
-
-echo $myJSON;
+        $q = mysqli_query($dbcon, "SELECT resseller FROM users WHERE username='$usrid'"); $r = mysqli_fetch_assoc($q);
+		  $reselerif = $r['resseller']; if ($reselerif == "1") { 
+        $q = mysqli_query($dbcon, "SELECT soldb FROM resseller WHERE username='$usrid'"); $r = mysqli_fetch_assoc($q);
+                  $seller = $r['soldb'];$myObj->seller = "$$seller"; } 
+                                                                    else { } 
+               $myJSON = json_encode($myObj);
+                                                                   echo $myJSON;
 ?>
