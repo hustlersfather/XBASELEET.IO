@@ -6,7 +6,7 @@
 
 
   if(isset($_SESSION['sname']) and isset($_SESSION['spass'])){
-   header("location: index.html");
+   header("location: main");
    exit();
 }
 ?
