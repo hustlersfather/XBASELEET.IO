@@ -799,15 +799,27 @@ Invite Users<br> ----->
 Our News</div>
 <div class="card-body " style="color: var(--font-color); background-color: var(--color-card);">
 <ul>
-    <?php
+<i class="fas fa-newspaper"></i>
+Our News</div>
+    <div class="list-group" id="div2">
+     <i class="fas fa-newspaper"></i>
+Our News</div>; 
 		 $qq = @mysqli_query($dbcon, "SELECT * FROM news ORDER by id desc LIMIT 5") or die("error here"); 
 
                 
-while($r = mysqli_fetch_assoc($qq)){				echo'<li class='mb-2'><span class='btn btn-info btn-sm mr-2 mt-1 mb-1'>
-<b>'.stripcslashes($r['content']).'</b></span><span><small><b>'.$r['date'].'</small></span></b>
-<br>
-<br>
-</li>'; 
+while($r = mysqli_fetch_assoc($qq)){				echo'<a class="list-group-item"><h5 class="list-group-item-heading"><b>'.stripcslashes($r['content']).'</b></h5><h6 class="list-group-item-text">'.$r['date'].'</h6></a>'; 
+}
+ echo '
+
+				 </div>
+
+</div>
+<div class="form-group col-lg-4 ">
+	<!-- <img src="files/img/eid.jpg" style="width: 70%; height: 70%" title="Eid Mubarak"> -->
+<iframe src="static.html" style="border:none;" width="400" height="270" scrolling="no">Browser not compatible.</iframe>
+
+    ';
+	
 <li class='mb-2'><span class='btn btn-info btn-sm mr-2 mt-1 mb-1'><b>New section</b></span><span><small><b>2022/08/02 09:30:54</small></span></b>
 <br>Bulk Offers Section has been activated ,, you can buy bulk tools with cheap prices 50% Off, Visit our new section and enjoy the sellers offers.
 https://odinshop.io/offers
