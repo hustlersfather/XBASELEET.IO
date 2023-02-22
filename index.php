@@ -374,6 +374,22 @@ Send
 
 <ul class="navbar-nav profile">
 
+<?php
+$uid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
+$q = mysqli_query($dbcon, "SELECT resseller FROM users WHERE username='$uid'") or die(mysqli_error());
+$r         = mysqli_fetch_assoc($q);
+$reselerif = $r['resseller'];
+if ($reselerif == "1") {
+    $uid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
+    $q = mysqli_query($dbcon, "SELECT soldb FROM resseller WHERE username='$uid'") or die(mysqli_error());
+    $r = mysqli_fetch_assoc($q);
+
+    echo '<a class=“waves-effect waves-light” href=“../seller/index.html” style=“color: var(- -font-color); “> <span title=“Seller Panel”><span class =“px-2”><span id="seller"></span></span></a></li>';
+} else {
+} ?>
+
+
+
 <li class="nav-item dropdown">
 <a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bell text-danger"></i> <span class="badge badge-success">0</span></a>
 <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="color: var(--font-color); background-color: var(--color-nav);">
