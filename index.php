@@ -384,7 +384,7 @@ if ($reselerif == "1") {
     $q = mysqli_query($dbcon, "SELECT soldb FROM resseller WHERE username='$uid'") or die(mysqli_error());
     $r = mysqli_fetch_assoc($q);
 
-    echo '<a class=“waves-effect waves-light” href=“../seller/index.html” style=“color: var(- -font-color); “> <span title=“Seller Panel”><span class =“px-2”><span id="seller"></span></span></a></li>';
+    echo '<a class=“waves-effect waves-light” href=“../seller/index.html” style=“color: var(- -font-color); “> <span title=“Seller Panel”><span class =“px-2”><li class="fa fa-user-secret-circle"><span id="seller"></span></span></a></li>';
 } else {
 } ?>
 
