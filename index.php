@@ -402,7 +402,8 @@ s
 ---->
 </div>
 </li>
-<?php echo'
+<?php echo''.$usrid.'
+</a>';?>
 
 <li class="nav-item dropdown">
 <a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">'.$usrid.'
@@ -727,8 +728,12 @@ a.closearb {
 <div class="col-md-8">
 <div class="card mb-3" style="color: var(--font-color); background-color: var(--color-card);">
 <div class="card-header">
+	<?php echo''.$usrid.'
+
+
 <i class="fas fa-user-shield"></i>
-Welcome <a class="badge badge-pill badge-success">hustlersfather</a><br>
+Welcome <a class="badge badge-pill badge-success">'.$usrid.'</a>';?>
+	<br>
 </div>
 <div class="card-body" style="color: var(--font-color); background-color: var(--color-card);">
 <br>
