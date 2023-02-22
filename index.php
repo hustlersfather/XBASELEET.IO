@@ -646,8 +646,7 @@ a.closearb {
 <div class="col-md-10">
 <h5 class="card-title text-uppercase text-muted mb-0">Balance</h5>
 <span class="h2 font-weight-bold mb-0">
-
-<span id="balance"></span>
+0 </span>
 </div>
 <div class="col-md-2">
 <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
@@ -732,9 +731,8 @@ a.closearb {
 	
 
 <?php echo'
-
 <i class="fas fa-user-shield"></i>
-            Welcome <a class="badge badge-pill badge-success">'.$usrid.'</a>
+Welcome <a class="badge badge-pill badge-success">'.$usrid.'</a>
 ';?>
 	<br>
 </div>
