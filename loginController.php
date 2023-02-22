@@ -13,7 +13,7 @@
   if (isset($_POST['user'],$_POST['pass'])) {
     # code...
   } else{
-    header('location:index');
+    header('location:main');
     exit();
   }
   $username = mysqli_real_escape_string($dbcon, strip_tags($_POST['user']));
