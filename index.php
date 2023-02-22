@@ -282,7 +282,6 @@ Send
 --->
 </div>
 </li>
-s
 
 <li class="nav-item dropdown mr-auto">
 <a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-mail-bulk fa-sm pink-color"></i> Leads
