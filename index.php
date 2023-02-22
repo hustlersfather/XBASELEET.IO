@@ -757,15 +757,12 @@ If you have any Question ,Problem, Suggestion or Request Please feel free to Ope
 if you want to report an order , just go to <a class="btn btn-success btn-sm" data-title="My Orders" href="orders"> My Orders <i class="fa fa-shopping-cart"></i></a> then click on Report #[Order Id] button.
 <br>
 Our Domains are <p><span style="color: #ff0000;"><strong>odinshop.io</strong> || <strong>odin.pw</strong> || <strong>odinshop.se</strong> || <strong>odin.pm</strong> ||</span><strong><span style="color: #ff0000;">Tor Mirror odinshoyi3y5clejn3klyggxrmq5sy5efdiremz353z6ucdujgdiccad.onion ||</span> </strong></p> - Please Save them!
-<br>
-<a href="https://odinshop.se/Tos.php" data-title="Terms Of Service " class="btn btn-primary btn-sm"> Terms Of Service <i class="fa fa-newspaper-o"></i></a>
-<br>
+<!----
+<br><a href="https://odinshop.se/Tos.php" data-title="Terms Of Service " class="btn btn-primary btn-sm"> Terms Of Service <i class="fa fa-newspaper-o"></i></a>
+<br></div>
 </div>
-</div>
-<div class="card mb-3" style="color: var(--font-color); background-color: var(--color-card);">
-<div class="card-header">
-<i class="fas fa-users"></i>
-Invite Users<br>
+<div class="card mb-3" style="color: var(--font-color); background-color: var(--color-card);"><div class="card-header"><i class="fas fa-users"></i>
+Invite Users<br> ----->
 </div>
 <div class="card-body" style="color: var(--font-color); background-color: var(--color-card);">
 <div class="row">
