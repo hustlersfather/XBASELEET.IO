@@ -246,7 +246,7 @@ input:checked + .slider:before {
                                                           padding-bottom: 0.5rem;
                                                           padding-left: 1rem;
                                                         ">
-<a class="navbar-brand" href="index.html" style="color: var(--font-color);"><img width="40px" src="layout/images/logo.png"> XBASELEET</a>
+<a class="navbar-brand" href="main" style="color: var(--font-color);"><img width="40px" src="layout/images/logo.png"> XBASELEET</a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 <i class="navbar-toggler-icon"></i>
 </button>
@@ -364,8 +364,8 @@ Send
 </li> --->
 
 
-<a href="../seller/index.html" style="color: var(--font-color);">
-<i class="fa fa-user-circle icon-primary fa-sm">
+<a class="nav-link" href="../seller/index.html" style="color: var(--font-color);">
+<i class="cfas fa-user-secret text-primary fa-sm">
 </i> 
 
 </a>
@@ -373,6 +373,22 @@ Send
 </ul>
 
 <ul class="navbar-nav profile">
+
+<?php
+$uid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
+$q = mysqli_query($dbcon, "SELECT resseller FROM users WHERE username='$uid'") or die(mysqli_error());
+$r         = mysqli_fetch_assoc($q);
+$reselerif = $r['resseller'];
+if ($reselerif == "1") {
+    $uid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
+    $q = mysqli_query($dbcon, "SELECT soldb FROM resseller WHERE username='$uid'") or die(mysqli_error());
+    $r = mysqli_fetch_assoc($q);
+
+    echo '<a class=“waves-effect waves-light” href=“../seller/index.html” style=“color: var(- -font-color); “> <span title=“Seller Panel”><span class =“px-2”><li class="fa fa-user-secret-circle"><span id="seller"></span></span></a></li>';
+} else {
+} ?>
+
+
 
 <li class="nav-item dropdown">
 <a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bell text-danger"></i> <span class="badge badge-success">0</span></a>
