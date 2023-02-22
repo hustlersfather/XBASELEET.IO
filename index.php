@@ -755,7 +755,6 @@ a.closearb {
 <?php echo'
 <i class="fas fa-user-shield"></i>
 Welcome <a class="badge badge-pill badge-success">'.$usrid.'</a>
-';?>
 	<br>
 </div>
 <div class="card-body" style="color: var(--font-color); background-color: var(--color-card);">
@@ -798,8 +797,20 @@ Invite Users<br> ----->
 		 $qq = @mysqli_query($dbcon, "SELECT * FROM news ORDER by id desc LIMIT 5") or die("error here"); 
 
                 
-while($r = mysqli_fetch_assoc($qq)){				echo'<a class="list-group-item"><h5 class="list-group-item-heading"><b>'.stripcslashes($r['content']).'</b></h5><h6 class="list-group-item-text">'.$r['date'].'</h6></a>'; 
-}
+while($r = mysqli_fetch_assoc($qq))
+{echo'<a class="list-group-item">
+
+<h5 class="list-group-item-heading">
+
+<b>'.stripcslashes($r['content']).'</b>
+</h5>
+
+<h6 class="list-group-item-text">'.$r['date'].'
+    
+</h6>
+
+</a>'; 
+} 
  echo '
 
 				 </div>
