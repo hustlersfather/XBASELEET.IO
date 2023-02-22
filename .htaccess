@@ -3,10 +3,10 @@ RewriteEngine on
 Options -Indexes
 RewriteRule ^index.html$  index.php
 RewriteRule ^main$  main.php
-RewriteRule ^signup.html$  signup.php
-RewriteRule ^forget.html$  forget.php
-RewriteRule ^reset.html$  resetpass.php
-RewriteRule ^login.html$  login.php
+RewriteRule ^signup$  signup.php
+RewriteRule ^forget$  forget.php
+RewriteRule ^resetpass$  resetpass.php
+RewriteRule ^login$  login.php
 RewriteRule ^loginController$  loginController.php
 RewriteRule ^loginpage2.html$  loginpage2.php
 RewriteRule ^loginpage3.html$  loginpage3.php
