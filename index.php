@@ -53,8 +53,8 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
         gtag('set', {'$usrid': 'USER_ID'}); // Set the user ID using signed-in user_id.
         gtag('config', 'UA-177092549-1');
         </script>
-<link rel="stylesheet" href="layout/css/all.min.css" />
-<link rel="stylesheet" href="layout/css/main.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"  />
+	<link rel="stylesheet" href="layout/css/main.css" />
 <link rel="stylesheet" href="layout/css/util.css" />
 <style>body{padding-top:80px}</style>
 <link rel="stylesheet" href="layout/fonts/iconic/css/material-design-iconic-font.min.css">
