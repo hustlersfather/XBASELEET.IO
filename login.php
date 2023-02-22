@@ -9,7 +9,7 @@
    header("location: main");
    exit();
 }
-?
+?>
   <!DOCTYPE html>
 <html>
 <head>
