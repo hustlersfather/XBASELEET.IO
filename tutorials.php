@@ -12,7 +12,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 ?>
 
     <ul class="nav nav-tabs">
-        <                                    li class="active"><a href="#filter" data-toggle="tab">Filter</a></li>
+        <li class="active"><a href="#filter" data-toggle="tab">Filter</a></li>
     </ul>
 	 
 	
@@ -23,7 +23,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
                 <thead>
                     <tr>
                                                    <th>Tutorial Name</th>
-                        <th>Description</th>
+                                                    <th>Description</th>
                         <th>Seller</th>
                         <th></th>
                     </tr>
@@ -45,9 +45,9 @@ $query = mysqli_query($dbcon, "SELECT DISTINCT(`resseller`) FROM `tutorials` WHE
 
 
 
-\\\\\\\\\\\		$qer = mysqli_query($dbcon, "SELECT DISTINCT(`id`) FROM resseller WHERE username='".$row['resseller']."' ORDER BY id ASC")or die(mysql_error());
-		   while($rpw = mysqli_fetch_assoc($qer))
-			 $SellerNick = "seller".$rpw["id"]."";
+\\\\\\\\\\\qer = mysqli_query($dbcon, "SELECT DISTINCT(`id`) FROM resseller WHERE username='".$row['resseller']."' ORDER BY id ASC")or die(mysql_error());
+while($rpw = mysqli_fetch_assoc($qer))
+$SellerNick = "seller".$rpw["id"]."";
 	echo '<option value="'.$SellerNick.'">'.$SellerNick.'</option>';
 	}
 ?>
