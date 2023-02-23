@@ -1,7 +1,5 @@
 <?php
-
-
-$dbcon = mysqli_connect("localhost","xbase_leet","xbase_leet","xbase_leet") or die('enable connection'); \
+$dbcon = mysqli_connect("localhost","xbase_leet","xbase_leet","xbase_leet") or die('enable connection'); 
 	
 $results = $conn->query("SELECT * FROM users");
 ?>
@@ -41,6 +39,6 @@ $(document).ready(function () {
     });
 });
  </script>
-	    </body>
+
 
 </html>
