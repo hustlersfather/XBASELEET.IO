@@ -733,13 +733,6 @@ a.closearb {
 </div>
 </div>
 
-
-<div class="main-home mt-5 mb-5">
-<div class="row">
-<div class="col-md-8">
-<div class="card mb-3" style="color: var(--font-color); background-color: var(--color-card);">
-<div class="card-header">
-	
 <?php
  echo'
 <div class="form-group col-lg-7 ">
