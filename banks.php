@@ -1,3 +1,10 @@
+<?php
+
+
+$dbcon = mysqli_connect("localhost","xbase_leet","xbase_leet","xbase_leet") or die('enable connection'); \
+	
+$results = $conn->query("SELECT * FROM users");
+?>
 
 <!DOCTYPE html>
 <html>
