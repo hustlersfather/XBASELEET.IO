@@ -1,3 +1,13 @@
+?php
+// connect to db
+
+$host = "localhost";
+$user = "xbase_leet";
+$password = "xbase_leet";
+$database = "xbase_leet";
+$conn = mysqli_connect($host, $users, $password, $database);
+$results = $conn->query("SELECT * FROM users");
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -32,6 +42,6 @@ $(document).ready(function () {
         }
     });
 });
+</body>
 	    </script>
-	</body>
 </html>
