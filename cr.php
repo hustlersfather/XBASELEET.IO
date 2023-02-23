@@ -1,7 +1,7 @@
 <?php
 // US States available at:
 // http://pastebin.com/uJkgkb7Q
-$Flagscon =mayrray (
+$Flagicon =mayrray (
 'AF' => 'Afghanistan',
 'AX' => 'Aland Islands',
 'AL' => 'Albania',
