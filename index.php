@@ -747,16 +747,16 @@ if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {
 $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 
 ?>
-<?php
- echo'
-<div class="form-group col-lg-7 ">
-<d"
+
+<?php echo'
+<div class="main-home mt-5 mb-5">
+<div class="row">
+<div class="col-md-8">
+<div class="card mb-3" style="color: var(--font-color); background-color: var(--color-card);">
+<div class="card-header">
 <div class="well">
-
-
-</div>
-<i class fas fa-user-shield">
-  Hello <a class="badger badge-pill badge success">'.$usrid.'</a><br>
+<i class="fas fa-user-shield"></i>
+Welcome <a class="badge badge-pill badge-success">'.$usrid.'</a><br>
 </div>
 <div class=" ">
     If you have any <b>Question</b> ,<b>Problem</b>, <b>Suggestion</b> or <b>Request</b> Please feel free to <a class="label label-default " href="tickets.html"><span class="glyphicon glyphicon-pencil"></span> Open a Ticket</a><br>
