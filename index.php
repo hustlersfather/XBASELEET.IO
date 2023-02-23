@@ -791,6 +791,7 @@ Invite Users<br> ----->
 <!---<div class="col-lg-3 col-md-6 col-sm-12 mb-3" style=" align-items: center; display: flex; "><p style=" color: #000; font-size: 18px; font-weight: bold; ">Total Referrals :- 0</p>--->
 </div></div></div>
 </div>
+';?>
 
     <div class="list-group" id="wells/">
       	<h3><i class="glyphicon glyphicon-info-sign"></i> News</h3>'; 
