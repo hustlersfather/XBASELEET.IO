@@ -4,7 +4,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
         <title>Fetch Data From MySQL Database using AJAX in PHP</title>
-    </head>
+    <head>
     <body>
         <div class="container">
             <h4>User data</h4>
