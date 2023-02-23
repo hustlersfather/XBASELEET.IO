@@ -767,21 +767,6 @@ Our Domains are <p><span style="color: #ff0000;"><strong>odinshop.io</strong> ||
 <i class="fas fa-users"></i>
 Invite Users<br>
 </div>
-<div class="card-body" style="color: var(--font-color); background-color: var(--color-card);">
-<div class="row">
-<div class="col-lg-5 col-md-6 col-sm-12">
-<div class="input-group mb-3" style="align-items: center;">
-<input type="text" class="form-control form-control-lg" id="code_user" value="https://odinshop.io/?referral=18229" disabled>
-<div class="input-group-append">
-<button class="btn btn-outline-secondary copydiv" data-clipboard-text="https://odinshop.io/?referral=18229" type="button">COPY</button>
-</div>
-</div>
-</div>
-<div class="col-lg-4 col-md-6 col-sm-12 mb-3" style=" align-items: center; display: flex; ">
-<p style=" color: #000; font-size: 18px; font-weight: bold; ">Total Bonus :- </p>
-</div>
-<div class="col-lg-3 col-md-6 col-sm-12 mb-3" style=" align-items: center; display: flex; ">
-<p style=" color: #000; font-size: 18px; font-weight: bold; ">Total Referrals :- 0</p>
 </div>
 </div>
 </div>
@@ -791,51 +776,6 @@ Invite Users<br>
 <i class="fas fa-newspaper"></i>
 Our News
 </div>
-<div class="card-body " style="color: var(--font-color); background-color: var(--color-card);">
-<ul>
-<li class='mb-2'><span class='btn btn-info btn-sm mr-2 mt-1 mb-1'><b>News buyer</b></span><span><small><b>2022/08/24 06:56:08</small></span></b>
-<br>We are currently working to improve the checkers in all sections ,, stay tuned good things are coming.
-<br>
-</li>
-<li class='mb-2'><span class='btn btn-info btn-sm mr-2 mt-1 mb-1'><b>New section</b></span><span><small><b>2022/08/02 09:30:54</small></span></b>
-<br>Bulk Offers Section has been activated ,, you can buy bulk tools with cheap prices 50% Off, Visit our new section and enjoy the sellers offers.
-https://odinshop.io/offers
-<br>
-</li>
-<li class='mb-2'><span class='btn btn-info btn-sm mr-2 mt-1 mb-1'><b>Report time</b></span><span><small><b>2022/07/29 01:18:06</small></span></b>
-<br>Dear Buyers
-report/refund time increased to 12hours to give our buyers time to report their bad items, also please rate your purchases to help other buyers and help us to flag the bad sellers and remove them from our platform
-we are here to serve you ,If you have any questions , please don't hesitate to contact us if you have any problem with one of our sellers message us.
-<br>
-</li>
-<li class='mb-2'><span class='btn btn-info btn-sm mr-2 mt-1 mb-1'><b>Seller apply</b></span><span><small><b>2022/02/03 07:07:04</small></span></b>
-<br>now you can upgrade your account to seller status and start selling with us instantly without support tickets,,for more information visit https://odinshop.io/become-seller
-<br>
-</li>
-<li class='mb-2'><span class='btn btn-info btn-sm mr-2 mt-1 mb-1'><b>Requests</b></span><span><small><b>2021/11/20 08:39:24</small></span></b>
-<br>Odin's offers you the peace of mind you need to make any purchase. We’ll not release the funds to the Seller until you have received the item and are satisfied with the transaction. We also make sure the Seller provides the required information for the transaction.
-<br>
-</li>
-<li class='mb-2'><span class='btn btn-info btn-sm mr-2 mt-1 mb-1'><b>Update</b></span><span><small><b>2021/11/06 08:43:23</small></span></b>
-<br>Now you can rate \ review \ comment about the item you've purchased go to MyOrders or Report Items and choose Rate Seller and submit your comment / rate ,, rating will help other clients to easily find the good sellers you can also check the seller's profile by clicking on seller's number button in blue color inside of sections
-<br>
-</li>
-<li class='mb-2'><span class='btn btn-info btn-sm mr-2 mt-1 mb-1'><b>Update</b></span><span><small><b>2021/08/03 07:52:03</small></span></b>
-<br>CMS / Technology detectors installed in cPanel & Shell sections to extract the platform [ Wordpress - Joomla - Drupal - WooCommerce - etc.. ] and extract back side technologies such as [ Laravel - Codeigniter - Yii - Zend - Vue JS - React Js - etc.. ] plus extract Server Technologies such as [ Apache - Nginx - MySQL - Tomcat - etc..] and more updates coming soon.
-<br>
-</li>
-<li class='mb-2'><span class='btn btn-info btn-sm mr-2 mt-1 mb-1'><b>Email</b></span><span><small><b>2020/10/14 04:57:06</small></span></b>
-<br>Dear users please use a VALID email in your profile incase you lost your password so you can recover it.
-<br>
-</li>
-<li class='mb-2'><span class='btn btn-info btn-sm mr-2 mt-1 mb-1'><b>Warning</b></span><span><small><b>2020/04/06 06:18:01</small></span></b>
-<br>Orders will be automatically refunded after 6hours of the report time if the seller didnt replay.
-<br>
-</li>
-<li class='mb-2'><span class='btn btn-info btn-sm mr-2 mt-1 mb-1'><b>Free bonus $</b></span><span><small><b>2020/03/17 06:14:10</small></span></b>
-<br>every time your deposit starts from $50 you will receive a 5% bonus.
-<br>
-</li> </ul>
 </div>
 </div>
 </div>
@@ -861,56 +801,10 @@ Latest 10 Added Tools
 <div class="scroll-area-lg" style="color: var(--font-color); background-color: var(--color-card);">
 <div class="scrollbar-container ps--active-y" style="color: var(--font-color); background-color: var(--color-card);">
 <ul class="list-group list-group-flush" style="color: var(--font-color); background-color: var(--color-card);">
-<li class="list-group-item" style="color: var(--font-color); background-color: var(--color-card);">
-Added <font color="red"><b>13</b></font> items in The <font color="green"><b>
-<a class="text-success" href="business-1">
-Cpanel Webmail </a></b></font> section.
-By <b>Seller463</b>, 2023-02-22 </li>
-<li class="list-group-item" style="color: var(--font-color); background-color: var(--color-card);">
-Added <font color="red"><b>23</b></font> items in The <font color="green"><b>
-<a class="text-success" href="cPanel">
-cpanel </a></b></font> section.
-By <b>Seller393</b>, 2023-02-22 </li>
-<li class="list-group-item" style="color: var(--font-color); background-color: var(--color-card);">
-Added <font color="red"><b>30</b></font> items in The <font color="green"><b>
-<a class="text-success" href="business-2">
-Godaddy Webmail </a></b></font> section.
-By <b>Seller467</b>, 2023-02-22 </li>
-<li class="list-group-item" style="color: var(--font-color); background-color: var(--color-card);">
-Added <font color="red"><b>40</b></font> items in The <font color="green"><b>
-<a class="text-success" href="smtp">
-smtp </a></b></font> section.
-By <b>Seller463</b>, 2023-02-22 </li>
-<li class="list-group-item" style="color: var(--font-color); background-color: var(--color-card);">
-Added <font color="red"><b>136</b></font> items in The <font color="green"><b>
-<a class="text-success" href="cPanel">
-cpanel </a></b></font> section.
-By <b>Seller477</b>, 2023-02-22 </li>
-<li class="list-group-item" style="color: var(--font-color); background-color: var(--color-card);">
-Added <font color="red"><b>57</b></font> items in The <font color="green"><b>
-<a class="text-success" href="mailer">
-mailer </a></b></font> section.
-By <b>Seller471</b>, 2023-02-21 </li>
- <li class="list-group-item" style="color: var(--font-color); background-color: var(--color-card);">
-Added <font color="red"><b>28</b></font> items in The <font color="green"><b>
-<a class="text-success" href="business-2">
-Godaddy Webmail </a></b></font> section.
-By <b>Seller471</b>, 2023-02-21 </li>
-<li class="list-group-item" style="color: var(--font-color); background-color: var(--color-card);">
-Added <font color="red"><b>38</b></font> items in The <font color="green"><b>
-<a class="text-success" href="business-2">
-Godaddy Webmail </a></b></font> section.
-By <b>Seller467</b>, 2023-02-21 </li>
-<li class="list-group-item" style="color: var(--font-color); background-color: var(--color-card);">
-Added <font color="red"><b>20</b></font> items in The <font color="green"><b>
-<a class="text-success" href="cPanel">
-cpanel </a></b></font> section.
-By <b>Seller254</b>, 2023-02-21 </li>
-<li class="list-group-item" style="color: var(--font-color); background-color: var(--color-card);">
-Added <font color="red"><b>4</b></font> items in The <font color="green"><b>
-<a class="text-success" href="rdp">
-rdp </a></b></font> section.
-By <b>Seller306</b>, 2023-02-21 </li>
+
+
+
+
 </ul>
 </div> </div>
 </div>
@@ -923,41 +817,9 @@ By <b>Seller306</b>, 2023-02-21 </li>
 <i class="fas fa-table"></i>
 Latest 10 Sold Tools
 </div>
-<div class="card-body " style="color: var(--font-color); background-color: var(--color-card);">
-<div id="roncaa" style="color: var(--font-color); background-color: var(--color-card);">
-<div class="scroll-area-lg" style="color: var(--font-color); background-color: var(--color-card);">
-<div class="scrollbar-container ps--active-y" style="color: var(--font-color); background-color: var(--color-card);">
-<ul class="list-group list-group-flush" style="color: var(--font-color); background-color: var(--color-card);">
-<li class="list-group-item" style="color: var(--font-color); background-color: var(--color-card);">
-<b>Seller341</b> Sold <font color="green"><b>
-<a class="text-success" href="cPanel">cpanel</a></b></font> To <b>Buyer16293</b>, 2023-02-22 14:47:28 </li>
-<li class="list-group-item" style="color: var(--font-color); background-color: var(--color-card);">
-<b>Seller376</b> Sold <font color="green"><b>
-<a class="text-success" href="cPanel">cpanel</a></b></font> To <b>Buyer16293</b>, 2023-02-22 14:43:20 </li>
-<li class="list-group-item" style="color: var(--font-color); background-color: var(--color-card);">
-<b>Seller460</b> Sold <font color="green"><b>
-<a class="text-success" href="cPanel">cpanel</a></b></font> To <b>Buyer16293</b>, 2023-02-22 14:42:27 </li>
-<li class="list-group-item" style="color: var(--font-color); background-color: var(--color-card);">
-<b>Seller254</b> Sold <font color="green"><b>
-<a class="text-success" href="cPanel">cpanel</a></b></font> To <b>Buyer16293</b>, 2023-02-22 14:36:58 </li>
-<li class="list-group-item" style="color: var(--font-color); background-color: var(--color-card);">
-<b>Seller376</b> Sold <font color="green"><b>
-<a class="text-success" href="cPanel">cpanel</a></b></font> To <b>Buyer16293</b>, 2023-02-22 14:36:14 </li>
-<li class="list-group-item" style="color: var(--font-color); background-color: var(--color-card);">
-<b>Seller341</b> Sold <font color="green"><b>
-<a class="text-success" href="cPanel">cpanel</a></b></font> To <b>Buyer17647</b>, 2023-02-22 14:24:57 </li>
-<li class="list-group-item" style="color: var(--font-color); background-color: var(--color-card);">
-<b>Seller376</b> Sold <font color="green"><b>
-<a class="text-success" href="cPanel">cpanel</a></b></font> To <b>Buyer16293</b>, 2023-02-22 14:24:22 </li>
-<li class="list-group-item" style="color: var(--font-color); background-color: var(--color-card);">
-<b>Seller474</b> Sold <font color="green"><b>
-<a class="text-success" href="cPanel">cpanel</a></b></font> To <b>Buyer18061</b>, 2023-02-22 14:16:13 </li>
-<li class="list-group-item" style="color: var(--font-color); background-color: var(--color-card);">
-<b>Seller353</b> Sold <font color="green"><b>
-<a class="text-success" href="cPanel">cpanel</a></b></font> To <b>Buyer17647</b>, 2023-02-22 14:15:46 </li>
-<li class="list-group-item" style="color: var(--font-color); background-color: var(--color-card);">
-<b>Seller477</b> Sold <font color="green"><b>
-<a class="text-success" href="cPanel">cpanel</a></b></font> To <b>Buyer18101</b>, 2023-02-22 14:10:51 </li>
+
+
+
 </ul>
 </div> </div>
 </div>
@@ -965,57 +827,6 @@ Latest 10 Sold Tools
 </div>
 </div>
 </div>
-</div>
-<div class="mb-3 pb-1">
-<ul class="nav nav-tabs" id="myTab" role="tablist">
-<li class="nav-item" role="presentation">
-<button class="nav-link active" id="offer-tab" data-toggle="tab" data-target="#offer" type="button" role="tab" aria-controls="offer" aria-selected="true">Latest Sellers Offers</button>
-</li>
-<li class="nav-item" role="presentation">
-<button class="nav-link" id="request-tab" data-toggle="tab" data-target="#request" type="button" role="tab" aria-controls="request" aria-selected="false">Latest Buyers Requests</button>
-</li>
-</ul>
-<div class="tab-content" id="myTabContent">
-<div class="tab-pane fade  show active" id="offer" role="tabpanel" aria-labelledby="offer-tab">
-<div class="card mb-3" style="color: var(--font-color); background-color: var(--color-card);">
-<div class="card-header">
-<i class="fas fa-table"></i>
-Latest 10 Added Sellers Offers
-</div>
-<div class="card-body " style="color: var(--font-color); background-color: var(--color-card);">
-<div id="roncaa" style="color: var(--font-color); background-color: var(--color-card);">
-<div class="scroll-area-lg" style="color: var(--font-color); background-color: var(--color-card);">
-<div class="scrollbar-container ps--active-y" style="color: var(--font-color); background-color: var(--color-card);">
-<ul class="list-group list-group-flush" style="color: var(--font-color); background-color: var(--color-card);">
-<li class="list-group-item" style="color: var(--font-color); background-color: var(--color-card);">
-Added <font color="red"><b>100 mixed shells</b></font> items in The <font color="green"><b>
-<a class="text-success" href="offers">Offers</a></b></font> section.
-By <b>Seller447</b>, 19/01/2023 05:15:10 pm </li>
-<li class="list-group-item" style="color: var(--font-color); background-color: var(--color-card);">
-Added <font color="red"><b>Fully Verified CashApp Account BTC Enable</b></font> items in The <font color="green"><b>
-<a class="text-success" href="offers">Offers</a></b></font> section.
-By <b>Seller466</b>, 02/01/2023 12:56:28 am </li>
-<li class="list-group-item" style="color: var(--font-color); background-color: var(--color-card);">
-Added <font color="red"><b>Fully Verified Wise Account [Business] [id+pass+email+documents]</b></font> items in The <font color="green"><b>
-<a class="text-success" href="offers">Offers</a></b></font> section.
-By <b>Seller466</b>, 02/01/2023 12:51:15 am </li>
-<li class="list-group-item" style="color: var(--font-color); background-color: var(--color-card);">
-Added <font color="red"><b>ETH, BSC, MATIC Drainer</b></font> items in The <font color="green"><b>
-<a class="text-success" href="offers">Offers</a></b></font> section.
-By <b>Seller455</b>, 03/11/2022 06:41:27 pm </li>
-<li class="list-group-item" style="color: var(--font-color); background-color: var(--color-card);">
-Added <font color="red"><b>Creation of PMTA and SMTP for turnkey distribution</b></font> items in The <font color="green"><b>
-<a class="text-success" href="offers">Offers</a></b></font> section.
-By <b>Seller455</b>, 03/11/2022 06:37:35 pm </li>
- <li class="list-group-item" style="color: var(--font-color); background-color: var(--color-card);">
-Added <font color="red"><b>ETH Drainer</b></font> items in The <font color="green"><b>
-<a class="text-success" href="offers">Offers</a></b></font> section.
-By <b>Seller447</b>, 04/10/2022 08:05:59 pm </li>
-<li class="list-group-item" style="color: var(--font-color); background-color: var(--color-card);">
-Added <font color="red"><b>20 cpanels mixed country</b></font> items in The <font color="green"><b>
-<a class="text-success" href="offers">Offers</a></b></font> section.
-By <b>Seller447</b>, 26/09/2022 03:10:22 pm </li>
-</ul>
 </div> </div>
 </div>
 </div>
@@ -1027,51 +838,6 @@ By <b>Seller447</b>, 26/09/2022 03:10:22 pm </li>
 <i class="fas fa-table"></i>
 Latest 10 Added Buyers Requests
 </div>
-<div class="card-body " style="color: var(--font-color); background-color: var(--color-card);">
-<div id="roncaa" style="color: var(--font-color); background-color: var(--color-card);">
-<div class="scroll-area-lg" style="color: var(--font-color); background-color: var(--color-card);">
-<div class="scrollbar-container ps--active-y" style="color: var(--font-color); background-color: var(--color-card);">
-<ul class="list-group list-group-flush" style="color: var(--font-color); background-color: var(--color-card);">
-<li class="list-group-item" style="color: var(--font-color); background-color: var(--color-card);">
-Added <font color="red"><b>FreeBSD servers wanted</b></font> items in The <font color="green"><b>
-<a class="text-success" href="requests">Requests</a></b></font> section.
-By <b>Buyer9660</b>, 2023/02/20 02:53:20 am </li>
-<li class="list-group-item" style="color: var(--font-color); background-color: var(--color-card);">
-Added <font color="red"><b>MEDIA TEMPLE SHELLS</b></font> items in The <font color="green"><b>
-<a class="text-success" href="requests">Requests</a></b></font> section.
-By <b>Buyer9874</b>, 2023/02/01 11:28:22 am </li>
-<li class="list-group-item" style="color: var(--font-color); background-color: var(--color-card);">
-Added <font color="red"><b>domain smtp</b></font> items in The <font color="green"><b>
-<a class="text-success" href="requests">Requests</a></b></font> section.
-By <b>Buyer18151</b>, 2023/01/27 16:32:48 pm </li>
-<li class="list-group-item" style="color: var(--font-color); background-color: var(--color-card);">
-Added <font color="red"><b>Looking for medium.com hacked account</b></font> items in The <font color="green"><b>
-<a class="text-success" href="requests">Requests</a></b></font> section.
-By <b>Buyer17148</b>, 2023/01/07 16:32:18 pm </li>
-<li class="list-group-item" style="color: var(--font-color); background-color: var(--color-card);">
-Added <font color="red"><b>shell/cpanel - DA/PA 40+</b></font> items in The <font color="green"><b>
-<a class="text-success" href="requests">Requests</a></b></font> section.
-By <b>Buyer18140</b>, 2022/12/20 17:59:38 pm </li>
-<li class="list-group-item" style="color: var(--font-color); background-color: var(--color-card);">
-Added <font color="red"><b>Hostgator Cpanel </b></font> items in The <font color="green"><b>
-<a class="text-success" href="requests">Requests</a></b></font> section.
-By <b>Buyer9660</b>, 2022/12/15 00:06:40 am </li>
-<li class="list-group-item" style="color: var(--font-color); background-color: var(--color-card);">
-Added <font color="red"><b>bulk login/pass usa nelikvid</b></font> items in The <font color="green"><b>
-<a class="text-success" href="requests">Requests</a></b></font> section.
-By <b>Buyer18110</b>, 2022/12/14 15:11:47 pm </li>
-<li class="list-group-item" style="color: var(--font-color); background-color: var(--color-card);">
-Added <font color="red"><b>Bulk japan shells</b></font> items in The <font color="green"><b>
-<a class="text-success" href="requests">Requests</a></b></font> section.
-By <b>Buyer17300</b>, 2022/12/13 20:55:39 pm </li>
-<li class="list-group-item" style="color: var(--font-color); background-color: var(--color-card);">
-Added <font color="red"><b>Cpanel</b></font> items in The <font color="green"><b>
-<a class="text-success" href="requests">Requests</a></b></font> section.
-By <b>Buyer9660</b>, 2022/12/08 19:39:15 pm </li>
-<li class="list-group-item" style="color: var(--font-color); background-color: var(--color-card);">
-Added <font color="red"><b>GODADDY</b></font> items in The <font color="green"><b>
-<a class="text-success" href="requests">Requests</a></b></font> section.
-By <b>Buyer15241</b>, 2022/12/08 11:25:45 am </li>
 </ul>
 </div> </div>
 </div>
@@ -1104,6 +870,7 @@ Available Payment Methods
 <a href="addBalance"><img src="layout/images/dgc.jpg" height="48" width="49" title="Dogecoin" /></a>
 </div>
 </div>
+
 <div class="card mb-3" style="color: var(--font-color); background-color: var(--color-card);">
 <div class="card-header">
 <i class="fas fa-chart-pie"></i>
@@ -1111,16 +878,18 @@ Our Stuff
 </div>
 <div class="card-body" style="color: var(--font-color); background-color: var(--color-card);">
 <div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
+
+
 <div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
 <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0">
 </div>
-</div>
-<div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
-<div style="position:absolute;width:200%;height:200%;left:0; top:0">
+
 </div>
 </div>
 </div>
-<canvas id="myPieChart" width="278" height="278" style="display: block; width: 278px; height: 278px;" class="chartjs-render-monitor"></canvas>
+<canvas id=" “>
+
+</canvas>
 </div>
 <div class="card-footer small text-primary" style="color: var(--font-color); background-color: var(--color-card);">Page Loaded in 1.3091 Seconds</div>
 </div>
