@@ -763,7 +763,10 @@ Welcome <a class="badge badge-pill badge-success">'.$usrid.'</a><br>
 </div>
 
     <div class="list-group" id="div2">
-      	<h3><i class="glyphicon glyphicon-info-sign"></i> News</h3>'; 
+</li>
+<li class='mb-2'><span class='btn btn-info btn-sm mr-2 mt-1 mb-1'><b>OUT NEWS'; 
+
+
 		 $qq = @mysqli_query($dbcon, "SELECT * FROM news ORDER by id desc LIMIT 5") or die("error here"); 
 
                 
