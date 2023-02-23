@@ -750,8 +750,15 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 <?php
  echo'
 <div class="form-group col-lg-7 ">
+<d"
 <div class="well">
-  Hello <a class="label label-primary">'.$usrid.'</a><br>
+
+
+</div>
+<i class fas fa-user-shield">
+  Hello <a class="badger badge-pill badge success">'.$usrid.'</a><br>
+</div>
+<div class=" ">
     If you have any <b>Question</b> ,<b>Problem</b>, <b>Suggestion</b> or <b>Request</b> Please feel free to <a class="label label-default " href="tickets.html"><span class="glyphicon glyphicon-pencil"></span> Open a Ticket</a><br>
     if you want to report an order , just go to <abbr title="Account - > My Orders or Click here" >My Orders  <span class="glyphicon glyphicon-shopping-cart"></span></abbr> 
     then click on <a class="label label-primary">Report #[Order Id]</a> button<br><br>
