@@ -410,7 +410,18 @@ Send
 
 
 
+              </td>
+                                  </tr>
+                                  <?php
 
+                                  }
+                                }
+                                else{
+                                  echo "NO RECORD FOUND";
+                                }
+                              ?>
+                            </tbody>
+                          </table>
 
 
 </body>
