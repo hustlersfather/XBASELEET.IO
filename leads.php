@@ -439,74 +439,30 @@ if ($reselerif == "1") {
 </div>
 </nav>
 <style>
-<Dv I'd="mainDiv>
-<?php
-$query = mysqli_query($dbcon, "SELECT DISTINCT(`country`) FROM `leads` WHERE `sold` = '0' ORDER BY country ASC");
-	while($row = mysqli_fetch_assoc($query)){
-	echo '<option value="'.$row['country'].'">'.$row['country'].'</option>';
-	}
-?>
-
-
-
-
-<?php
-$query = mysqli_query($dbcon, "SELECT DISTINCT(`resseller`) FROM `leads` WHERE `sold` = '0' ORDER BY resseller ASC");
-	while($row = mysqli_fetch_assoc($query)){
-		 $qer = mysqli_query($dbcon, "SELECT DISTINCT(`id`) FROM resseller WHERE username='".$row['resseller']."' ORDER BY id ASC")or die(mysql_error());
-		   while($rpw = mysqli_fetch_assoc($qer))
-			 $SellerNick = "seller".$rpw["id"]."";
-	echo '<option value="'.$SellerNick.'">'.$SellerNick.'</option>';
-	}
-?>
-</select></td><td><button id='filterbutton'class="btn btn-primary btn-sm" disabled>Filter <span class="glyphicon glyphicon-filter"></span></button></td></tr></tbody></table></div>
-</div>
-
-
-<table width="100%"  class="table table-striped table-bordered table-condensed sticky-header" id="table">
-<thead>
-    <tr>
-      <th scope="col" >Country</th>
-      <th scope="col">Description</th>
-      <th scope="col">Email N</th>
-
-      <th scope="col">Seller</th>
-      <th scope="col">Price</th>
-      <th scope="col">Added on </th>
-
-      <th scope="col">Buy</th>
-    </tr>
-</thead>
-  <tbody>
-
- <?php
-include("cr.php");
-$q = mysqli_query($dbcon, "SELECT * FROM leads WHERE sold='0' ORDER BY RAND()")or die(mysqli_error());
- while($row = mysqli_fetch_assoc($q)){
-	 
-	 	 $countryfullname = $row['country'];
-	  $code = array_search("$countryfullname", $countrycodes);
-	 $countrycode = strtolower($code);
-	    $qer = mysqli_query($dbcon, "SELECT * FROM resseller WHERE username='".$row['resseller']."'")or die(mysql_error());
-		   while($rpw = mysqli_fetch_assoc($qer))
-			 $SellerNick = "seller".$rpw["id"]."";
-     echo "
- <tr>     
-    <td id='leads_country'><i class='flag-icon flag-icon-$countrycode'></i>&nbsp;".htmlspecialchars($row['country'])." </td>
-    <td id='leads_about'> ".htmlspecialchars($row['infos'])." </td> 
-	<td> ".htmlspecialchars($row['number'])." </td>
-    <td id='leads_seller'> ".htmlspecialchars($SellerNick)."</td>
-    <td> ".htmlspecialchars($row['price'])."</td>
-	    <td> ".$row['date']."</td>";
-    echo '
-    <td>
-	<span id="leads'.$row['id'].'" title="buy" type="leads"><a onclick="javascript:buythistool('.$row['id'].')" class="btn btn-primary btn-xs"><font color=white>Buy</font></a></span><center>
-    </td>
-            </tr>
-     ';
- }
-
- ?>
+<Div id="mainDiv>
+                      
+                        <table class="table table-striped mt-4 ">
+                            <thead>
+                              <tr>
+                                  <th>id</th>
+                                  <th>Balance</th>
+                                  <th>Title</th>
+                                  <th>Info</th>
+                                  <th>Details</th>
+                                  <th>Price</th>
+                                  <th>Edit</th>
+                                  <th>Delete</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
 <script type="text/javascript">
 $('#filterbutton').click(function () {$("#table tbody tr").each(function() {var ck1 = $.trim( $(this).find("#leads_country").text().toLowerCase() );var ck2 = $.trim( $(this).find("#leads_about").text().toLowerCase() );var ck3 = $.trim( $(this).find("#leads_seller").text().toLowerCase() ); var val1 = $.trim( $('select[name="leads_country"]').val().toLowerCase() );var val2 = $.trim( $('input[name="leads_about"]').val().toLowerCase() );var val3 = $.trim( $('select[name="leads_seller"]').val().toLowerCase() ); if((ck1 != val1 && val1 != '' ) || ck2.indexOf(val2)==-1 || (ck3 != val3 && val3 != '' )){ $(this).hide();  }else{ $(this).show(); } });$('#filterbutton').prop('disabled', true);});$('.filterselect').change(function () {$('#filterbutton').prop('disabled', false);});$('.filterinput').keyup(function () {$('#filterbutton').prop('disabled', false);});
 function buythistool(id){
