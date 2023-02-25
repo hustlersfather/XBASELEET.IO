@@ -8,7 +8,7 @@ function sendt(id){var sub=$("#subject"+id).val();var msg=$("#msg"+id).val();var
 function sendReview(id){var rating=$("#rating-"+id+" input[type='radio']:checked").val();var review=$("#review-"+id).val();if(rating==undefined)
 {rating='';}
 $.ajax({type:"POST",url:"addReviewToSeller",dataType:"json",data:{orderid:id,rating:rating,review:review},success:function(response){if(response.success!=1){$("#ratingModal"+id+" .modal-body p").show();$("#ratingModal"+id+" .modal-body p span").html(response.message);}else{$("div#rating-and-review-"+id).html(response.message);$("#ratingModal"+id).hide();$(".modal-backdrop").remove();alert('Your rating has saved.');}}});}
-     function ajaxinfo() {
+function ajaxinfo() {
                 $.ajax({
                     type: 'GET',
                     url: 'ajaxinfo.html',
@@ -81,19 +81,6 @@ $(window).on("popstate", function(e) {
 });
 
 
-$(window).on('load', function() {
-$('.dropdown').hover(function(){ $('.dropdown-toggle', this).trigger('click'); });
-   pageDiv(2,'cPanel - JeruxShop','',1);
-   var clipboard = new Clipboard('.copyit');
-    clipboard.on('success', function(e) {
-      setTooltip(e.trigger, 'Copied!');
-      hideTooltip(e.trigger);
-      e.clearSelection();
-   });
-
-});
-
-
 function setTooltip(btn, message) {
   console.log("hide-1");
   $(btn).tooltip('hide')
@@ -105,4 +92,9 @@ function setTooltip(btn, message) {
 function hideTooltip(btn) {
   setTimeout(function() {$(btn).tooltip('hide'); console.log("hide-2");}, 1000);
 }
-
+</script>
+		<style>
+            .navbar {
+                background-color: #001f3f;
+            }
+        </style>
