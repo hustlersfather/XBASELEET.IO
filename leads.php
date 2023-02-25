@@ -514,4 +514,17 @@ $query = mysqli_query($dbcon, "SELECT DISTINCT(`resseller`) FROM `leads` WHERE `
 <table id="lead_data" class="display responsive table-hover" style="width:100%; color: var(--font-color); background-color: var(--color-card);">
 <thead>
 <tr>
-	
+<tr>
+<th data-priority="1"></th>
+<th class="all">ID</th>
+<th data-priority="3">Country</th>
+<th data-priority="6">Description</th>
+<th data-priority="7">Email N</th>
+<th data-priority="8">Seller</th>
+<th data-priority="2">Proof</th>
+<th data-priority="9">Price</th>
+<th data-priority="10">Added on </th>
+<th class="all">Buy</th>
+</tr>
+	</thead>
+  <tbody>
