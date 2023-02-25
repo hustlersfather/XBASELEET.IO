@@ -14,6 +14,281 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 
 
 
+<?php include('../authentication/auth-controller.php'); ?>
+<?php include('../authentication/security.php'); ?>
+<?php include('includes/header.php'); ?>
+
+
+        <!--Sidebar-->
+        <div class="col-lg-10">
+            <div class="container-fluid">
+                <!--Breadcrumbs-->
+                <nav aria-label="breadcrumb border-bg">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                        <a href="#" class="text-white">Home</a>
+                        </li>
+                        <li class="breadcrumb-item active text-white" aria-current="page">Post</li>
+                    </ol>
+                </nav>
+                <!--Breadcrumbs ends-->
+
+                <!--Sb heading-->
+                <div class="border-bg pb-2">
+                    <div class="d-flex justify-content-between align-items-center mx-3">
+                        <h5 class="h5 text-white">Chase Page</h5>
+                        <div class="d-flex align-items-end">
+
+                            <!-- Bank log post -->
+                            <div>
+                                <button type="button" class="btn btn-danger btn-md" data-toggle="modal" data-target="#exampleModal">
+                                    Add Post
+                                </button>
+                                
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header bg-danger py-3 text-white">
+                                                <h5 class="modal-title" id="exampleModalLabel">Add a Post</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form action="post.php" method="post" class="px-3 py-1">
+
+                                                    <div class="form-group mt-2">
+                                                        <label for="email" class="text-uppercase mb-2">Balance</label>
+                                                        <input name="balance" type="int" id="email" class="form-control">
+                                                    </div>
+
+                                                    <div class="form-group mt-2">
+                                                        <label for="title" class="text-uppercase mb-2">Title</label>
+                                                        <input name="title" type="text" id="title" class="form-control">
+                                                    </div>
+
+                                                    <div class="form-group mt-2">
+                                                        <label for="info" class="text-uppercase mb-2">Info</label>
+                                                        <input name="info" type="text" id="info" class="form-control">
+                                                    </div>
+                                                    <div class="form-group mt-2">
+                                                        <label for="info" class="text-uppercase mb-2">Details</label>
+                                                        <input name="detail" type="text" id="info" class="form-control">
+                                                    </div>
+
+                                                    <div class="form-group mt-2">
+                                                        <label for="price" class="text-uppercase mb-2">Price</label>
+                                                        <input name="price" type="int" id="price" class="form-control">
+                                                    </div>
+
+                                                    <div class="form-group mt-2">
+                                                        <input name="table_name" type="hidden" id="price" value="chase_usa_fullz" class="form-control">
+                                                    </div>
+
+                                                    <div class="form-group mt-2">
+                                                        <label for="price" class="text-uppercase mb-2">Category</label>
+                                                        <select name="category" type="text" class="form-control">
+                                                            <option value="visa_card">Visa card</option>
+                                                            <option value="mastercard">mastercard</option>
+                                                            <option value="amex_card">Amex card</option>
+                                                            <option value="bank_ssn_dob_fullz">Bank ssn Dob Fullz</option>
+                                                            <option value="bank_checks">Bank Checks</option>
+                                                            <option value="Huntington Log(Full info)">Huntington Log(Full info)</option>
+                                                            <option value="Chase Log(Full info)">Chase Log(Full info)</option>
+                                                            <option value="Citi Log(Full info)">Citi Log(Full info)</option>
+                                                            <option value="PNC Log(Full info)">PNC Log(Full info)</option>
+                                                            <option value="Woodforest Log(Full info)">Woodforest Log(Full info)</option>
+                                                            <option value="Chime Log(Full info)">Chime Log(Full info)</option>
+                                                            <option value="NFCU Log(Full info)">NFCU Log(Full info)</option>
+                                                            <option value="BBVA Log(Full info)">BBVA Log(Full info)</option>
+                                                            <option value="BB&T Log(Full info)">BB&T Log(Full info)</option>
+                                                            <option value="BOA Log(Full info)">BOA Log(Full info)</option>
+                                                            <option value="Suntrust Log(Full info)">Suntrust Log(Full info)</option>
+                                                            <option value="Scotia Bank log(Full Info)">Scotia Bank log(Full Info)</option>
+                                                            <option value="RBC Log(Full info)">RBC Log(Full info)</option>
+                                                            <option value="TD Banks Canada(Full info)">TD Banks Canada(Full info)</option>
+                                                            <option value="Llyod Bank Log(Full info)">Llyod Bank Log(Full info)</option>
+                                                            <option value="Barclays Bank Log(Full info)">Barclays Bank Log(Full info)</option>
+                                                            <option value="HSBC Bank Log(Full info)">HSBC Bank Log(Full info)</option>
+                                                            <option value="Shopwithscript log(usa)">Shopwithscript log(usa)</option>
+                                                            <option value="fundscript_script">otherAccount</option>
+                                                            <option value="Southwest log">Southwest log</option>
+                                                            <option value="spamming_tools">spamming_tools</option>
+                                                            <option value="hosting_tools">hosting_tools</option>
+                                                            <option value="cracking_tools">cracking_tools</option>
+                                                            <option value="hacking_tools">hacking_tools</option>
+                                                            <option value="snipping_tools">snipping_tools</option>
+
+                                                        </select>   
+                                                    </div>
+
+                                                    <div class="form-group my-3">
+                                                        <button type="submit" name="add_post" class="btn-danger btn-lg sign_in text-white">Add post</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Bank log post ends -->
+                        </div>
+                    </div>
+                </div>
+                <!--Sb heading ends-->
+
+                <!--search form-->
+                <div class="float-right mt-2">
+                    <form action="">
+                        <label for="search" class="text-white h6">Search:</label>
+                        <input type="text" class="py-1 rounded">
+                    </form>
+                </div>
+                <!--search form ends-->
+
+                <!--Post Table-->
+                <div class="table-card rounded">
+                    <div class="card-head rounded d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5 class="h5">Chase Post</h5>
+                        </div>
+
+                        <div class="navbar mr-5">
+                            <div class="nav-item dropdown">
+                                <div class="nav-link dropdown-toggle bg-white p-2 rounded lead text-uppercase" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Select Your Post
+                                </div>
+                                <div class="dropdown-menu mx-5" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="post.php">Visa_card</a>
+                                    <a class="dropdown-item" href="mastercard.php">Mastercard</a>
+                                    <a class="dropdown-item" href="amex.php">Amex Card</a>
+                                    <a class="dropdown-item" href="bank_ssn.php">bank_ssn_dob_fullz</a>
+                                    <a class="dropdown-item" href="bank_checks.php">Bank Checks</a>
+                                    <a class="dropdown-item" href="huntington.php">Huntington Log(Full info)</a>
+                                    <a class="dropdown-item" href="chase.php">Chase Log(Full info)</a>
+                                    <a class="dropdown-item" href="citi.php">Citi Log(Full info)</a>
+                                    <a class="dropdown-item" href="pnc.php">PNC Log(Full info)</a>
+                                    <a class="dropdown-item" href="woodforest.php">Woodforest Log(Full info)</a>
+                                    <a class="dropdown-item" href="chime.php">Chime Log(Full info)</a>
+                                    <a class="dropdown-item" href="nfcu.php">NFCU Log(Full info)</a>
+                                    <a class="dropdown-item" href="bbva.php">BBVA Log(Full info)</a>
+                                    <a class="dropdown-item" href="bb&t.php">BB&T Log(Full info)</a>
+                                    <a class="dropdown-item" href="boa.php">BOA Log(Full info)</a>
+                                    <a class="dropdown-item" href="suntrust.php">Suntrust Log(Full info)</a>
+                                    <a class="dropdown-item" href="scotia.php">Scotia Bank log(Full Info)</a>
+                                    <a class="dropdown-item" href="rbc.php">RBC Log(Full info)</a>
+                                    <a class="dropdown-item" href="td.php">TD Banks Canada(Full info)</a>
+                                    <a class="dropdown-item" href="llyod.php">Llyod Bank Log(Full info)</a>
+                                    <a class="dropdown-item" href="barclays.php">Barclays Bank Log(Full info)</a>
+                                    <a class="dropdown-item" href="hsbc.php">HSBC Bank Log(Full info)</a>
+                                    <a class="dropdown-item" href="shopwithscript.php">Shopwithscript log(usa)</a>
+                                    <a class="dropdown-item" href="otherAccount.php">Other Account</a>
+                                    <a class="dropdown-item" href="southwest.php">Southwest log</a>
+                                    <a class="dropdown-item" href="spamming.php">spamming_tools</a>
+                                    <a class="dropdown-item" href="hosting.php">hosting_tools</a>
+                                    <a class="dropdown-item" href="cracking.php">cracking_tools</a>
+                                    <a class="dropdown-item" href="hacking.php">hacking_tools</a>
+                                    <a class="dropdown-item" href="snipping_tools.php">snipping_tools</a>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                    <div>
+                    <form action="chase.php" method="post" class="mx-4 pb-2 table-responsive">
+                      <?php
+                        include('../authentication/dbconfig.php'); 
+
+                        $query = "SELECT * FROM chase_usa_fullz";
+                        $results = mysqli_query($db, $query);
+                      ?>
+                        <table class="table table-striped mt-4 ">
+                            <thead>
+                              <tr>
+                                  <th>id</th>
+                                  <th>Balance</th>
+                                  <th>Title</th>
+                                  <th>Info</th>
+                                  <th>Details</th>
+                                  <th>Price</th>
+                                  <th>Edit</th>
+                                  <th>Delete</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                              if(mysqli_num_rows($results) > 0)
+                              {
+                                while($row = mysqli_fetch_assoc($results))
+                                {
+                                  ?>
+                                  <tr>
+                                    <td>
+                                      <?php echo $row['id']; ?>
+                                    </td>
+                                    <td> 
+                                      <?php echo $row['balance']; ?> 
+                                    </td>
+                                    <td>
+                                      <?php echo $row['title']; ?> 
+                                    </td>
+                                    <td>
+                                      <?php echo $row['info']; ?> 
+                                    </td>
+                                    <td>
+                                      <?php echo $row['detail']; ?> 
+                                    </td>
+                                    <td>
+                                      <?php echo $row['price']; ?> 
+                                    </td>
+                                    <td>
+                                        <form action="edit_post.php" method="post">
+                                            <input type="hidden" name="edit_post_id" value="<?php echo $row['id']; ?>">
+                                            <input type="hidden" name="post_table" value="chase_usa_fullz">
+                                            <button class="btn btn-success" type="submit" name="edit_post_btn">
+                                            Edit
+                                            </button>
+                                        </form>
+                                    </td>
+                                    <td>
+                                        <form action="../authentication/auth-controller.php" method="post">
+                                            <input type="hidden" name="delete_post_id" value="<?php echo $row['id']; ?>">
+                                            <input type="hidden" name="table" value="chase_usa_fullz">
+                                            <button class="btn btn-danger" name="delete_post_btn">
+                                                    Delete
+                                            </button>
+                                        </form>
+                                    </td>
+                                  </tr>
+                                  <?php
+
+                                  }
+                                }
+                                else{
+                                  echo "NO RECORD FOUND";
+                                }
+                              ?>
+                            </tbody>
+                        </table>
+                    </form>
+                        <!--Pagination-->
+                        <div class="d-flex justify-content-between px-4 pb-4">
+                            <p>Showing 0 to 0 of 0 entries</p>
+                            <div>
+                                <a href="#" class="btn">Previous</a>
+                                <a href="#" class="btn">Next</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--post Table ends-->
+
+                
+                
+            </div>
+        </div>
+        <!--Main Body ends-->
+        <?php include('includes/footer.php'); ?>
 
 
 <!DOCTYPE html>
