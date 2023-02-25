@@ -67,8 +67,46 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
             {
             margin:0 !important
             }
-        </style>
+   </style>
 </head>
+<style>
+
+.display  td {
+    background: var(--color-card);
+      color: var(--font-color);
+
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+
+    color: var(--font-color);
+
+}
+#lead_data_paginate .paginate_button {
+color: var(--font-color);
+
+}
+
+.alert-info {
+    color: var(--color-info);
+    background-color: var(--color-backinfo);
+    border-color: var(--color-borderinfo);
+
+}
+
+#lead_data_filter{
+  color: var(--font-color);
+}
+#lead_data_length{
+  color: var(--font-color);
+}
+#lead_data_paginate{
+  color: var(--font-color);
+}
+#lead_data_info{
+  color: var(--font-color);
+}
+</style>
+<body class="them">
 <style>
     .navbar-nav .dropdown-menu
     {
@@ -499,7 +537,7 @@ a.closearb {
 </div>
 <div class="row m-2 pt-3 " style="max-width:100%; color: var(--font-color); background-color: var(--color-card);">
 <div class="col-sm-12 table-responsive">
-<table id="lead_data" class="display responsive table-hover" style="width:100%; color: var(--font-color); background-color: var(--color-card);">
+<table id="table" class="display responsive table-hover" style="width:100%; color: var(--font-color); background-color: var(--color-card);">
 <thead>
 <tr>
 <th data-priority="1"></th>
@@ -583,7 +621,7 @@ a.closearb {
             load_data();
 
             function load_data(myarray) {
-                $('#lead_data').DataTable({
+                $('#table').DataTable({
                     "processing": true,
                     "serverSide": true,
                     "responsive": true,
@@ -598,7 +636,7 @@ a.closearb {
                     ],
 
                     "ajax":{
-                        url:"divPage6.html",
+                        url:"",
                         type:"POST",
                         data:{
                             data_filter:myarray,
