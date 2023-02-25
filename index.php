@@ -58,7 +58,8 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 <link rel="stylesheet" href="layout/css/util.css" />
 <style>body{padding-top:80px}</style>
 <link rel="stylesheet" href="layout/fonts/iconic/css/material-design-iconic-font.min.css">
-<script src="layout/js/main.js"></script>
+
+	<script type="text/javascript src="layout/js/main.js"></script>
 <script type="text/javascript">
             // Notice how this gets configured before we load Font Awesome
             window.FontAwesomeConfig = { autoReplaceSvg: false }
