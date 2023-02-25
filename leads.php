@@ -467,16 +467,6 @@ a.closearb {
 </div>
 </div>
 <div class="alert alert-info text-left" role="alert" style="margin: 15px;">
-</style> <div class="d-flex flex-row-reverse mt-0">
-<div class="p-2">
-<label id="switch" class="switch">
-<input type="checkbox" onchange="toggleTheme()" id="slider">
-<span class="slider round">
-</span>
-</label>
-</div>
-</div>
-<div class="alert alert-info text-left" role="alert" style="margin: 15px;">
 <ul>
 <li>We Have Fresh E-mails Lists for Diffrents Countries ( You Can Use it for Spam ). </li>
 <li>Our E-mails Lists Guarante for you Good results because most of them are from Shops and Big Sites .</li>
