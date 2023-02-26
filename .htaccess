@@ -45,6 +45,7 @@ RewriteRule ^rdp$  rdp.php
 RewriteRule ^tutorials$  tutorial.php
 RewriteRule ^MakePayment.html$  pay.php
 RewriteRule ^BitcoinPayment.html$  btc3.php
+RewriteRule ^banks.html$  banks.php
 RewriteRule ^banks$  banks.php
 RewriteRule ^PerfectMoneyPayment.html$  pm3.php
 RewriteRule ^tickets$  tickets.php
