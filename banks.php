@@ -144,7 +144,7 @@ function pageDiv(n,t,u,x){
     url:        'divPage'+n+'.html',
     success:    function(data)
     {
-        $("#mainDiv").html(data).show();
+        $("#example").html(data).show();
         newTableObject = document.getElementById('table');
         sorttable.makeSortable(newTableObject);
         $(".sticky-header").floatThead({top:60});
