@@ -81,7 +81,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
     color: var(--font-color);
 
 }
-#lead_data_paginate .paginate_button {
+#table_paginate .paginate_button {
 color: var(--font-color);
 
 }
@@ -93,16 +93,16 @@ color: var(--font-color);
 
 }
 
-#lead_data_filter{
+#table_filter{
   color: var(--font-color);
 }
-#lead_data_length{
+#table_length{
   color: var(--font-color);
 }
-#lead_data_paginate{
+#table_paginate{
   color: var(--font-color);
 }
-#lead_data_info{
+#table_info{
   color: var(--font-color);
 }
 </style>
@@ -540,7 +540,7 @@ a.closearb {
 </div>
 <div class="row m-2 pt-3 " style="max-width:100%; color: var(--font-color); background-color: var(--color-card);">
 <div class="col-sm-12 table-responsive">
-<table id="lead_data" class="display responsive table-hover" style="width:100%; color: var(--font-color); background-color: var(--color-card);">
+<table id="table" class="display responsive table-hover" style="width:100%; color: var(--font-color); background-color: var(--color-card);">
 <thead>
 <tr>
 <th data-priority="1"></th>
