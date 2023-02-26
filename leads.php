@@ -639,7 +639,7 @@ a.closearb {
                     ],
 
                     "ajax":{
-                        url:"",
+                        url:"divPage6.html",
                         type:"POST",
                         data:{
                             data_filter:myarray,
