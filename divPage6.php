@@ -11,15 +11,8 @@ if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {
 $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 ?>
 
-<ul class="nav nav-tabs">
-  <li class="active"><a href="#filter" data-toggle="tab">Filter</a></li>
-</ul>
-<div id="myTabContent" class="tab-content" >
-  <div class="tab-pane active in" id="filter"><table class="table"><thead><tr><th>Country</th>
-<th>Description</th>
-<th>Seller</th>
 
-</select></td><td><input class='filterinput form-control input-sm' name="leads_about" size='3'></td><td><select class='filterselect form-control input-sm' name="leads_seller"><option value="">ALL</option>
+
 <?php
 $query = mysqli_query($dbcon, "SELECT DISTINCT(`resseller`) FROM `leads` WHERE `sold` = '0' ORDER BY resseller ASC");
 	while($row = mysqli_fetch_assoc($query)){
@@ -29,7 +22,7 @@ $query = mysqli_query($dbcon, "SELECT DISTINCT(`resseller`) FROM `leads` WHERE `
 	echo '<option value="'.$SellerNick.'">'.$SellerNick.'</option>';
 	}
 ?>
-</select></td><td><button id='filterbutton'class="btn btn-primary btn-sm" disabled>Filter <span class="glyphicon glyphicon-filter"></span></button></td></tr></tbody></table></div>
+
 </div>
 
 
