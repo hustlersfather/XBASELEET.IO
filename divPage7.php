@@ -16,18 +16,18 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 </ul>
 <div id="myTabContent" class="tab-content" >
   <div class="tab-pane active in" id="filter"><table class="table"><thead><tr><th>Country</th>
-<th>Description</th>
+<th>Site Name</th>
 <th>Seller</th>
-<th></th></tr></thead><tbody><tr><td><select class='filterselect form-control input-sm' name="leads_country"><option value="">ALL</option>
+<th></th></tr></thead><tbody><tr><td><select class='filterselect form-control input-sm' name="account_country"><option value="">ALL</option>
 <?php
-$query = mysqli_query($dbcon, "SELECT DISTINCT(`country`) FROM `leads` WHERE `sold` = '0' ORDER BY country ASC");
+$query = mysqli_query($dbcon, "SELECT DISTINCT(`country`) FROM `accounts` WHERE `sold` = '0' ORDER BY country ASC");
 	while($row = mysqli_fetch_assoc($query)){
 	echo '<option value="'.$row['country'].'">'.$row['country'].'</option>';
 	}
 ?>
-</select></td><td><input class='filterinput form-control input-sm' name="leads_about" size='3'></td><td><select class='filterselect form-control input-sm' name="leads_seller"><option value="">ALL</option>
+</select></td><td><input class='filterinput form-control input-sm' name="account_sitename" size='3'></td><td><select class='filterselect form-control input-sm' name="account_seller"><option value="">ALL</option>
 <?php
-$query = mysqli_query($dbcon, "SELECT DISTINCT(`resseller`) FROM `leads` WHERE `sold` = '0' ORDER BY resseller ASC");
+$query = mysqli_query($dbcon, "SELECT DISTINCT(`resseller`) FROM `accounts` WHERE `sold` = '0' ORDER BY resseller ASC");
 	while($row = mysqli_fetch_assoc($query)){
 		 $qer = mysqli_query($dbcon, "SELECT DISTINCT(`id`) FROM resseller WHERE username='".$row['resseller']."' ORDER BY id ASC")or die(mysql_error());
 		   while($rpw = mysqli_fetch_assoc($qer))
@@ -43,13 +43,11 @@ $query = mysqli_query($dbcon, "SELECT DISTINCT(`resseller`) FROM `leads` WHERE `
 <thead>
     <tr>
       <th scope="col" >Country</th>
-      <th scope="col">Description</th>
-      <th scope="col">Email N</th>
-
+      <th scope="col">Site Name</th>
+      <th scope="col">Available Information</th>
       <th scope="col">Seller</th>
       <th scope="col">Price</th>
       <th scope="col">Added on </th>
-
       <th scope="col">Buy</th>
     </tr>
 </thead>
@@ -57,7 +55,7 @@ $query = mysqli_query($dbcon, "SELECT DISTINCT(`resseller`) FROM `leads` WHERE `
 
  <?php
 include("cr.php");
-$q = mysqli_query($dbcon, "SELECT * FROM leads WHERE sold='0' ORDER BY RAND()")or die(mysqli_error());
+$q = mysqli_query($dbcon, "SELECT * FROM accounts WHERE sold='0' ORDER BY RAND()")or die(mysqli_error());
  while($row = mysqli_fetch_assoc($q)){
 	 
 	 	 $countryfullname = $row['country'];
@@ -68,15 +66,15 @@ $q = mysqli_query($dbcon, "SELECT * FROM leads WHERE sold='0' ORDER BY RAND()")o
 			 $SellerNick = "seller".$rpw["id"]."";
      echo "
  <tr>     
-    <td id='leads_country'><i class='flag-icon flag-icon-$countrycode'></i>&nbsp;".htmlspecialchars($row['country'])." </td>
-    <td id='leads_about'> ".htmlspecialchars($row['infos'])." </td> 
-	<td> ".htmlspecialchars($row['number'])." </td>
-    <td id='leads_seller'> ".htmlspecialchars($SellerNick)."</td>
+    <td id='account_country'><i class='flag-icon flag-icon-$countrycode'></i>&nbsp;".htmlspecialchars($row['country'])." </td>
+    <td id='account_sitename'> ".htmlspecialchars($row['sitename'])." </td> 
+	<td> ".htmlspecialchars($row['infos'])." </td>
+    <td id='account_seller'> ".htmlspecialchars($SellerNick)."</td>
     <td> ".htmlspecialchars($row['price'])."</td>
 	    <td> ".$row['date']."</td>";
     echo '
     <td>
-	<span id="leads'.$row['id'].'" title="buy" type="leads"><a onclick="javascript:buythistool('.$row['id'].')" class="btn btn-primary btn-xs"><font color=white>Buy</font></a></span><center>
+	<span id="premium'.$row['id'].'" title="buy" type="premium"><a onclick="javascript:buythistool('.$row['id'].')" class="btn btn-primary btn-xs"><font color=white>Buy</font></a></span><center>
     </td>
             </tr>
      ';
@@ -84,17 +82,17 @@ $q = mysqli_query($dbcon, "SELECT * FROM leads WHERE sold='0' ORDER BY RAND()")o
 
  ?>
 <script type="text/javascript">
-$('#filterbutton').click(function () {$("#table tbody tr").each(function() {var ck1 = $.trim( $(this).find("#leads_country").text().toLowerCase() );var ck2 = $.trim( $(this).find("#leads_about").text().toLowerCase() );var ck3 = $.trim( $(this).find("#leads_seller").text().toLowerCase() ); var val1 = $.trim( $('select[name="leads_country"]').val().toLowerCase() );var val2 = $.trim( $('input[name="leads_about"]').val().toLowerCase() );var val3 = $.trim( $('select[name="leads_seller"]').val().toLowerCase() ); if((ck1 != val1 && val1 != '' ) || ck2.indexOf(val2)==-1 || (ck3 != val3 && val3 != '' )){ $(this).hide();  }else{ $(this).show(); } });$('#filterbutton').prop('disabled', true);});$('.filterselect').change(function () {$('#filterbutton').prop('disabled', false);});$('.filterinput').keyup(function () {$('#filterbutton').prop('disabled', false);});
+$('#filterbutton').click(function () {$("#table tbody tr").each(function() {var ck1 = $.trim( $(this).find("#account_country").text().toLowerCase() );var ck2 = $.trim( $(this).find("#account_sitename").text().toLowerCase() );var ck3 = $.trim( $(this).find("#account_seller").text().toLowerCase() ); var val1 = $.trim( $('select[name="account_country"]').val().toLowerCase() );var val2 = $.trim( $('input[name="account_sitename"]').val().toLowerCase() );var val3 = $.trim( $('select[name="account_seller"]').val().toLowerCase() ); if((ck1 != val1 && val1 != '' ) || ck2.indexOf(val2)==-1 || (ck3 != val3 && val3 != '' )){ $(this).hide();  }else{ $(this).show(); } });$('#filterbutton').prop('disabled', true);});$('.filterselect').change(function () {$('#filterbutton').prop('disabled', false);});$('.filterinput').keyup(function () {$('#filterbutton').prop('disabled', false);});
 function buythistool(id){
   bootbox.confirm("Are you sure?", function(result) {
         if(result ==true){
       $.ajax({
      method:"GET",
-     url:"buytool.php?id="+id+"&t=leads",
+     url:"buytool.php?id="+id+"&t=accounts",
      dataType:"text",
      success:function(data){
          if(data.match(/<button/)){
-		 $("#leads"+id).html(data).show();
+		 $("#account"+id).html(data).show();
          }else{
             bootbox.alert('<center><img src="files/img/balance.png"><h2><b>No enough balance !</b></h2><h4>Please refill your balance <a class="btn btn-primary btn-xs"  href="addBalance.html" onclick="window.open(this.href);return false;" >Add Balance <span class="glyphicon glyphicon-plus"></span></a></h4></center>')
          }
@@ -103,6 +101,7 @@ function buythistool(id){
        ;}
   });
 }
+
 function openitem(order){
   $("#myModalLabel").text('Order #'+order);
   $('#myModal').modal('show');
