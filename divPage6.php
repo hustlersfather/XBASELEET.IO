@@ -22,25 +22,46 @@ $query = mysqli_query($dbcon, "SELECT DISTINCT(`resseller`) FROM `leads` WHERE `
 	echo '<option value="'.$SellerNick.'">'.$SellerNick.'</option>';
 	}
 ?>
-
 </div>
-
-
-<table width="100%"  class="table table-striped table-bordered table-condensed sticky-header" id="table">
+<input type=hidden id="type" name="type" value="5" />
+<div class="row m-3 pt-1" style="color: var(--font-color);">
+<div class="col-xs-6 col-sm-4 col-lg-2" style="display:inline-block">
+ <label for="infos" style="margin-bottom: 10px; margin-top: 5px">Description:</label>
+<input type="search" class="form-control" id="infos" style="color: var(--font-color); background-color: var(--color-card);">
+	<option value="">All Countries</option>
+</select>
+</div>
+<div class="col-xs-6 col-sm-4 col-lg-2" style="display:inline-block">
+<label for="Country" style="margin-bottom: 10px; margin-top: 5px">Country :</label>
+<select name="country" id="country" class="form-control" style="color: var(--font-color); background-color: var(--color-card);">
+<option value="">All Countries</option>
+</select>
+</div>
+<div class="col-xs-6 col-sm-4 col-lg-2" style="display:inline-block">
+<label for="seller" style="margin-bottom: 10px; margin-top: 5px">Seller :</label>
+<select name="seller" id="seller" class="form-control" style="color: var(--font-color); background-color: var(--color-card);">
+<option value="">All</option>
+</select>
+</div>
+</div>
+<div class="row m-2 pt-3 " style="max-width:100%; color: var(--font-color); background-color: var(--color-card);">
+<div class="col-sm-12 table-responsive">
+<table id="lead_data" class="display responsive table-hover" style="width:100%; color: var(--font-color); background-color: var(--color-card);">
 <thead>
-    <tr>
-      <th scope="col" >Country</th>
-      <th scope="col">Description</th>
-      <th scope="col">Email N</th>
-
-      <th scope="col">Seller</th>
-      <th scope="col">Price</th>
-      <th scope="col">Added on </th>
-
-      <th scope="col">Buy</th>
-    </tr>
+<tr>
+<th data-priority="3">Country</th>
+<th data-priority="6">Description</th>
+<th data-priority="7">Email N</th>
+<th data-priority="8">Seller</th>
+<th data-priority="2">Proof</th>
+<th data-priority="9">Price</th>
+<th data-priority="10">Added on </th>
+<th class="all">Buy</th>
+</tr>
 </thead>
-  <tbody>
+</table>
+</div>
+</div>
 
  <?php
 include("cr.php");
