@@ -40,8 +40,8 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 <script src="https://cdn.datatables.net/buttons/1.6.4/js/dataTables.buttons.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.colVis.min.js"></script>
 <script src="js/jquery.dataTables.min.js"></script>
-<link href="//cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
 
 <script async src="//www.googletagmanager.com/gtag/js?id=UA-177092549-1"></script>
 <script>
