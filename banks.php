@@ -14,14 +14,25 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="files/bootstrap/3/css/bootstrap.css?1" />
+ <link rel="stylesheet" https://cdn.datatables.net/1.13.2/css/jquery.dataTables.min.css">
+ <link rel="stylesheet" https://cdn.datatables.net/responsive/2.4.0/css/responsive.dataTables.min.css">
+
 <link rel="stylesheet" type="text/css" href="files/css/flags.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
-<script type="text/javascript" src="files/js/jquery.js?1"></script>
 <script type="text/javascript" src="files/bootstrap/3/js/bootstrap.js?1"></script>
 <script type="text/javascript" src="files/js/sorttable.js"></script>
 <script type="text/javascript" src="files/js/table-head.js?3334"></script>
 <script type="text/javascript" src="files/js/bootbox.min.js"></script>
 <script type="text/javascript" src="files/js/clipboard.min.js"></script>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/responsive/2.4.0/js/dataTables.responsive.min.js"></script>
+
+
+
+
+
 
 <link rel="shortcut icon" href="files/img/favicon.ico" />
 <meta http-equiv="X-UA-Compatible" content="IE=10; IE=9; IE=8; IE=7; IE=EDGE" /> 
@@ -70,7 +81,9 @@ table.floatThead-table {
   margin: auto; /* presto! */
 
 }
-
+div.container { 
+    max-width: 1200px 
+}
    
     
 
@@ -276,13 +289,27 @@ if ($r1 == "1") {
         </li>
       </ul>
     </div>
-    <!-- /.navbar-collapse -->
+    <navbar-collapse>
   </div>
-  <!-- /.container-fluid -->
 </nav>
-<div id="mainDiv">
-
-
+<div id="container-fluid">
+    <div class="mainDiv">
+<table id="example" class="display nowrap" style="width:100%">
+        <thead>
+            <tr>
+               <th data-priority="1">Country</th>
+               <th data-priority="1">Bank Name</th>
+               <th data-priority="1">Bank Info</th>
+               <th data-priority="1">Seller Name</th>
+                <th data-priority="1">Price</th>
+              <th data-priority="1">created date</th>
+                <th data-priority="1">Buy</th>
+            </tr>
+        </thead>
+        <tbody>
+            </tr>
+        </tbody>
+    </table>
 </div>
 </body>
 </html>
