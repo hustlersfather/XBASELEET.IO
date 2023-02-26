@@ -18,13 +18,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
   <div class="tab-pane active in" id="filter"><table class="table"><thead><tr><th>Country</th>
 <th>Description</th>
 <th>Seller</th>
-<th></th></tr></thead><tbody><tr><td><select class='filterselect form-control input-sm' name="leads_country"><option value="">ALL</option>
-<?php
-$query = mysqli_query($dbcon, "SELECT DISTINCT(`country`) FROM `leads` WHERE `sold` = '0' ORDER BY country ASC");
-	while($row = mysqli_fetch_assoc($query)){
-	echo '<option value="'.$row['country'].'">'.$row['country'].'</option>';
-	}
-?>
+
 </select></td><td><input class='filterinput form-control input-sm' name="leads_about" size='3'></td><td><select class='filterselect form-control input-sm' name="leads_seller"><option value="">ALL</option>
 <?php
 $query = mysqli_query($dbcon, "SELECT DISTINCT(`resseller`) FROM `leads` WHERE `sold` = '0' ORDER BY resseller ASC");
