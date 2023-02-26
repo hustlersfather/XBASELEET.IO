@@ -14,8 +14,8 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="files/bootstrap/3/css/bootstrap.css?1" />
- <link rel="stylesheet" https://cdn.datatables.net/1.13.2/css/jquery.dataTables.min.css">
- <link rel="stylesheet" https://cdn.datatables.net/responsive/2.4.0/css/responsive.dataTables.min.css">
+ <link rel="stylesheet" type="text/css" https://cdn.datatables.net/1.13.2/css/jquery.dataTables.min.css">
+ <link rel="stylesheet" type="text/css" https://cdn.datatables.net/responsive/2.4.0/css/responsive.dataTables.min.css">
 
 <link rel="stylesheet" type="text/css" href="files/css/flags.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
