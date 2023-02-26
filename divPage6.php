@@ -80,6 +80,7 @@ $q = mysqli_query($dbcon, "SELECT * FROM leads WHERE sold='0' ORDER BY RAND()")o
     <td id='leads_about'> ".htmlspecialchars($row['infos'])." </td> 
 	<td> ".htmlspecialchars($row['number'])." </td>
     <td id='leads_seller'> ".htmlspecialchars($SellerNick)."</td>
+     <td id='leads_country'><i class='flag-icon flag-icon-$countrycode'></i>&nbsp;".htmlspecialchars($row['country'])." </td>
     <td> ".htmlspecialchars($row['price'])."</td>
 	    <td> ".$row['date']."</td>";
     echo '
