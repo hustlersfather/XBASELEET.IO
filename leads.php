@@ -511,17 +511,20 @@ a.closearb {
 <li>Combo use for cracking (Brute forcing attack) not use for login to email.</li>
 <li>There is <b> 2 </b> Available.</li>
 </ul>
+
+
 	</div>
 <input type=hidden id="type" name="type" value="4" />
 	<div class="row m-3 pt-1" style="color: var(--font-color);">
 	<div class="col-xs-6 col-sm-4 col-lg-2" style="display:inline-block">
 <label for="infos" style="margin-bottom: 10px; margin-top: 5px">Description:</label>
 <input type="search" class="form-control" id="infos" style="color: var(--font-color); background-color: var(--color-card);">
+    
 		</div>	
 <div class="col-xs-6 col-sm-4 col-lg-2" style="display:inline-block">
 	<label for="Country" style="margin-bottom: 10px; margin-top: 5px">Country :</label>
 	<select name="country" id="country" class="form-control" style="color: var(--font-color); background-color: var(--color-card);">
-<?php echo '<option value="'.$row['country'].'">'.$row['country'].'</option>';
+
 	}
 ?> 
 	</select>
@@ -529,7 +532,7 @@ a.closearb {
 		<div class="col-xs-6 col-sm-4 col-lg-2" style="display:inline-block">
 			<label for="seller" style="margin-bottom: 10px; margin-top: 5px">Seller :</label>
 			<select name="seller" id="seller" class="form-control" style="color: var(--font-color); background-color: var(--color-card);">
-                <?php echo '<option value="'.$SellerNick.'">'.$SellerNick.'</option>';?>
+
 
 		</div>
 	
@@ -617,7 +620,7 @@ a.closearb {
 </div>
 <script>
 	$(document).ready(function(){
-            var webID;
+            var table;
             load_data();
 
             function load_data(myarray) {
