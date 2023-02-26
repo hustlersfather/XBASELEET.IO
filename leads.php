@@ -515,7 +515,7 @@ a.closearb {
 
 	</div>
     
-    
+    <?php include "divPage6.php"; ?>
     
     
     
