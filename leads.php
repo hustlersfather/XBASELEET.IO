@@ -521,16 +521,16 @@ a.closearb {
 <div class="col-xs-6 col-sm-4 col-lg-2" style="display:inline-block">
 	<label for="Country" style="margin-bottom: 10px; margin-top: 5px">Country :</label>
 	<select name="country" id="country" class="form-control" style="color: var(--font-color); background-color: var(--color-card);">
-		<option value="">All Countries</option>
-		<option value="Canada">Canada</option>
-		<option value="France">France</option> 
+<?php echo '<option value="'.$row['country'].'">'.$row['country'].'</option>';
+	}
+?> 
 	</select>
 		</div>
 		<div class="col-xs-6 col-sm-4 col-lg-2" style="display:inline-block">
 			<label for="seller" style="margin-bottom: 10px; margin-top: 5px">Seller :</label>
 			<select name="seller" id="seller" class="form-control" style="color: var(--font-color); background-color: var(--color-card);">
-				<option value="">All</option>
-				<option value="Seller467">Seller467</option> </select>
+                <?php echo '<option value="'.$SellerNick.'">'.$SellerNick.'</option>';?>
+
 		</div>
 	
 	
