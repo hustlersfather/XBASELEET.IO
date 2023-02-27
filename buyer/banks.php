@@ -281,8 +281,41 @@ if ($r1 == "1") {
   <!-- /.container-fluid -->
 </nav>
 <div id="mainDiv">
+  <div style="margin-top: 30px">
+        <table id="myTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Birthday</th>
+                    <th>Account Date</th>
+                </tr>
+            </thead>
+
+            <tbody>
 
 
+
+</div>
+<script type="text/javascript">
+    load_data = $('#Table').DataTable
+	({
+        "bLengthChange": false, // this gives option for changing the number of records shown in the UI table
+        "lengthMenu": [10,10], // 4 records will be shown in the table
+        "columnDefs": [{
+       "className": "dt-center",
+        "targets": "_all"
+            } //columnDefs for align text to center
+        ],
+        "dom": "lrtip" //to hide default searchbox but search feature is not disabled hence customised searchbox can be made.
+    });
+
+    $('#myCustomSearchBox').keyup(function() {
+        load_data.search($(this).val()).draw(); // this  is for customized searchbox with datatable search feature.
+    })
+</script>
+
+</html>
 </div>
 </body>
 </html>
