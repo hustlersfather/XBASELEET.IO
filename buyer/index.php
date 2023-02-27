@@ -99,6 +99,9 @@ table.floatThead-table {
   height: 400px;
   position: relative;
 }
+
+
+	<style>
 .ajax-loader {
   position: absolute;
   left: 0;
@@ -213,9 +216,7 @@ function hideTooltip(btn) {
 }
 </script>
 		<style>
-            .navbar {
-                background-color: #001f3f;
-            }
+          
         </style>
 <body style="padding-top: 70px; padding-bottom: 70px;">
 
