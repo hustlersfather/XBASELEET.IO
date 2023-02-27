@@ -26,20 +26,23 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 <script src="/cdn-cgi/apps/head/5OOZijtrf_Bpx-OYIJIWKuxGuQM.js">
 </script>
 
+
+
 <link rel="shortcut icon" href="../favicon.ico" />
 <title>XBASELEET</title>
-
+	<link rel="stylesheet" href="../layout/css/main.css" />
+<link rel="stylesheet" href="../layout/css/util.css" />
 <link rel="stylesheet" href="../layout/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="../layout/css/flags.css" />
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.6/css/responsive.dataTables.min.css">
+<link rel=“stylesheet” href=“https://cdn.datatables.net/buttons/2.3.4/css/buttons.dataTables.min.css”>
+    
 <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
 <script src="../layout/js/clipboard.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="../layout/js/bootstrap.min.js"></script>
 <script src="../layout/js/bootbox.min.js"></script>
-<link rel="stylesheet" type="text/css" href="../layout/css/flags.css" />
-
-<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
-<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.6/css/responsive.dataTables.min.css">
-<link rel="stylesheet" href="<link rel=“stylesheet” href=“https://cdn.datatables.net/buttons/2.3.4/css/buttons.dataTables.min.css”>">
 <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/responsive/2.2.6/js/dataTables.responsive.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.6.4/js/dataTables.buttons.min.js"></script>
@@ -57,8 +60,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
         gtag('config', 'UA-177092549-1');
         </script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"  />
-	<link rel="stylesheet" href="../layout/css/main.css" />
-<link rel="stylesheet" href="../layout/css/util.css" />
+
 <style>body{padding-top:80px}</style>
 <link rel="stylesheet" href="../layout/fonts/iconic/css/material-design-iconic-font.min.css">
 <script src="../layout/js/main.js"></script>
