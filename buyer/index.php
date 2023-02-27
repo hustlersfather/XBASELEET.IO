@@ -10,13 +10,24 @@ if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {
 }
 $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 ?>
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+ 
 <head>
-	
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XBASELEET</title>
+  <link rel="shortcut icon" href="../layout/img/favicon.png" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" href="../layout/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../layout/css/custom.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+ 
+ 
 <link rel="stylesheet" href="../layout/css/bootstrap.min.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />	
-	
+
 	
 	
 	
