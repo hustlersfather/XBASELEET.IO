@@ -78,7 +78,7 @@ table th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sorttable_no
 }
 
 body {
-    padding-top:50px;
+    padding-top:0px;
 }
 table.floatThead-table {
     border-top: none;
