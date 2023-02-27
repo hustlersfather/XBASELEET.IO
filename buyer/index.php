@@ -24,21 +24,19 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 <meta name="revisit-after" content="3 days">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <script src="/cdn-cgi/apps/head/5OOZijtrf_Bpx-OYIJIWKuxGuQM.js">
-</script><link rel="shortcut icon" href="../../favicon.ico" />
+</script><link rel="shortcut icon" href="../favicon.ico" />
 <title>XBASELEET</title>
-<link rel="stylesheet" href="../layout/css/bootstrap.min.css">
+<link rel="stylesheet" href="layout/css/bootstrap.min.css">
 <script src="../layout/js/jquery-3.4.1.min.js"></script>
 <script src="../layout/js/clipboard.min.js"></script>
-<script src="../https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="../layout/js/bootstrap.min.js"></script>
 <script src="../layout/js/bootbox.min.js"></script>
-<link rel="stylesheet" type="text/css" href="layout/css/flags.css" />
+<link rel="stylesheet" type="text/css" href="../layout/css/flags.css" />
 
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.6/css/responsive.dataTables.min.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.4/css/buttons.dataTables.min.css">
-    
-    
 <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/responsive/2.2.6/js/dataTables.responsive.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.6.4/js/dataTables.buttons.min.js"></script>
@@ -73,6 +71,8 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
             }
         </style>
 </head>
+
+
 <style>
     .navbar-nav .dropdown-menu
     {
@@ -289,7 +289,7 @@ Send
 <a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-mail-bulk fa-sm pink-color"></i> Leads
 </a>
 <div class="dropdown-menu dropdown-menu-left" style="color: var(--font-color); background-color: var(--color-nav);" aria-labelledby="navbarDropdown">
-<a class="dropdown-item" href="leads-5" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-award"></i> 100% Validated Leads <span class="badge badge-primary"><span id="leads"></span></span></a>
+<a class="dropdown-item" href="leads" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-award"></i> 100% Validated Leads <span class="badge badge-primary"><span id="leads"></span></span></a>
 <!---
 <a class="dropdown-item" href="leads-1" style="color: var(--font-color);"><span class="px-2"><i class="fa fa-fire orange-color"></i> Email Only <span class="badge badge-primary">140</span></span></a>
 <a class="dropdown-item" href="leads-2" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-passport"></i> Combo Email:Password <span class="badge badge-primary">0</span></span></a>
@@ -1231,6 +1231,8 @@ function hideTooltip(btn) {
   setTimeout(function() {$(btn).tooltip('hide'); console.log("hide-2");}, 1000);
 }
 </script>
+
+	        </script>
 </div>
 </div>
 </body>
