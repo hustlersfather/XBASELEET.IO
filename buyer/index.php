@@ -1,4 +1,4 @@
-I'm <?php
+<?php
 ob_start();
 session_start();
 date_default_timezone_set('UTC');
@@ -10,296 +10,174 @@ if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {
 }
 $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 ?>
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>XBASELEET</title>
-  <link rel="shortcut icon" href="../layout/img/favicon.png" type="image/x-icon">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="../layout/css/custom.css">
-  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../layout/css/main.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />	
-  <link rel=“stylesheet” href=“../layout/css/jquery.dataTables.css”>
-	<link rel="stylesheet" type="text/css" href="layout/css/flags.css" />
-<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
-<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.6/css/responsive.dataTables.min.css">
-<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.4/css/buttons.dataTables.min.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.20.0/css/mdb.min.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"  />
-<link rel="stylesheet" href="../layout/css/util.css"/>
-<style>body{padding-top:80px}</style>
-<link rel="stylesheet" href="../layout/fonts/iconic/css/material-design-iconic-font.min.css">
+<link rel="stylesheet" type="text/css" href="files/bootstrap/3/css/bootstrap.css?1" />
+<link rel="stylesheet" type="text/css" href="files/css/flags.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
+<script type="text/javascript" src="../files/js/jquery.js?1"></script>
+<script type="text/javascript" src="../files/bootstrap/3/js/bootstrap.js?1"></script>
+<script type="text/javascript" src="../files/js/sorttable.js"></script>
+<script type="text/javascript" src="../files/js/table-head.js?3334"></script>
+<script type="text/javascript" src="../files/js/bootbox.min.js"></script>
+<script type="text/javascript" src="../files/js/clipboard.min.js"></script>
 
-	</style>
-  
-  
-  
-  
-  
-	<script src=“https://code.jquery.com/jquery-3.5.1.js”></script>
-	<script src=“../layout/js/jquery.dataTables.js”></script>
-	<script src="../layout/js/bootbox.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.20.0/js/mdb.min.js"></script>
-<script src="../layout/js/main.js"></script>
-<script src="layout/js/clipboard.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/responsive/2.2.6/js/dataTables.responsive.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/1.6.4/js/dataTables.buttons.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.colVis.min.js"></script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-177092549-1"></script>
-<script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('set', {'$usrid': 'USER_ID'}); // Set the user ID using signed-in user_id.
-        gtag('config', 'UA-177092549-1');
-        </script>
-<script type="text/javascript">
-            // Notice how this gets configured before we load Font Awesome
-            window.FontAwesomeConfig = { autoReplaceSvg: false }
-        </script>
-<style>
-            @import url(//fonts.googleapis.com/css?family=Roboto:400);
-            .navbar-nav .dropdown-menu
-            {
-            margin:0 !important
-            }
-        </style>
-</head>
-<style>
-            @import url(//fonts.googleapis.com/css?family=Roboto:400);
-            .navbar-nav .dropdown-menu
-            {
-            margin:0 !important
-            }
-        </style>
-</head>
-<style>
-    .navbar-nav .dropdown-menu
-    {
-      margin:0 !important
-    }
-    .theme-light {
-  --color-primary: #0060df;
-  --color-secondary: #ffffff;
-   --color-secondary2: #ecf0f1;
-  --color-accent: #fd6f53;
-  --font-color: #000000;
-  --color-nav: #ffffff;
-  --color-dropdown: #ffffff;
-  --color-card: #ffffff;
-   --color-card2: #d1ecf1;
-  --color-info: #0c5460;
-  --color-backinfo: #d1ecf1;
-  --color-borderinfo: #bee5eb;
-
-}
-.theme-dark {
-  --color-primary: #17ed90;
-  --color-secondary: #353B50;
-  --color-secondary2: #353B50;
-  --color-accent: #12cdea;
-  --font-color: #ffffff;
-  --color-nav: #363947;
-  --color-dropdown: rgba(171, 205, 239, 0.3);
-  --color-card: #262A37;
-   --color-card2: #262A37;
-   --color-info: #4DD0E1;
-  --color-backinfo: #262A37;
-  --color-borderinfo: #262A37;
-}
-.them {
-
-  background: var(--color-secondary);
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.them h1 {
-  color: var(--font-color);
-  font-family: sans-serif;
-}
-.card-body {
-     color: var(--font-color);
-    }
-.them button {
-  color: var(--font-color);
-  background-color: #ffffff;
-  padding: 10px 20px;
-  border: 0;
-  border-radius: 5px;
-}
-.navbar.navbar-light .navbar-toggler {
-    color: var(--font-color);
-}
-
-/* The switch - the box around the slider */
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
-
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* The slider */
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 40px;
-  width: 40px;
-  left: 0px;
-  bottom: 4px;
-  top: 0;
-  bottom: 0;
-  margin: auto 0;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-  box-shadow: 0 0px 15px #2020203d;
-  background: white url('https://i.ibb.co/FxzBYR9/night.png');
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-input:checked + .slider {
-  background-color: #2196f3;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196f3;
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(24px);
-  -ms-transform: translateX(24px);
-  transform: translateX(24px);
-  background: white url('https://i.ibb.co/7JfqXxB/sunny.png');
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
-
-  </style>
-  
-<script>
-
-        function setTheme(themeName) {
-            localStorage.setItem('theme', themeName);
-            document.documentElement.className = themeName;
-        }
-
-        // function to toggle between light and dark theme
-        function toggleTheme() {
-            if (localStorage.getItem('theme') === 'theme-dark') {
-                setTheme('theme-light');
-            } else {
-                setTheme('theme-dark');
-            }
-        }
-
-        // Immediately invoked function to set the theme on initial load
-        (function () {
-            if (localStorage.getItem('theme') === 'theme-dark') {
-                setTheme('theme-dark');
-                document.getElementById('slider').checked = false;
-            } else {
-                setTheme('theme-light');
-              document.getElementById('slider').checked = true;
-            }
-        })();
-
-  </script>
-<nav class="navbar navbar-expand-xl navbar  navbar-light " style="
-                                                          position:fixed;
-                                                          background-color: var(--color-nav);
-                                                          z-index:1;
-                                                          top:0;
-                                                          left:0;
-                                                          right:0;
-                                                          line-height: 1.5;
-                                                          font-family: 'Lato', sans-serif;
-                                                          font-size: 15px;
-                                                          padding-top: 0.5rem;
-                                                          padding-right: 1rem;
-                                                          padding-bottom: 0.5rem;
-                                                          padding-left: 1rem;
-                                                        ">
-<a class="navbar-brand" href="main" style="color: var(--font-color);"><img width="40px" src="layout/images/logo.png"> XBASELEET</a>
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-<i class="navbar-toggler-icon"></i>
-</button>
-<div class="collapse navbar-collapse order-1" id="navbarSupportedContent">
-<ul class="navbar-nav mr-auto">
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-<script type="text/javascript" src="files/js/jquery.js?1"></script>
-<script type="text/javascript" src="layout/js/bootstrap.min.js?1"></script>
-
-<script type="text/javascript" src="files/js/table-head.js?3334"></script>
-
-<script type="text/javascript" src="files/js/clipboard.min.js"></script>
-
-<link rel="shortcut icon" href="files/img/favicon.ico" />
+<link rel="shortcut icon" href="../files/img/favicon.ico" />
 <meta http-equiv="X-UA-Compatible" content="IE=10; IE=9; IE=8; IE=7; IE=EDGE" /> 
  <meta name="referrer" content="no-referrer" />
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="utf-8">
-<title>JeruxShop</title>
+<title>XBASELEET</title>
 </head>
-
 <style>
+#table {
+  .sortable
+}
+table th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sorttable_nosort):after { 
+    content: " \25BE" 
+}
+
+.label-as-badge {
+    border-radius: 0.5em;
+}
+
+body {
+    padding-top:50px;
+}
+table.floatThead-table {
+    border-top: none;
+    border-bottom: none;
+    background-color: #fff;
+}
+@media (min-width: 768px) {
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+}
+
+#mydiv {
+  height: 400px;
+  position: relative;
+}
+.ajax-loader {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto; /* presto! */
+
+}
+
+   
+    
 
 </style>
+<script type="text/javascript">
+             function ajaxinfo() {
+                $.ajax({
+                    type: 'GET',
+                    url: 'ajaxinfo.html',
+                    timeout: 10000,
 
+                    success: function(data) {
+                        if (data != '01') {
+                            var data = JSON.parse(data);
+                            for (var prop in data) {
+                                $("#" + prop).html(data[prop]).show();
+                            }
+                        } else {
+                            window.location = "logout.html";
+                        }
+                    }
+                });
+
+            }
+            setInterval(function() {
+                ajaxinfo()
+            }, 3000);
+
+            ajaxinfo();
+
+$(document).keydown(function(event){
+    if(event.which=="17")
+        cntrlIsPressed = true;
+});
+
+$(document).keyup(function(){
+    cntrlIsPressed = false;
+});
+
+var cntrlIsPressed = false;
+
+
+function pageDiv(n,t,u,x){
+  if(cntrlIsPressed){
+    window.open(u, '_blank');
+    return false;
+  }
+        var obj = { Title: t, Url: u };
+        if ( ("/"+obj.Url) != location.pathname) {
+        	if (x != 1) {history.pushState(obj, obj.Title, obj.Url);}
+        	else{history.replaceState(obj, obj.Title, obj.Url);}
+
+    	}
+      document.title = obj.Title;
+    $("#mainDiv").html('<div id="mydiv"><img src="files/img/load2.gif" class="ajax-loader"></div>').show();
+    $.ajax({
+    type:       'GET',
+    url:        'divPage'+n+'.html',
+    success:    function(data)
+    {
+        $("#mainDiv").html(data).show();
+        newTableObject = document.getElementById('table');
+        sorttable.makeSortable(newTableObject);
+        $(".sticky-header").floatThead({top:60});
+        if(x==0){ajaxinfo();}
+      }});
+    if (typeof stopCheckBTC === 'function') { 
+    var a = stopCheckBTC();
+     }
+
+}
+
+$(window).on("popstate", function(e) {
+        location.replace(document.location);
+
+});
+
+
+$(window).on('load', function() {
+$('.dropdown').hover(function(){ $('.dropdown-toggle', this).trigger('click'); });
+   pageDiv(0,'','',0);
+   var clipboard = new Clipboard('.copyit');
+    clipboard.on('success', function(e) {
+      setTooltip(e.trigger, 'Copied!');
+      hideTooltip(e.trigger);
+      e.clearSelection();
+   });
+
+});
+
+
+function setTooltip(btn, message) {
+  console.log("hide-1");
+  $(btn).tooltip('hide')
+    .attr('data-original-title', message)
+    .tooltip('show');
+     console.log("show");
+}
+
+function hideTooltip(btn) {
+  setTimeout(function() {$(btn).tooltip('hide'); console.log("hide-2");}, 1000);
+}
+</script>
 		<style>
-          
+            .navbar {
+                background-color: #001f3f;
+            }
         </style>
 <body style="padding-top: 70px; padding-bottom: 70px;">
 
@@ -406,103 +284,6 @@ if ($r1 == "1") {
 
 
 </div>
-</div>
-
-</div>
-<script type="text/javascript">
-      function ajax() { $.ajax({
-                type: 'GET',
-                url: 'ajaxinfo.html',
-                timeout: 10000,success: 
-      function  (data) {if (data != '01'
-                 ) {var data = JSON.parse
-                  (data);for (var prop in 
-                  data) { $("#" + prop).html
-                  (data[prop]).show();} } else 
-                  {window.location = "logout.html";}
-                    }
-                });
-
-                 }
-                    setInterval(function() {
-                ajaxinfo()
-            }, 3000);
-
-            ajaxinfo();
-
-$(document).keydown(function(event){
-    if(event.which=="17")
-        cntrlIsPressed = true;
-});
-
-$(document).keyup(function(){
-    cntrlIsPressed = false;
-});
-
-var cntrlIsPressed = false;
-
-
-function pageDiv(n,t,u,x){
-  if(cntrlIsPressed){
-    window.open(u, '_blank');
-    return false;
-  }
-        var obj = { Title: t, Url: u };
-        if ( ("/"+obj.Url) != location.pathname) {
-        	if (x != 1) {history.pushState(obj, obj.Title, obj.Url);}
-        	else{history.replaceState(obj, obj.Title, obj.Url);}
-
-    	}
-      document.title = obj.Title;
-    $("#mainDiv").html('<div id="mydiv"><img src="files/img/load2.gif" class="ajax-loader"></div>').show();
-    $.ajax({
-    type:       'GET',
-    url:        'divPage'+n+'.html',
-    success:    function(data)
-    {
-        $("#mainDiv").html(data).show();
-        newTableObject = document.getElementById('table');
-        sorttable.makeSortable(newTableObject);
-        $(".sticky-header").floatThead({top:60});
-        if(x==0){ajaxinfo();}
-      }});
-    if (typeof stopCheckBTC === 'function') { 
-    var a = stopCheckBTC();
-     }
-
-}
-
-$(window).on("popstate", function(e) {
-        location.replace(document.location);
-
-});
-
-
-$(window).on('load', function() {
-$('.dropdown').hover(function(){ $('.dropdown-toggle', this).trigger('click'); });
-   pageDiv(0,'Main - JeruxShop','',1);
-   var clipboard = new Clipboard('.copyit');
-    clipboard.on('success', function(e) {
-      setTooltip(e.trigger, 'Copied!');
-      hideTooltip(e.trigger);
-      e.clearSelection();
-   });
-
-});
-
-
-function setTooltip(btn, message) {
-  console.log("hide-1");
-  $(btn).tooltip('hide')
-    .attr('data-original-title', message)
-    .tooltip('show');
-     console.log("show");
-}
-
-function hideTooltip(btn) {
-  setTimeout(function() {$(btn).tooltip('hide'); console.log("hide-2");}, 1000);
-}
-</script>
 </body>
 </html>
 
