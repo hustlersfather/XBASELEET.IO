@@ -26,8 +26,8 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 <script src="/cdn-cgi/apps/head/5OOZijtrf_Bpx-OYIJIWKuxGuQM.js">
 </script><link rel="shortcut icon" href="../favicon.ico" />
 <title>XBASELEET</title>
-<link rel="stylesheet" href="layout/css/bootstrap.min.css">
-<script src="../layout/js/jquery-3.4.1.min.js"></script>
+<link rel="stylesheet" href="../layout/css/bootstrap.min.css">
+<script src="https://code.jquery-3.5.1.min.js"></script>
 <script src="../layout/js/clipboard.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="../layout/js/bootstrap.min.js"></script>
