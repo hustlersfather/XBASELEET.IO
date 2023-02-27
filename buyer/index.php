@@ -23,9 +23,16 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
   <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../layout/css/main.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />	
-  <link rel=“stylesheet” href=“.layout/css/jquery.dataTables.css”>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.20.0/css/mdb.lite.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.20.0/css/mdb.min.css" />
+  <link rel=“stylesheet” href=“../layout/css/jquery.dataTables.css”>
+	<link rel="stylesheet" type="text/css" href="layout/css/flags.css" />
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.6/css/responsive.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.4/css/buttons.dataTables.min.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.20.0/css/mdb.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"  />
+<link rel="stylesheet" href="../layout/css/util.css"/>
+<style>body{padding-top:80px}</style>
+<link rel="stylesheet" href="../layout/fonts/iconic/css/material-design-iconic-font.min.css">
+
 	</style>
   
   
@@ -34,26 +41,16 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
   
 	<script src=“https://code.jquery.com/jquery-3.5.1.js”></script>
 	<script src=“../layout/js/jquery.dataTables.js”></script>
-	<script src="layout/js/bootbox.min.js"></script>
+	<script src="../layout/js/bootbox.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.20.0/js/mdb.min.js"></script>
-	
-	
-	<link rel="stylesheet" type="text/css" href="layout/css/flags.css" />
-
-<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
-<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.6/css/responsive.dataTables.min.css">
-<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.4/css/buttons.dataTables.min.css">
-    
-    
+<script src="../layout/js/main.js"></script>
+<script src="layout/js/clipboard.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/responsive/2.2.6/js/dataTables.responsive.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.6.4/js/dataTables.buttons.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.colVis.min.js"></script>
-<script src="js/jquery.dataTables.min.js"></script>
-<link href="//cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
-
-<script async src="//www.googletagmanager.com/gtag/js?id=UA-177092549-1"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-177092549-1"></script>
 <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -61,16 +58,18 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
         gtag('set', {'$usrid': 'USER_ID'}); // Set the user ID using signed-in user_id.
         gtag('config', 'UA-177092549-1');
         </script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"  />
-	<link rel="stylesheet" href="layout/css/main.css" />
-<link rel="stylesheet" href="layout/css/util.css" />
-<style>body{padding-top:80px}</style>
-<link rel="stylesheet" href="layout/fonts/iconic/css/material-design-iconic-font.min.css">
-<script src="layout/js/main.js"></script>
 <script type="text/javascript">
             // Notice how this gets configured before we load Font Awesome
             window.FontAwesomeConfig = { autoReplaceSvg: false }
         </script>
+<style>
+            @import url(//fonts.googleapis.com/css?family=Roboto:400);
+            .navbar-nav .dropdown-menu
+            {
+            margin:0 !important
+            }
+        </style>
+</head>
 <style>
             @import url(//fonts.googleapis.com/css?family=Roboto:400);
             .navbar-nav .dropdown-menu
