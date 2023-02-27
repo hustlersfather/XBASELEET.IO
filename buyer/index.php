@@ -55,8 +55,8 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 	
 	
 <script type="text/javascript" src="files/js/jquery.js?1"></script>
-<script type="text/javascript" src="files/bootstrap/3/js/bootstrap.js?1"></script>
-<script type="text/javascript" src="files/js/sorttable.js"></script>
+<script type="text/javascript" src="layout/js/bootstrap.min.js?1"></script>
+
 <script type="text/javascript" src="files/js/table-head.js?3334"></script>
 <script type="text/javascript" src="files/js/bootbox.min.js"></script>
 <script type="text/javascript" src="files/js/clipboard.min.js"></script>
