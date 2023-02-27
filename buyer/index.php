@@ -37,7 +37,16 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.6/css/responsive.dataTables.min.css">
 <link rel=“stylesheet” href=“https://cdn.datatables.net/buttons/2.3.4/css/buttons.dataTables.min.css”>
-    
+<link rel="stylesheet" href="../layout/fonts/iconic/css/material-design-iconic-font.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"  />
+<script async src="//www.googletagmanager.com/gtag/js?id=UA-177092549-1"></script>
+<script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('set', {'$usrid': 'USER_ID'}); // Set the user ID using signed-in user_id.
+        gtag('config', 'UA-177092549-1');
+        </script>
 <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
 <script src="../layout/js/clipboard.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
@@ -50,31 +59,21 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 <script src="../layout/js/jquery.dataTables.min.js"></script>
 <link href="//cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
-
-<script async src="//www.googletagmanager.com/gtag/js?id=UA-177092549-1"></script>
-<script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('set', {'$usrid': 'USER_ID'}); // Set the user ID using signed-in user_id.
-        gtag('config', 'UA-177092549-1');
-        </script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"  />
-
-<style>body{padding-top:80px}</style>
-<link rel="stylesheet" href="../layout/fonts/iconic/css/material-design-iconic-font.min.css">
 <script src="../layout/js/main.js"></script>
 <script type="text/javascript">
             // Notice how this gets configured before we load Font Awesome
             window.FontAwesomeConfig = { autoReplaceSvg: false }
-        </script>
+</script>
+        
 <style>
             @import url(//fonts.googleapis.com/css?family=Roboto:400);
             .navbar-nav .dropdown-menu
             {
             margin:0 !important
             }
-        </style>
+</style>
+<style>body{padding-top:80px}</style>
+        
 </head>
 
 
