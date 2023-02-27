@@ -25,6 +25,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
   <link rel="stylesheet" href="../layout/css/main.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />	
   <link rel=“stylesheet” href=“.layout/css/jquery.dataTables.css”>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.20.0/css/mdb.lite.min.css" integrity="sha512-Eu5EEZpsrO6niYlnhT+ITom/YVGoIZGEsbAvZ+gUJsO3Xaq9+hX4vZnbecMn/Cq5KOdmNOdehu/U80111W9xsA==" crossorigin="anonymous" />
 	</style>
   
   
