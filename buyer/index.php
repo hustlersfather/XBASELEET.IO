@@ -24,8 +24,11 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 <meta name="revisit-after" content="3 days">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <script src="/cdn-cgi/apps/head/5OOZijtrf_Bpx-OYIJIWKuxGuQM.js">
-</script><link rel="shortcut icon" href="../favicon.ico" />
+</script>
+
+<link rel="shortcut icon" href="../favicon.ico" />
 <title>XBASELEET</title>
+
 <link rel="stylesheet" href="../layout/css/bootstrap.min.css">
 <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
 <script src="../layout/js/clipboard.min.js"></script>
@@ -36,12 +39,12 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.6/css/responsive.dataTables.min.css">
-<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.4/css/buttons.dataTables.min.css">
+<link rel="stylesheet" href="<link rel=“stylesheet” href=“https://cdn.datatables.net/buttons/2.3.4/css/buttons.dataTables.min.css”>">
 <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/responsive/2.2.6/js/dataTables.responsive.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.6.4/js/dataTables.buttons.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.colVis.min.js"></script>
-<script src="js/jquery.dataTables.min.js"></script>
+<script src="../layout/js/jquery.dataTables.min.js"></script>
 <link href="//cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
 
