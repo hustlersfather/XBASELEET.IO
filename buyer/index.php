@@ -248,7 +248,7 @@ input:checked + .slider:before {
                                                           padding-bottom: 0.5rem;
                                                           padding-left: 1rem;
                                                         ">
-<a class="navbar-brand" href="main" style="color: var(--font-color);"><img width="40px" src="layout/images/logo.png"> XBASELEET</a>
+<a class="navbar-brand" href="main" style="color: var(--font-color);"><img width="40px" src="../layout/images/logo.png"> XBASELEET</a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 <i class="navbar-toggler-icon"></i>
 </button>
@@ -643,13 +643,13 @@ a.closearb {
 <span class="slider round"></span>
 </label></div>
 </div>
-<script defer src="/layout/js/jquery.flexslider.js"></script>
+<script defer src="../layout/js/jquery.flexslider.js"></script>
 <div class="header">
 <div class="container-fluid">
 <div class="row">
-<div class="col-lg-3 col-md-6 col-sm-12" style="text-align:center;"><a href="shell"><img style="border: 3px solid;" src="layout/images/shells.gif"></a></div>
-<div class="col-lg-3 col-md-6 col-sm-12" style="text-align:center;"><a href="smtp"><img style="border: 3px solid;" src="layout/images/smtps.gif"></a></div>
-<div class="col-lg-3 col-md-6 col-sm-12" style="text-align:center;"><a href="accounts-7"><img style="border: 3px solid;" src="layout/images/accs.gif"></a></div>
+<div class="col-lg-3 col-md-6 col-sm-12" style="text-align:center;"><a href="shell"><img style="border: 3px solid;" src="../layout/images/shells.gif"></a></div>
+<div class="col-lg-3 col-md-6 col-sm-12" style="text-align:center;"><a href="smtp"><img style="border: 3px solid;" src="../layout/images/smtps.gif"></a></div>
+<div class="col-lg-3 col-md-6 col-sm-12" style="text-align:center;"><a href="accounts-7"><img style="border: 3px solid;" src="../layout/images/accs.gif"></a></div>
 </div><br>
 <div class="header-body">
 
@@ -1096,14 +1096,14 @@ Become a Seller & Seller Rules<i class="fab fa-btc"></i>
 <br><br>
 Available Payment Methods
 <br>
-<a href="addBalance"><img src="layout/images/pmlogo2.png" height="48" width="49" title="PerfectMoney" /></a>
-<a href="addBalance"><img src="layout/images/btclogo.png" height="48" width="49" title="Bitcoin" /></a>
-<a href="addBalance"><img src="layout/images/ltclogo.png" height="48" width="49" title="Litecoin" /></a>
-<a href="addBalance"><img src="layout/images/bnb.png" height="48" width="49" title="Binance Token" /></a>
-<a href="addBalance"><img src="layout/images/ethereum.png" height="48" width="49" title="Etherum" /></a>
-<a href="addBalance"><img src="layout/images/trc.png" height="48" width="49" title="Tether [USDT/TRC20]" /></a>
-<a href="addBalance"><img src="layout/images/bch.png" height="48" width="49" title="Bitcoin Cash" /></a>
-<a href="addBalance"><img src="layout/images/dgc.jpg" height="48" width="49" title="Dogecoin" /></a>
+<a href="addBalance"><img src="../layout/images/pmlogo2.png" height="48" width="49" title="PerfectMoney" /></a>
+<a href="addBalance"><img src="../layout/images/btclogo.png" height="48" width="49" title="Bitcoin" /></a>
+<a href="addBalance"><img src="../layout/images/ltclogo.png" height="48" width="49" title="Litecoin" /></a>
+<a href="addBalance"><img src="../layout/images/bnb.png" height="48" width="49" title="Binance Token" /></a>
+<a href="addBalance"><img src="../layout/images/ethereum.png" height="48" width="49" title="Etherum" /></a>
+<a href="addBalance"><img src="../layout/images/trc.png" height="48" width="49" title="Tether [USDT/TRC20]" /></a>
+<a href="addBalance"><img src="../layout/images/bch.png" height="48" width="49" title="Bitcoin Cash" /></a>
+<a href="addBalance"><img src="../layout/images/dgc.jpg" height="48" width="49" title="Dogecoin" /></a>
 </div>
 </div>
 <div class="card mb-3" style="color: var(--font-color); background-color: var(--color-card);">
@@ -1130,12 +1130,12 @@ Our Stuff
 </div>
 </div>
 
-<script type="text/javascript" src="layout/js/Chart.min.js"></script>
+<script type="text/javascript" src="../layout/js/Chart.min.js"></script>
 <script type="text/javascript">
      function ajaxinfo() {
                 $.ajax({
                     type: 'GET',
-                    url: 'ajaxinfo.html',
+                    url: '../ajaxinfo.html',
                     timeout: 10000,
 
                     success: function(data) {
@@ -1184,7 +1184,7 @@ function pageDiv(n,t,u,x){
     $("#mainDiv").html('<div id="mydiv"><img src="files/img/load2.gif" class="ajax-loader"></div>').show();
     $.ajax({
     type:       'GET',
-    url:        'divPage'+n+'.html',
+    url:        '../divPage'+n+'.html',
     success:    function(data)
     {
         $("#mainDiv").html(data).show();
