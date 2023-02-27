@@ -491,8 +491,8 @@ a.closearb {
 
 </style>
 <body class="them loading">
-<link rel="stylesheet" href="/layout/css/flexslider5.css" type="text/css">
-<script src="/layout/js/jquery.flexslider-min.js"></script>
+<link rel="stylesheet" href="../layout/css/flexslider5.css" type="text/css">
+<script src="../layout/js/jquery.flexslider-min.js"></script>
 <style>
 #tour {
     font-family: 'Raleway', sans-serif;
