@@ -76,7 +76,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 
 </style>
 <script type="text/javascript">
-      function ajaxinfo() { $.ajax({
+      function ajax() { $.ajax({
                 type: 'GET',
                 url: 'ajaxinfo.html',
                 timeout: 10000,success: 
