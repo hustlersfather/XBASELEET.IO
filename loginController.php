@@ -7,13 +7,13 @@
   
 
   if(isset($_SESSION['sname']) and isset($_SESSION['spass'])){
-   header("location: main");
+   header("location: /buyer/index.php");
    exit();
   }
   if (isset($_POST['user'],$_POST['pass'])) {
     # code...
   } else{
-    header('location:main');
+    header('location:/buyer/index.php');
     exit();
   }
   $username = mysqli_real_escape_string($dbcon, strip_tags($_POST['user']));
@@ -29,7 +29,7 @@
      $_SESSION['spass'] = $userpass;
 	  //$errorbox = "<div class='alert alert-dismissible alert-success'><button type='button' class='close' data-dismiss='alert'>×</button><p>Login successful. Redirecting …</p></div>";
       //echo '{"state":"1","errorbox":"'.$errorbox.'","url":"main"}';
-     header('location:main');
+     header('location:buyer/');
      exit();
 	  }else{
 	  //$errorbox = "<div class='alert alert-dismissible alert-info'><button type='button' class='close' data-dismiss='alert'>×</button><p>Login failed! Please try again! 1</p></div>";
