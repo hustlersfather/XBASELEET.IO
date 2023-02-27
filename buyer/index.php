@@ -10,7 +10,7 @@ session_start();
 date_default_timezone_set('UTC');
 
 
-include "includes/config.php";
+include "../includes/config.php";
 
 
 
