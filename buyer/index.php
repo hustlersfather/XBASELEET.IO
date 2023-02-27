@@ -24,7 +24,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
   <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../layout/css/main.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />	
-  <link rel=“stylesheet” href=“../layout/css/jquery.dataTables.css”>
+  <link rel=“stylesheet” href=“.layout/css/jquery.dataTables.css”>
 	</style>
   
   
@@ -33,7 +33,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
   
 	<script src=“https://code.jquery.com/jquery-3.5.1.js”></script>
 	<script src=“../layout/js/jquery.dataTables.js”></script>
-	<script src="../layout/js/bootbox.min.js"></script>
+	<script src="layout/js/bootbox.min.js"></script>
 
 	
 	
