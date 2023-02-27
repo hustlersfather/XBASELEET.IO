@@ -1176,6 +1176,7 @@ function hideTooltip(btn) {
   setTimeout(function() {$(btn).tooltip('hide'); console.log("hide-2");}, 1000);
 }
 </script>
+</script>
 </div>
 </div>
 </body>
