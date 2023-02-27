@@ -70,74 +70,26 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 <meta charset="utf-8">
 <title>JeruxShop</title>
 </head>
+
 <style>
-#table {
-  .sortable
-}
-table th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sorttable_nosort):after { 
-    content: " \25BE" 
-}
-
-.label-as-badge {
-    border-radius: 0.5em;
-}
-
-body {
-    padding-top:0px;
-}
-table.floatThead-table {
-    border-top: none;
-    border-bottom: none;
-    background-color: #fff;
-}
-@media (min-width: 768px) {
-  .dropdown:hover .dropdown-menu {
-    display: block;
-  }
-}
-
-#mydiv {
-  height: 400px;
-  position: relative;
-}
-
-
-	<style>
-.ajax-loader {
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto; /* presto! */
-
-}
-
-   
-    
 
 </style>
 <script type="text/javascript">
-             function ajaxinfo() {
-                $.ajax({
-                    type: 'GET',
-                    url: 'ajaxinfo.html',
-                    timeout: 10000,
-
-                    success: function(data) {
-                        if (data != '01') {
-                            var data = JSON.parse(data);
-                            for (var prop in data) {
-                                $("#" + prop).html(data[prop]).show();
-                            }
-                        } else {
-                            window.location = "logout.html";
-                        }
+      function ajaxinfo() { $.ajax({
+                type: 'GET',
+                url: 'ajaxinfo.html',
+                timeout: 10000,success: 
+      function  (data) {if (data != '01'
+                 ) {var data = JSON.parse
+                  (data);for (var prop in 
+                  data) { $("#" + prop).html
+                  (data[prop]).show();} } else 
+                  {window.location = "logout.html";}
                     }
                 });
 
-            }
-            setInterval(function() {
+                 }
+                    setInterval(function() {
                 ajaxinfo()
             }, 3000);
 
