@@ -27,7 +27,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 </script><link rel="shortcut icon" href="../../favicon.ico" />
 <title>XBASELEET</title>
 <link rel="stylesheet" href="../layout/css/bootstrap.min.css">
-<script src="../layout/js/jquery-3.4.1.min.js"></script>
+<script src="../layout/js/jquery-3.6..min.js"></script>
 <script src="../layout/js/clipboard.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="../layout/js/bootstrap.min.js"></script>
@@ -1133,7 +1133,7 @@ Our Stuff
      function ajaxinfo() {
                 $.ajax({
                     type: 'GET',
-                    url: 'ajaxinfo.html',
+                    url: '../ajaxinfo.html',
                     timeout: 10000,
 
                     success: function(data) {
@@ -1182,7 +1182,7 @@ function pageDiv(n,t,u,x){
     $("#mainDiv").html('<div id="mydiv"><img src="files/img/load2.gif" class="ajax-loader"></div>').show();
     $.ajax({
     type:       'GET',
-    url:        'divPage'+n+'.html',
+    url:        '../divPage'+n+'.html',
     success:    function(data)
     {
         $("#mainDiv").html(data).show();
