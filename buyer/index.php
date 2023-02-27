@@ -1,4 +1,4 @@
-<?php
+I'm <?php
 ob_start();
 session_start();
 date_default_timezone_set('UTC');
@@ -12,7 +12,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
- 
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,7 +33,8 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
   
 	<script src=“https://code.jquery.com/jquery-3.5.1.js”></script>
 	<script src=“../layout/js/jquery.dataTables.js”></script>
-	
+	<script src="../layout/js/bootbox.min.js"></script>
+
 	
 	
 	
@@ -58,7 +59,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 <script type="text/javascript" src="layout/js/bootstrap.min.js?1"></script>
 
 <script type="text/javascript" src="files/js/table-head.js?3334"></script>
-<script type="text/javascript" src="files/js/bootbox.min.js"></script>
+
 <script type="text/javascript" src="files/js/clipboard.min.js"></script>
 
 <link rel="shortcut icon" href="files/img/favicon.ico" />
