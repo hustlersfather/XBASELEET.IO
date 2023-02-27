@@ -34,7 +34,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 	<script src=“https://code.jquery.com/jquery-3.5.1.js”></script>
 	<script src=“../layout/js/jquery.dataTables.js”></script>
 	<script src="layout/js/bootbox.min.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.20.0/js/mdb.min.js"></script>
 	
 	
 	
