@@ -26,11 +26,8 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="layout/js/bootstrap.min.js"></script>
     <script src="layout/js/bootbox.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="layout/css/flags.css" />
+    <link rel="stylesheet" type="text/css" href="layout/css/flags.css"  
 
-  
-
-     </style> rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.6/css/responsive.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.4/css/buttons.dataTables.min.css">
     <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
@@ -157,31 +154,31 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
                                 252
                             </span>
                         </a>
-                            <a class="dropdown-item" data-title=" Accounts - Graphic / Developer" href="https://vulnxtools.xyz//5">
-                            Graphic / Developer
+                            <a class="dropdown-item" data-title=" citi - Bank" href="https://vulnxtools.xyz//5">
+                            Citi Bank
                             <span class="badge badge-info d-blue-background">
                                 112
                             </span>
                         </a>
-                            <a class="dropdown-item" data-title=" Accounts - VPN/Socks Proxy" href="https://vulnxtools.xyz/6">
+                            <a class="dropdown-item" data-title=" Chase - Bank" href="https://vulnxtools.xyz/6">
                             VPN/Socks Proxy
                             <span class="badge badge-info d-blue-background">
                                 3047
                             </span>
                         </a>
-                            <a class="dropdown-item" data-title=" Accounts - Shopping {Amazon, eBay .... etc }" href="https://vulnxtools.xyz/7">
-                            Shopping {Amazon, eBay .... etc }
+                            <a class="dropdown-item" data-title=" Suntrust - Bank" href="https://vulnxtools.xyz/7">
+                      Suntrust Bank
                             <span class="badge badge-info d-blue-background">
                                 129
                             </span>
                         </a>
-                            <a class="dropdown-item" data-title=" Accounts - Program { antivirus, Adobe .... etc }" href="https://vulnxtools.xyz/8">
-                            Program { antivirus, Adobe .... etc }
+                            <a class="dropdown-item" data-title=" Hills -Bank" href="https://vulnxtools.xyz/8">
+                            Hills Bank
                             <span class="badge badge-info d-blue-background">
                                 159
                             </span>
                         </a>
-                            <a class="dropdown-item" data-title=" Accounts - Stream { Music, Netflix, iptv, HBO, bein sport, WWE ...etc }" href="https://vulnxtools.xyz/9">
+                            <a class="dropdown-item" data-title=" Mtt Bank" href="https://vulnxtools.xyz/9">
                             Stream { Music, Netflix, iptv, HBO, bein sport, WWE ...etc }
                             <span class="badge badge-info d-blue-background">
                                 2255
@@ -387,3 +384,25 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
                 </ul>
             </div>
         </nav>
+           <!-- /.sidebar-menu -->
+
+            < class="content">
+            </div>
+            <!-- /.sidebar -->
+        </br>
+ 
+
+                 <div class="container-fluid">
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <a href="#" class="btn btn-danger btn-lg"><strong><i class="fa fa-wallet"> </i> My Balance: </strong> $0.00</a>
+                            <a href="#" data-target="#TopUpModal" data-toggle="modal" class="btn btn-danger btn-lg float-right"><strong><i class="fa fa-upload"> </i> Top Up</strong></a>
+                        </div>
+                    </div>
+
+        </br>
+
+                <div class="container-fluid">
