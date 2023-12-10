@@ -130,14 +130,14 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
                             <i class="fa fa-server orangeu-color"></i> USA BANK (full info)
                         </a>
                         <div class="dropdown-menu dropdown-menu-left" aria-labelledby="
-                            <a class="dropdown-item" data-title=" Principal - Banks " href="https://vulnxtools.xyz/principal-bank">
+                            <a class="dropdown-item" data-title=" Principal - Banks " href="https://vulnxtools.xyz/1">
                        Principal Bank
                             <span class="badge badge-info d-blue-background">
                                 12
                             </span>
                         </a>
 
-                            <a class="dropdown-item" data-title=" Huntington - Banks " href="https://vulnxtools.xyz/huntington-bank">
+                            <a class="dropdown-item" data-title=" Huntington - Banks " href="https://vulnxtools.xyz/2">
                        Huntington Bank
                             <span class="badge badge-info d-blue-background">
                                 12
@@ -145,13 +145,13 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
                         </a>
          
 
-                            <a class="dropdown-item" data-title=" Accounts - Hosting/Domain" href="https://vulnxtools.xyz/3">
-                            Hosting/Domain
+                            <a class="dropdown-item" data-title=" Woodforest - Banks" href="https://vulnxtools.xyz/3">
+                      Woodforest Bank
                             <span class="badge badge-info d-blue-background">
                                 675
                             </span>
                         </a>
-                            <a class="dropdown-item" data-title=" Accounts - Games" href="https://vulnxtools.xyz/4">
+                            <a class="dropdown-item" data-title=" PNC  - Bank" href="https://vulnxtools.xyz/4">
                             Games
                             <span class="badge badge-info d-blue-background">
                                 252
