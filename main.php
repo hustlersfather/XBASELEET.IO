@@ -148,44 +148,32 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
                                 675
                             </span>
                         </a>
-                            <a class="dropdown-item" data-title=" PNC  - Bank" href="https://vulnxtools.xyz/4">
-                            Games
-                            <span class="badge badge-info d-blue-background">
-                                252
-                            </span>
-                        </a>
-                            <a class="dropdown-item" data-title=" citi - Bank" href="https://vulnxtools.xyz//5">
+                            <a class="dropdown-item" data-title=" citi - Bank" href="https://vulnxtools.xyz/4">
                             Citi Bank
                             <span class="badge badge-info d-blue-background">
                                 112
                             </span>
                         </a>
-                            <a class="dropdown-item" data-title=" Chase - Bank" href="https://vulnxtools.xyz/6">
-                            VPN/Socks Proxy
-                            <span class="badge badge-info d-blue-background">
-                                3047
-                            </span>
-                        </a>
-                            <a class="dropdown-item" data-title=" Suntrust - Bank" href="https://vulnxtools.xyz/7">
+                            <a class="dropdown-item" data-title=" Suntrust - Bank" href="https://vulnxtools.xyz/5">
                       Suntrust Bank
                             <span class="badge badge-info d-blue-background">
                                 129
                             </span>
                         </a>
-                            <a class="dropdown-item" data-title=" Hills -Bank" href="https://vulnxtools.xyz/8">
+                            <a class="dropdown-item" data-title=" Hills -Bank" href="https://vulnxtools.xyz/6">
                             Hills Bank
                             <span class="badge badge-info d-blue-background">
                                 159
                             </span>
                         </a>
-                            <a class="dropdown-item" data-title=" Mtt Bank" href="https://vulnxtools.xyz/9">
-                            Stream { Music, Netflix, iptv, HBO, bein sport, WWE ...etc }
+                            <a class="dropdown-item" data-title=" Mtt Bank" href="https://vulnxtools.xyz/7">
+                        WellsFargo Bank
                             <span class="badge badge-info d-blue-background">
                                 2255
                             </span>
                         </a>
-                            <a class="dropdown-item" data-title=" Accounts - Dating" href="https://vulnxtools.xyz//9">
-                            Dating
+                            <a class="dropdown-item" data-title=" WellsFargo - Bank" href="https://vulnxtools.xyz/8">
+                            WellsFargo Bank
                             <span class="badge badge-info d-blue-background">
                                 1141
                             </span>
