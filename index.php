@@ -72,7 +72,7 @@
 				?>                <!-- ... USA BANK+an:rn(login/addres) ... -->
 		<li class="nav-item dropdown mr-auto">
 			<a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			<i class="fa fa-warehouse fa-sm orange-text"></i>
+	  <i class="fas fa-leaf fa-fw fa-sm text-success" style="margin-right: 4px;"></i>
 			<small>
 			USA SELF REGISTERED (verified accounts) (2)
 			</a>
@@ -126,7 +126,7 @@
 			<!-- ... CANADA BANK+(Fullz Infos) ... -->
 		<li class="nav-item dropdown mr-auto">
 			<a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			<i class="fa fa-warehouse fa-sm orange-text"></i>
+		<i class="fas fa-mail-bulk fa-sm pink-color"></i> 
 			<small>
 			USA SELF REGISTERED (verified accounts) (3)
 			</a>
@@ -180,7 +180,7 @@
 			<!----USA BANK (full info)----->
 		<li class="nav-item dropdown mr-auto">
 			<a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			<i class="fa fa-warehouse fa-sm orange-text"></i>
+	<i class="fas fa-leaf fa-sm orange-text"></i>
 			<small>
 			USA SELF REGISTERED (verified accounts) (4)
 			</a>
@@ -234,7 +234,7 @@
 			<!---------UK BANK(full infos)----->
 		<li class="nav-item dropdown mr-auto">
 			<a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			<i class="fa fa-warehouse fa-sm orange-text"></i>
+	<i class="fas fa-leaf fa-fw fa-sm text-success" style="margin-right: 4px;"></i> 
 			<small>
 			USA SELF REGISTERED (verified accounts) (5)
 			</a>
