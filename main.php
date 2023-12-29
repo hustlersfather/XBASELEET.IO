@@ -2,32 +2,26 @@
 ob_start();
 session_start();
 date_default_timezone_set('UTC');
-
 include "includes/config.php";
 
 if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {
-    header("location: ../");
+    header("location: /login.php");
     exit();
 }
 $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 ?>
-
 <!DOCTYPE html>
-<html>
+<html lang="ru">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="alfacoins-site-verification" content="">
-<meta name="revisit-after" content="3 days">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="layout/css/bootstrap.min.css">
     <script src="layout/js/jquery-3.4.1.min.js"></script>
     <script src="layout/js/clipboard.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="layout/js/bootstrap.min.js"></script>
     <script src="layout/js/bootbox.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="layout/css/flags.css"  
-
+    <link rel="stylesheet" type="text/css" href="layout/css/flags.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.6/css/responsive.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.4/css/buttons.dataTables.min.css">
     <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
@@ -35,362 +29,710 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
     <script src="https://cdn.datatables.net/buttons/1.6.4/js/dataTables.buttons.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.colVis.min.js"></script>
     <script src="js/jquery.dataTables.min.js"></script>
-
+    <link href="//cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+    <script src="//code.tidio.co/ymh99ispooeubsiz9akeioosa4vlpg4b.js" async></script>
+    <script async src="//www.googletagmanager.com/gtag/js?id=UA-177092549-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('set', {'$usrid': 'USER_ID'}); // Set the user ID using signed-in user_id.
+        gtag('config', 'UA-177092549-1');
+    </script>
     <link rel="stylesheet" href="layout/css/all.min.css" />
     <link rel="stylesheet" href="layout/css/main.css?v=12.9" />
-    <link rel="stylesheet" href="layout/css/util.css" /> 
-    <!-- Theme style -->
-    <link rel="stylesheet" href="https://vulnx.biz/css/adminlte.min.css">
-    <link rel="stylesheet" href="https://vulnx.biz/js/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+    <link rel="stylesheet" href="layout/css/util.css" />
     <style>
-        .colored-toast.swal2-icon-success {
-            background-color: #a5dc86 !important;
-            color: #fff;
-        }
- 
-        .colored-toast.swal2-icon-error {
-            background-color: #f27474 !important;
-            color: #fff;
-        }
- 
-        .colored-toast.swal2-icon-warning {
-            background-color: #f8bb86 !important;
-        }
- 
-        .colored-toast.swal2-icon-info {
-            background-color: #3fc3ee !important;
-        }
- 
-        .colored-toast.swal2-icon-question {
-            background-color: #87adbd !important;
-        }
- 
-        .colored-toast .swal2-title {
-            color: white !important;
-        }
- 
-        .colored-toast .swal2-close {
-            color: white !important;
-        }
- 
-        .colored-toast .swal2-html-container {
-            color: white !important;
-        }
- 
-        body {
-            top: 0 !important;
-        }
- 
-        .goog-te-gadget {
-            padding: .5rem 1rem;
-        }
- 
-        .goog-te-gadget-simple .goog-te-menu-value {
-            color: #6c6b71;
-            font-weight: 600;
-        }
- 
-        .goog-te-banner-frame {
-            margin-bottom: -40px !important;
-            display: none !important;
+        body{padding-top:80px}
+    </style>
+    <link rel="stylesheet" href="layout/fonts/iconic/css/material-design-iconic-font.min.css">
+    <script src="layout/js/main.js"></script>
+    <script type="text/javascript">
+        // Notice how this gets configured before we load Font Awesome
+        window.FontAwesomeConfig = { autoReplaceSvg: false }
+    </script>
+    <style>
+        @import url(//fonts.googleapis.com/css?family=Roboto:400);
+        .navbar-nav .dropdown-menu
+        {
+        margin:0 !important
         }
     </style>
-</head>
-
-
-<ul class="navbar-nav">
-    <li class="nav-item">
-
-    </li>
-    <li class="nav-item d-none d-sm-inline-block">
-
-    </li>
-
-
-
-    <body class="hold-transition navbar-mini layout-boxed dark-mode">
-
-
-        <!-- Left navbar links -->
-
-        <nav id="navbar_id" class="navbar navbar-expand-lg navbar-dark bg-dark-mode fixed-top">
-            <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2 home_nav">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="main_site_name nav-item nav-link active" href="https://vulnxtools.xyz/homepage">
-                            <i class="middle fab fa-2x fa-redhat pink-color"></i>
-                            <span class="middle site_name_span">VulNxTools</span>
-                        </a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownHosts" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-server orangeu-color"></i> USA BANK (full info)
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-left" aria-labelledby="
-                            <a class="dropdown-item" data-title=" Principal - Banks " href="https://vulnxtools.xyz/1">
-                       Principal Bank
-                            <span class="badge badge-info d-blue-background">
-                                12
-                            </span>
-                        </a>
-
-                            <a class="dropdown-item" data-title=" Huntington - Banks " href="https://vulnxtools.xyz/2">
-                       Huntington Bank
-                            <span class="badge badge-info d-blue-background">
-                                12
-                            </span>
-                        </a>
+    <link rel="shortcut icon" href="files/img/favicon.ico" />
+    <meta http-equiv="X-UA-Compatible" content="IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>xBaseTools</title> <!-- jQuery -->
+    <script src="https://vulnx.biz/js/plugins/jquery/jquery.min.js"></script> <!-- Bootstrap 4 -->
+    <script src="https://vulnx.biz/js/plugins/bootstrap/js/bootstrap.bundle.min.js"></script> <!-- AdminLTE App -->
+    <script src="https://vulnx.biz/js/adminlte.min.js"></script> <!-- AdminLTE for demo purposes -->
+    <script src="https://vulnx.biz/js/demo.js"></script>
+    <script src="https://vulnx.biz/js/plugins/sweetalert2/sweetalert2.all.min.js"></script>
+    <script src="https://vulnx.biz/js/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="https://vulnx.biz/js/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://vulnx.biz/js/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="https://vulnx.biz/js/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+    <script>
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            customClass: {
+                popup: 'colored-toast'
+            },
+            showConfirmButton: true,
+            timer: 5000,
+            timerProgressBar: true
+        })
+    </script>
+    <script>
+        Toast.fire({
+            icon: 'error',
+            title: "Your account is Not active. Please make a deposit of at least $100 to activate your account!"
+        })
+    </script>
+    <div style="display:none !important"></div>
+    <script>
+        $('table').dataTable();
+        var url = "https://vulnx.biz/change-language";
          
+        $(".changeLang").change(function() {
+            window.location.href = url + "?lang=" + $(this).val();
+        });
+    </script>
+    <script src="https://vulnx.biz/js/plugins/sweetalert2/sweetalert2.all.min.js"></script>
+    <script src="https://vulnx.biz/js/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script>
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            customClass: {
+                popup: 'colored-toast'
+            },
+            showConfirmButton: true,
+            timer: 5000,
+            timerProgressBar: true
+        })
+    </script>
+    <script>
+        $('table').dataTable();
+        var url = "https://vulnxtools.xyz/change-language";
+         
+        $(".changeLang").change(function() {
+            window.location.href = url + "?lang=" + $(this).val();
+        });
+    </script>
+</head>
+<style>
+    #table {
+        .sortable
+    }
+     
+    table th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sorttable_nosort):after {
+        content: " \25BE"
+    }
+     
+    .label-as-badge {
+        border-radius: 0.5em;
+    }
+     
+    body {
+        padding-top: 50px;
+    }
+     
+    table.floatThead-table {
+        border-top: none;
+        border-bottom: none;
+        background-color: #fff;
+    }
+     
+    @media (min-width: 768px) {
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+    }
+     
+    #mydiv {
+        height: 400px;
+        position: relative;
+    }
+     
+    .ajax-loader {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        /* presto! */
+     
+    }
+</style>
+<style>
+    .panel-default {
+        border-color: #ecf0f1;
+    }
+     
+    .panel {
+        background-color: var(--color-card);
+        border: 1px solid transparent;
+        border-radius: 4px;
+        -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    }
+     
+    .card {
+        background-color: var(--color-card);
+        border: 1px solid transparent;
+        border-radius: 4px;
+        -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+        border-color: var(--color-card);
+    }
+     
+    .panel-body {
+        padding: 15px;
+    }
+     
+    .panel-footer {
+        padding: 10px 15px;
+        background-color: var(--color-secondary2);
+        border-top: 1px solid var(--color-secondary2);
+        border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+     
+    }
+     
+    .panel-footer .label-info {
+        background-color: #3498db;
+    }
+     
+    .panel-footer .label-warning {
+        background-color: #e74c3c;
+    }
+     
+    .panel-footer .label-warning {
+        background-color: #FFA726;
+    }
+     
+     
+    .panel-footer .label {
+     
+        display: inline;
+        padding: .2em .6em .3em;
+        font-size: 100%;
+        font-weight: bold;
+        line-height: 1;
+     
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: baseline;
+        border-radius: .25em;
+    }
+     
+    .display td {
+        background: var(--color-card);
+        color: var(--font-color);
+     
+    }
+     
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+     
+        color: var(--font-color);
+     
+    }
+     
+    #table_paginate .paginate_button {
+        color: var(--font-color);
+     
+    }
+     
+    .alert-info {
+        color: var(--color-info);
+        background-color: var(--color-backinfo);
+        border-color: var(--color-borderinfo);
+     
+    }
+     
+    #table_filter {
+        color: var(--font-color);
+    }
+     
+    #table_length {
+        color: var(--font-color);
+    }
+     
+    #table_paginate {
+        color: var(--font-color);
+    }
+     
+    #table_info {
+        color: var(--font-color);
+    }
+</style>
 
-                            <a class="dropdown-item" data-title=" Woodforest - Banks" href="https://vulnxtools.xyz/3">
-                      Woodforest Bank
-                            <span class="badge badge-info d-blue-background">
-                                675
-                            </span>
-                        </a>
-                            <a class="dropdown-item" data-title=" citi - Bank" href="https://vulnxtools.xyz/4">
-                            Citi Bank
-                            <span class="badge badge-info d-blue-background">
-                                112
-                            </span>
-                        </a>
-                            <a class="dropdown-item" data-title=" Suntrust - Bank" href="https://vulnxtools.xyz/5">
-                      Suntrust Bank
-                            <span class="badge badge-info d-blue-background">
-                                129
-                            </span>
-                        </a>
-                            <a class="dropdown-item" data-title=" Hills -Bank" href="https://vulnxtools.xyz/6">
-                            Hills Bank
-                            <span class="badge badge-info d-blue-background">
-                                159
-                            </span>
-                        </a>
-                            <a class="dropdown-item" data-title=" Mtt Bank" href="https://vulnxtools.xyz/7">
-                        WellsFargo Bank
-                            <span class="badge badge-info d-blue-background">
-                                2255
-                            </span>
-                        </a>
-                            <a class="dropdown-item" data-title=" WellsFargo - Bank" href="https://vulnxtools.xyz/8">
-                            WellsFargo Bank
-                            <span class="badge badge-info d-blue-background">
-                                1141
-                            </span>
-                        </a>
-                            <a class="dropdown-item" data-title=" Accounts - Learning { udemy, lynda, .... etc. }" href="https://vulnxtools.xyz//10">
-                            Learning { udemy, lynda, .... etc. }
-                            <span class="badge badge-info d-blue-background">
-                                855
-                            </span>
-                        </a>
-                            <a class="dropdown-item" data-title=" Accounts - Torrent / File Host" href="https://vulnxtools.xyz//11">
-                            Torrent / File Host
-                            <span class="badge badge-info d-blue-background">
-                                1
-                            </span>
-                        </a>
-                            <a class="dropdown-item" data-title=" Accounts - Voip / Sip" href="https://vulnxtools.xyz/#">
-                            Voip / Sip
-                            <span class="badge badge-info d-blue-background">
-                                10
-                            </span>
-                        </a>
-                            <a class="dropdown-item" data-title=" Accounts - Social Media" href="https://vulnxtools.xyz//">
-                            Social Media
-                            <span class="badge badge-info d-blue-background">
-                                105
-                            </span>
-                        </a>
-                            <a class="dropdown-item" data-title=" Accounts - Other" href="https://vulnxtools.xyz/">
-                            Other
-                            <span class="badge badge-info d-blue-background">
-                                129
-                            </span>
-                        </a>
+<body class="them">
+    <style>
+        .navbar-nav .dropdown-menu {
+            margin: 0 !important
+        }
+         
+        .theme-light {
+            --color-primary: #0060df;
+            --color-secondary: #ffffff;
+            --color-secondary2: #ecf0f1;
+            --color-accent: #fd6f53;
+            --font-color: #000000;
+            --color-nav: #ffffff;
+            --color-dropdown: #ffffff;
+            --color-card: #ffffff;
+            --color-card2: #d1ecf1;
+            --color-info: #0c5460;
+            --color-backinfo: #d1ecf1;
+            --color-borderinfo: #bee5eb;
+         
+        }
+         
+        .theme-dark {
+            --color-primary: #17ed90;
+            --color-secondary: #353B50;
+            --color-secondary2: #353B50;
+            --color-accent: #12cdea;
+            --font-color: #ffffff;
+            --color-nav: #363947;
+            --color-dropdown: rgba(171, 205, 239, 0.3);
+            --color-card: #262A37;
+            --color-card2: #262A37;
+            --color-info: #4DD0E1;
+            --color-backinfo: #262A37;
+            --color-borderinfo: #262A37;
+        }
+         
+        .them {
+         
+            background: var(--color-secondary);
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+         
+        .them h1 {
+            color: var(--font-color);
+            font-family: sans-serif;
+        }
+         
+        .card-body {
+            color: var(--font-color);
+        }
+         
+        .them button {
+            color: var(--font-color);
+            background-color: #ffffff;
+            padding: 10px 20px;
+            border: 0;
+            border-radius: 5px;
+        }
+         
+        .navbar.navbar-light .navbar-toggler {
+            color: var(--font-color);
+        }
+         
+        /* The switch - the box around the slider */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+         
+        /* Hide default HTML checkbox */
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+         
+        /* The slider */
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: 0.4s;
+            transition: 0.4s;
+        }
+         
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 40px;
+            width: 40px;
+            left: 0px;
+            bottom: 4px;
+            top: 0;
+            bottom: 0;
+            margin: auto 0;
+            -webkit-transition: 0.4s;
+            transition: 0.4s;
+            box-shadow: 0 0px 15px #2020203d;
+            background: white url('https://i.ibb.co/FxzBYR9/night.png');
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+         
+        input:checked+.slider {
+            background-color: #2196f3;
+        }
+         
+        input:focus+.slider {
+            box-shadow: 0 0 1px #2196f3;
+        }
+         
+        input:checked+.slider:before {
+            -webkit-transform: translateX(24px);
+            -ms-transform: translateX(24px);
+            transform: translateX(24px);
+            background: white url('https://i.ibb.co/7JfqXxB/sunny.png');
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+         
+        /* Rounded sliders */
+        .slider.round {
+            border-radius: 34px;
+        }
+         
+        .slider.round:before {
+            border-radius: 50%;
+        }
+    </style>
+    <script>
+        function setTheme(themeName) {
+            localStorage.setItem('theme', themeName);
+            document.documentElement.className = themeName;
+        }
+         
+        // function to toggle between light and dark theme
+        function toggleTheme() {
+            if (localStorage.getItem('theme') === 'theme-dark') {
+                setTheme('theme-light');
+            } else {
+                setTheme('theme-dark');
+            }
+        }
+         
+        // Immediately invoked function to set the theme on initial load
+        (function() {
+            if (localStorage.getItem('theme') === 'theme-dark') {
+                setTheme('theme-dark');
+                document.getElementById('slider').checked = false;
+            } else {
+                setTheme('theme-light');
+                document.getElementById('slider').checked = true;
+            }
+        })();
+    </script>
+    <script>
+        $(document).ready(function() {
+          $('#table').DataTable({
+            "aaSorting": [
+              [0, "asc"]
+            ],
+         
+            "pageLength": 1222250,
+            "bLengthChange": false,
+         
+            "language": {
+              "search": "GLOBAL FILTER: ",
+              "searchPlaceholder": "Bin,balace,bank ETC"
+         
+            }
+         
+         
+         
+          });
+         
+          $('#table').removeClass('no e').addClass('table table-responsive table-hover');
+         
+        });
+    </script>
+    <script type="text/javascript">
+        function ajaxinfo() {
+           $.ajax({
+               type: 'GET',
+               url: 'ajaxinfo.html',
+               timeout: 10000,
+        
+               success: function(data) {
+                   if (data != '01') {
+                       var data = JSON.parse(data);
+                       for (var prop in data) {
+                           $("#" + prop).html(data[prop]).show();
+                       }
+                   } else {
+                       window.location = "logout.html";
+                   }
+               }
+           });
+        
+                    }
+                    setInterval(function() {
+           ajaxinfo()
+                    }, 3000);
+        
+                    ajaxinfo();
+        
+        $(document).keydown(function(event){
+            if(event.which=="17")
+                cntrlIsPressed = true;
+        });
+        
+        $(document).keyup(function(){
+            cntrlIsPressed = false;
+        });
+        
+        var cntrlIsPressed = false;
+        
+        
+        function pageDiv(n,t,u,x){
+          if(cntrlIsPressed){
+            window.open(u, '_blank');
+            return false;
+          }
+                var obj = { Title: t, Url: u };
+                if ( ("/"+obj.Url) != location.pathname) {
+                	if (x != 1) {history.pushState(obj, obj.Title, obj.Url);}
+                	else{history.replaceState(obj, obj.Title, obj.Url);}
+        
+            	}
+              document.title = obj.Title;
+            $("#mainDiv").html('<div id="mydiv"><img src="files/img/load2.gif" class="ajax-loader"></div>').show();
+            $.ajax({
+            type:       'GET',
+            url:        'divPage'+n+'.html',
+            success:    function(data)
+            {
+                $("#mainDiv").html(data).show();
+                newTableObject = document.getElementById('table');
+                sorttable.makeSortable(newTableObject);
+                $(".sticky-header").floatThead({top:60});
+                if(x==0){ajaxinfo();}
+              }});
+            if (typeof stopCheckBTC === 'function') { 
+            var a = stopCheckBTC();
+             }
+        
+        }
+        
+        $(window).on("popstate", function(e) {
+                location.replace(document.location);
+        
+        });
+        
+        
+        $(window).on('load', function() {
+        $('.dropdown').hover(function(){ $('.dropdown-toggle', this).trigger('click'); });
+        
+           var clipboard = new Clipboard('.copyit');
+            clipboard.on('success', function(e) {
+              setTooltip(e.trigger, 'Copied!');
+              hideTooltip(e.trigger);
+              e.clearSelection();
+           });
+        
+        });
+        
+        
+        function setTooltip(btn, message) {
+          console.log("hide-1");
+          $(btn).tooltip('hide')
+            .attr('data-original-title', message)
+            .tooltip('show');
+             console.log("show");
+        }
+        
+        function hideTooltip(btn) {
+          setTimeout(function() {$(btn).tooltip('hide'); console.log("hide-2");}, 1000);
+        }
+    </script>
+    <style>
+        .dropdown-menu {
+            margin: 5px, 5px;
+            padding: 5px;
+            background-color: ;
+            width: 500px;
+            height: 1500px;
+            overflow-x: hidden;
+            overflow-y: auto;
+            text-align: justify;
+        }
+    </style>
+    <nav class="navbar navbar-expand-xl navbar navbar-light" style="
+    position:fixed;
+    background-color: var(--color-nav);
+    z-index:1;
+    top:0;
+    left:0;
+    right:0;
+    line-height: 1.5;
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    padding-top: 0.5rem;
+    padding-right: 1rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;"> <a class="navbar-brand" href="index.php" style="color: var(--font-color);"><img width="25px" src="layout/images/logo.png"> <small><small>XbaseTools</small></small> </a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <i class="navbar-toggler-icon"></i> </button>
+        <div class="collapse navbar-collapse order-1" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+            
+            
+            
+                <!-- ... Usa Bamk+(Full Infos) ... -->
+ <li class="nav-item dropdown mr-auto"> 
+                <a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-warehouse fa-sm orange-text"></i> <small><small>USA Bank+AN:RN(login/addres)</a>
+                    <div class="dropdown-menu dropdown-menu-left" style="color: var(--font-color); background-color: var(--color-nav);" aria-labelledby="navbarDropdown"> <?php $banks = 
+                   [ 
+                   "53bank", "huntingtonbank", "aacreditunionbank", "sofibank", "advantiscubank", "afcubank", "alaskausabank", "alliantbank", "allybank", "americanheritagecubank", "amexbank", 
+                   /* Add more banks in alphabetical order */
+                    "andigobank", "andrewsfcubank", "aplusfcubank", "applebank", "applefcubank", "bankatfirst", "bankMobile", "bankofhope", "barclaysusbank", "baxterbank", "bbt&tbank", "bbvabanks", "bell.bankbethpagefcu", "bmobank", "boabanks", "caltechefcubank", "campuscubank", "campusfederalbank", /* Add more banks in alphabetical order */
+                   "cbnabank", "centrisfcubank", "cfcubank", "chartwaybank", "chasebanks", "chimebank", "citadelbank", "citibanks", "citizensbank", "coastal24bank", "columbiabank", "comericabank", "corningcubank", "credithumanbank", "cutxbank", "discoverbank", "edwardjonesbank", "efirstbank", "etradebank", "fargobank", "fcbankingbank" 
+                   /* Add more banks in alphabetical order */   
+                  ];          
+                 foreach ($banks as $bank) { $bankCount = mysqli_query($dbcon, "SELECT * FROM {$bank} WHERE sold='0'"); $bankCount = mysqli_num_rows($bankCount);  $bankTitle = ucwords(str_replace(['.php', 'bank'], ['', ' bank'], $bank));  echo "<a class='link_menu' href='{$bank}.php' style='color: var(--font-color);'>            <span class='px-2'><i class='fas fa-tools fa-fw'></i> {$bankTitle}(Fullz+Infos)  <span class='badge badge-warning'>+{$bankCount}</span>   </small> </small> </a>";} ?>
 
-
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownSend" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-paper-plane text-primary"></i> UK BANK (full info)
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdownSend">
-                            <a class="dropdown-item " data-title="SMTP" href="https://vulnxtools.xyz/smtp">
-                            SMTP <span class="badge badge-info d-blue-background">6068</span>
-                        </a>
-                            <a class="dropdown-item" data-title="Mailers" href="https://vulnxtools.xyz/mailers">
-                            Mailers <span class="badge badge-info d-blue-background">70</span>
-                        </a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownLeads" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-address-book pink-color"></i> CANADA BANK  (full info)
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdownLeads">
-                            <a class="dropdown-item" data-title="Leads 100% Checked Email list" href="https://vulnxtools.xyz/leads?type=100%25%20Checked%20Email%20list">
-                                <span class="fa fa-fire orange-color"></span> 100% Checked Email list <span class="badge badge-info d-blue-background">51</span>
-                            </a>
-                            <a class="dropdown-item" data-title="Leads Email Only" href="https://vulnxtools.xyz/leads?type=Email%20Only">
-                            Email Only <span class="badge badge-info d-blue-background">3361</span>
-                        </a>
-                            <a class="dropdown-item" data-title="Leads Combo Email:Password" href="https://vulnxtools.xyz/leads?type=Combo%20Email%3APassword">
-                            Combo Email:Password <span class="badge badge-info d-blue-background">327</span>
-                        </a>
-                            <a class="dropdown-item" data-title="Leads Combo Username:Password" href="https://vulnxtools.xyz/leads?type=Combo%20Username%3APassword">
-                            Combo Username:Password <span class="badge badge-info d-blue-background">25</span>
-                        </a>
-                            <a class="dropdown-item" data-title="Leads Email Access" href="https://vulnxtools.xyz/leads?type=Email%20Access">
-                            Email Access <span class="badge badge-info d-blue-background">126</span>
-                        </a>
-                            <a class="dropdown-item" data-title="Leads Combo Email:Hash" href="https://vulnxtools.xyz/leads?type=Combo%20Email%3AHash">
-                            Combo Email:Hash <span class="badge badge-info d-blue-background">80</span>
-                        </a>
-                            <a class="dropdown-item" data-title="Leads Phone Number Only" href="https://vulnxtools.xyz/leads?type=Phone%20Number%20Only">
-                            Phone Number Only <span class="badge badge-info d-blue-background">387</span>
-                        </a>
-                            <a class="dropdown-item" data-title="Leads Combo Phone:Password" href="https://vulnxtools.xyz/leads?type=Combo%20Phone%3APassword">
-                            Combo Phone:Password <span class="badge badge-info d-blue-background">28</span>
-                        </a>
-                            <a class="dropdown-item" data-title="Leads Full Data" href="https://vulnxtools.xyz/leads?type=Full%20Data">
-                            Full Data <span class="badge badge-info d-blue-background">45</span>
-                        </a>
-                            <a class="dropdown-item" data-title="Leads Social Media Data" href="https://vulnxtools.xyz/leads?type=Social%20Media%20Data">
-                            Social Media Data <span class="badge badge-info d-blue-background">1</span>
-                        </a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBusiness" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-briefcase green-color"></i> OTHER ACCOUNTS
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdownBusiness">
-                            <a class="dropdown-item" data-title="Cpanel Webmail " href="https://vulnxtools.xyz/webmail?type=Cpanel%20Webmail">
-                            Cpanel Webmail <span class="badge badge-info d-blue-background">29439</span>
-                        </a>
-                            <a class="dropdown-item" data-title="Godaddy Webmail " href="https://vulnxtools.xyz/webmail?type=Godaddy%20Webmail">
-                            Godaddy Webmail <span class="badge badge-info d-blue-background">3669</span>
-                        </a>
-                            <a class="dropdown-item" data-title="Office Godaddy Webmail " href="https://vulnxtools.xyz/webmail?type=Office%20Godaddy%20Webmail">
-                            Office Godaddy Webmail <span class="badge badge-info d-blue-background">3108</span>
-                        </a>
-                            <a class="dropdown-item" data-title="Office365 Webmail " href="https://vulnxtools.xyz/webmail?type=Office365%20Webmail">
-                            Office365 Webmail <span class="badge badge-info d-blue-background">29751</span>
-                        </a>
-                            <a class="dropdown-item" data-title="Ionos Webmail " href="https://vulnxtools.xyz/webmail?type=Ionos%20Webmail">
-                            Ionos Webmail <span class="badge badge-info d-blue-background">1080</span>
-                        </a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownAccounts" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-users salmon-color"></i>SHOPWITHSCRIP
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdownAccounts">
-                          <a class="dropdown-item " data-title="Cpanels" href="https://vulnxtools.xyz/cpanels">
-                            Cpanels <span class="badge badge-info d-blue-background">28038</span>
-                        </a>
-                            <a class="dropdown-item " data-title="Shells" href="https://vulnxtools.xyz/shells">
-                            Shells <span class="badge badge-info d-blue-background">4991</span>
-                        </a>
-                            <a class="dropdown-item " data-title="SSH\WHM" href="https://vulnxtools.xyz/ssh">
-                            SSH\WHM <span class="badge badge-info d-blue-background">1635</span>
-                        </a>
-                            <a class="dropdown-item " data-title="RDP" href="https://vulnxtools.xyz/rdp">
-                            RDP <span class="badge badge-info d-blue-background">2135</span>
-                        </a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="mx-auto order-0">
-                <a class="navbar-brand mx-auto" href="#"> </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
-                    <span class="fa fa-bars"></span>
-                </button>
-            </div>
-            <div class="navbar-collapse collapse w-100 order-3 dual-collapse2 user_nav">
-                <ul class="navbar-nav ml-auto">
-                    <div id="notifications_container" data-href="https://vulnxtools.xyz/#notifications/get">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownNotifications" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fa fa-bell red-color"></i>
-                                <div class="badge badge-danger notification_count">
-                                    1
-                                </div>
-                            </a>
-                            <div class="dropdown-menu dropdownt-menu-right" aria-labelledby="navbarDropdownNotifications">
-                                <a class="dropdown-item text-center noAjax" id="notifications_mark_read" href="https://vulnxtools.xyz/#notifications/markread">
-                                Mark All Read
-                            </a>
-                                <div class="notification_parent" data-id="005a9103-8d81-44ab-984d-52dc2f48f7c5">
-                                    <a class="dropdown-item noAjax" href="https://vulnxtools.xyz/reports/">
-                                    You've New reply on Report #479892
-                                </a>
-                                    <span class="notification_close" data-id="005a9103-8d81-44ab-984d-52dc2f48f7c5">
-                                    x
-                                </span>
-                                </div>
-                            </div>
-                        </li>
-                    </div>
-                    <li class="nav-item">
-                        <a class="nav-item nav-link " data-title="Add Balance" href="https://vulnxtools.xyz/balance">
-                            <div class="badge badge-danger"><span id="buyer_balance">0.07</span> <i class="fa fa-plus"></i> </div>
-                        </a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Tickets
-                        <span class="badge badge-success">0</span>
-                    </a>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
-                            <a class="dropdown-item" data-title="My Tickets " href="https://vulnxtools.xyz/tickets">My Tickets
-                            <a class="dropdown-item" data-title="My Reports" href="https://vulnxtools.xyz/reports">My Reports
-                            </a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio
-" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Account <i class="fa fa-user-secret"></i>
-                    </a>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
-                            <a class="dropdown-item" data-title="Settings" href="https://vulnxtools.xyz/settings">Settings <i class="fa fa-cog"></i></a>
-                            <a class="dropdown-item" data-title="Orders" href="https://vulnxtools.xyz/purchased">Orders
-                            <span class="badge badge-success">
-                                27
-                            </span>
-                            <i class="fa fa-shopping-cart"></i></a>
-                            <a class="dropdown-item" data-title="Add Balance" href="https://vulnxtools.xyz/addBalance">Add Balance
-                            <i class="fa fa-money-bill-alt"></i></a>
-                            <a class="dropdown-item noAjax" href="https://vulnxtools.xyz/logout">Logout <i class="fa fa-door-open"></i></a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-           <!-- /.sidebar-menu -->
-
-            < class="content">
-            </div>
-            <!-- /.sidebar -->
-        </br>
+                <!-- ... Canada Bamk+(Full Infos) ... -->
+ <li class="nav-item dropdown mr-auto"> 
+                <a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-warehouse fa-sm orange-text"></i> <small><small>CANADA Bank+Q/N(Fullz Infos)</a>
+                    <div class="dropdown-menu dropdown-menu-left" style="color: var(--font-color); background-color: var(--color-nav);" aria-labelledby="navbarDropdown"> 
+<?php $banks = [ 
+            "fcbankingbank" /* Add more banks in alphabetical order */   ];          
+                 foreach ($banks as $bank) { $bankCount = mysqli_query($dbcon, "SELECT * FROM {$bank} WHERE sold='0'"); $bankCount = mysqli_num_rows($bankCount);  $bankTitle = ucwords(str_replace(['.php', 'bank'], ['', ' bank'], $bank));  echo "<a class='link_menu' href='{$bank}.php' style='color: var(--font-color);'>            <span class='px-2'><i class='fas fa-tools fa-fw'></i> {$bankTitle}(Fullz+Infos)  <span class='badge badge-warning'>+{$bankCount}</span>   </small> </small> </a>";} ?>
  
-
-                 <div class="container-fluid">
-            <!-- Main content -->
-            <section class="content">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <a href="#" class="btn btn-danger btn-lg"><strong><i class="fa fa-wallet"> </i> My Balance: </strong> $0.00</a>
-                            <a href="#" data-target="#TopUpModal" data-toggle="modal" class="btn btn-danger btn-lg float-right"><strong><i class="fa fa-upload"> </i> Top Up</strong></a>
-                        </div>
+<!-- ... Uk Bamk+(Full Infos) ... -->
+ <li class="nav-item dropdown mr-auto"> 
+                <a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-warehouse fa-sm orange-text"></i> <small><small>USA Bank+AN:RN(Fullz Infos)</a>
+                    <div class="dropdown-menu dropdown-menu-left" style="color: var(--font-color); background-color: var(--color-nav);" aria-labelledby="navbarDropdown"> <?php $banks = 
+                   [ 
+                   "53bank", "huntingtonbank", "aacreditunionbank", "sofibank", "advantiscubank", "afcubank", "alaskausabank", "alliantbank", "allybank", "americanheritagecubank", "amexbank", 
+                   /* Add more banks in alphabetical order */
+                    "andigobank", "andrewsfcubank", "aplusfcubank", "applebank", "applefcubank", "bankatfirst", "bankMobile", "bankofhope", "barclaysusbank", "baxterbank", "bbt&tbank", "bbvabanks", "bell.bankbethpagefcu", "bmobank", "boabanks", "caltechefcubank", "campuscubank", "campusfederalbank", /* Add more banks in alphabetical order */
+                   "cbnabank", "centrisfcubank", "cfcubank", "chartwaybank", "chasebanks", "chimebank", "citadelbank", "citibanks", "citizensbank", "coastal24bank", "columbiabank", "comericabank", "corningcubank", "credithumanbank", "cutxbank", "discoverbank", "edwardjonesbank", "efirstbank", "etradebank", "fargobank", "fcbankingbank" 
+                   /* Add more banks in alphabetical order */   
+                  ];          
+                 foreach ($banks as $bank) { $bankCount = mysqli_query($dbcon, "SELECT * FROM {$bank} WHERE sold='0'"); $bankCount = mysqli_num_rows($bankCount);  $bankTitle = ucwords(str_replace(['.php', 'bank'], ['', ' bank'], $bank));  echo "<a class='link_menu' href='{$bank}.php' style='color: var(--font-color);'>            <span class='px-2'><i class='fas fa-tools fa-fw'></i> {$bankTitle}(Fullz+Infos)  <span class='badge badge-warning'>+{$bankCount}</span>   </small> </small> </a>";} ?>
+ <!-- ... Uk Bank+(Full Infos) ... -->
+ <li class="nav-item dropdown mr-auto"> 
+                <a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-warehouse fa-sm orange-text"></i> <small><small>UK Bank+Q/A(Fullz Infos)</a>
+                    <div class="dropdown-menu dropdown-menu-left" style="color: var(--font-color); background-color: var(--color-nav);" aria-labelledby="navbarDropdown"> <?php $banks = 
+                   [ 
+                   "53bank",
+                "fcbankingbank" 
+                   /* Add more banks in alphabetical order */
+         
+                   /* Add more banks in alphabetical order */   
+                  ];          
+                 foreach ($banks as $bank) { $bankCount = mysqli_query($dbcon, "SELECT * FROM {$bank} WHERE sold='0'"); $bankCount = mysqli_num_rows($bankCount);  $bankTitle = ucwords(str_replace(['.php', 'bank'], ['', ' bank'], $bank));  echo "<a class='link_menu' href='{$bank}.php' style='color: var(--font-color);'>            <span class='px-2'><i class='fas fa-tools fa-fw'></i> {$bankTitle}(Fullz+Infos)  <span class='badge badge-warning'>+{$bankCount}</span>   </small> </small> </a>";} ?>                
+          <!-- ...USA SELF REGISTERED  (verified accounts) ... -->
+ <li class="nav-item dropdown mr-auto"> 
+                <a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-warehouse fa-sm orange-text"></i> <small><small>Usa Self(created accounts)</a>
+                    <div class="dropdown-menu dropdown-menu-left" style="color: var(--font-color); background-color: var(--color-nav);" aria-labelledby="navbarDropdown"> <?php $banks = 
+                   [ 
+                   "53bank",
+                "fcbankingbank" 
+                   /* Add more banks in alphabetical order */
+         
+                   /* Add more banks in alphabetical order */   
+                  ];          
+                 foreach ($banks as $bank) { $bankCount = mysqli_query($dbcon, "SELECT * FROM {$bank} WHERE sold='0'"); $bankCount = mysqli_num_rows($bankCount);  $bankTitle = ucwords(str_replace(['.php', 'bank'], ['', ' bank'], $bank));  echo "<a class='link_menu' href='{$bank}.php' style='color: var(--font-color);'>   <span class='px-2'><i class='fas fa-tools fa-fw'></i> {$bankTitle}(Fullz+Infos)  <span class='badge badge-warning'>+{$bankCount}</span>   </small> </small> </a>";} ?>
+<?php $banks = 
+                   [ 
+                   "53bank",
+                "fcbankingbank" 
+                   /* Add more banks in alphabetical order */
+         
+                   /* Add more banks in alphabetical order */   
+                  ];          
+                 foreach ($banks as $bank) { $bankCount = mysqli_query($dbcon, "SELECT * FROM {$bank} WHERE sold='0'"); $bankCount = mysqli_num_rows($bankCount);  $bankTitle = ucwords(str_replace(['.php', 'bank'], ['', ' bank'], $bank));  echo "<a class='link_menu' href='{$bank}.php' style='color: var(--font-color);'>   <span class='px-2'><i class='fas fa-tools fa-fw'></i> {$bankTitle}(Fullz+Infos)  <span class='badge badge-warning'>+{$bankCount}</span>   </small> </small> </a>";} ?>
+    
+   <!-- ...USA SELF REGISTERED  (verified accounts) ... -->
+ <li class="nav-item dropdown mr-auto"> 
+                <a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-warehouse fa-sm orange-text"></i> <small><small>USA Pros(Fullz Infos)</a>
+                    <div class="dropdown-menu dropdown-menu-left" style="color: var(--font-color); background-color: var(--color-nav);" aria-labelledby="navbarDropdown"> <?php $banks = 
+                   [ 
+                   "53bank",
+                "fcbankingbank" 
+                   /* Add more banks in alphabetical order */
+         
+                   /* Add more banks in alphabetical order */   
+                  ];          
+                 foreach ($banks as $bank) { $bankCount = mysqli_query($dbcon, "SELECT * FROM {$bank} WHERE sold='0'"); $bankCount = mysqli_num_rows($bankCount);  $bankTitle = ucwords(str_replace(['.php', 'bank'], ['', ' bank'], $bank));  echo "<a class='link_menu' href='{$bank}.php' style='color: var(--font-color);'>   <span class='px-2'><i class='fas fa-tools fa-fw'></i> {$bankTitle}(Fullz+Infos)  <span class='badge badge-warning'>+{$bankCount}</span>   </small> </small> </a>";} ?><?php $banks = 
+                   [ 
+                   "53bank",
+                   "fcbankingbank" 
+                   /* Add more banks in alphabetical order */
+         
+                   /* Add more banks in alphabetical order */   
+                  ];          
+                 foreach ($banks as $bank) { $bankCount = mysqli_query($dbcon, "SELECT * FROM {$bank} WHERE sold='0'"); $bankCount = mysqli_num_rows($bankCount);  $bankTitle = ucwords(str_replace(['.php', 'bank'], ['', ' bank'], $bank));  echo "<a class='link_menu' href='{$bank}.php' style='color: var(--font-color);'>   <span class='px-2'><i class='fas fa-tools fa-fw'></i> {$bankTitle}(Fullz+Infos)  <span class='badge badge-warning'>+{$bankCount}</span>   </small> </small> </a>";} ?>
+   </div>
+                
+            </ul>
+            
+            
+            
+    </nav> <!-- /.sidebar-menu -->
+    </div> <!-- /.sidebar -->
+    </aside> <!-- Content Wrapper. Contains content of the page -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1></h1>
                     </div>
-
-        </br>
-
-                <div class="container-fluid">
+                </div>
+            </div> <!-- /.container-fluid -->
+        </section> <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <!--div class="alert alert-danger alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h5><i class="icon fas fa-ban"></i> Error!</h5>
+            Your account is Not active. Please make a deposit of at least $50 to activate your account!
+            </div-->
+                <style>
+                    .modal-dialog.modal-frame.modal-top.modal-notify.modal-warning .modal-body,
+                    .modal-dialog.modal-frame.modal-top.modal-offernov.modal-warning .modal-body {
+                            padding-top: 35px;
+                    }
+                    
+                    .modal-dialog.modal-frame.modal-top.modal-notify.modal-warning,
+                    .modal-dialog.modal-frame.modal-top.modal-offernov.modal-warning {
+                            max-width: 500px !important;
+                            margin: 1.75rem auto !important;
+                            position: relative;
+                            width: auto !important;
+                            pointer-events: none;
+                    }
+                    
+                    a.closearb {
+                            position: absolute;
+                            top: 2.5px;
+                            right: 2.5px;
+                            display: block;
+                            width: 30px;
+                            height: 30px;
+                            text-indent: -9999px;
+                            background-size: contain background-repeat: no-repeat;
+                            background-position: center center;
+                            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAAXNSR0IArs4c6QAAA3hJREFUaAXlm8+K00Acx7MiCIJH/yw+gA9g25O49SL4AO3Bp1jw5NvktC+wF88qevK4BU97EmzxUBCEolK/n5gp3W6TTJPfpNPNF37MNsl85/vN/DaTmU6PknC4K+pniqeKJ3k8UnkvDxXJzzy+q/yaxxeVHxW/FNHjgRSeKt4rFoplzaAuHHDBGR2eS9G54reirsmienDCTRt7xwsp+KAoEmt9nLaGitZxrBbPFNaGfPloGw2t4JVamSt8xYW6Dg1oCYo3Yv+rCGViV160oMkcd8SYKnYV1Nb1aEOjCe6L5ZOiLfF120EjWhuBu3YIZt1NQmujnk5F4MgOpURzLfAwOBSTmzp3fpDxuI/pabxpqOoz2r2HLAb0GMbZKlNV5/Hg9XJypguryA7lPF5KMdTZQzHjqxNPhWhzIuAruOl1eNqKEx1tSh5rfbxdw7mOxCq4qS68ZTjKbanks1YVvilu559vWvFHhh4rZrdyZ69Vmpgdj8fJbDZLJpNJ0uv1cnr/gjrUhQMuI+ANjyuwftQ0bbL6Erp0mM/ny8Fg4M3LtdRxgMtKl3jwmIHVxYXChFy94/Rmpa/pTbNUhstKV+4Rr8lLQ9KlUvJKLyG8yvQ2s9SBy1Jb7jV5a0yapfF6apaZLjLLcWtd4sNrmJUMHyM+1xibTjH82Zh01TNlhsrOhdKTe00uAzZQmN6+KW+sDa/JD2PSVQ873m29yf+1Q9VDzfEYlHi1G5LKBBWZbtEsHbFwb1oYDwr1ZiF/2bnCSg1OBE/pfr9/bWx26UxJL3ONPISOLKUvQza0LZUxSKyjpdTGa/vDEr25rddbMM0Q3O6Lx3rqFvU+x6UrRKQY7tyrZecmD9FODy8uLizTmilwNj0kraNcAJhOp5aGVwsAGD5VmJBrWWbJSgWT9zrzWepQF47RaGSiKfeGx6Szi3gzmX/HHbihwBser4B9UJYpFBNX4R6vTn3VQnez0SymnrHQMsRYGTr1dSk34ljRqS/EMd2pLQ8YBp3a1PLfcqCpo8gtHkZFHKkTX6fs3MY0blKnth66rKCnU0VRGu37ONrQaA4eZDFtWAu2fXj9zjFkxTBOo8F7t926gTp/83Kyzzcy2kZD6xiqxTYnHLRFm3vHiRSwNSjkz3hoIzo8lCKWUlg/YtGs7tObunDAZfpDLbfEI15zsEIY3U/x/gHHc/G1zltnAgAAAABJRU5ErkJggg==);
+                    }
+                    
+                </style>
+                <div class="d-flex flex-row-reverse mt-0">
+                    <div class="p-2"> <label id="switch" class="switch"> <input type="checkbox" onchange="toggleTheme()" id="slide"> <span class="slide rectangle"></span></label> </div>
+                    <div id="mainDiv"> </div>
