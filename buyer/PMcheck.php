@@ -1,107 +1,490 @@
+
+
 <?php
-ob_start();
+ ob_start();
 session_start();
 date_default_timezone_set('UTC');
-include "../includes/config.php";
-
-if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {
-    header("location: ../");
-    exit();
-}
-$usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
-$uid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
-$p_data = mysqli_real_escape_string($dbcon, $_GET['p_data']);
- $q = mysqli_query($dbcon, "SELECT * FROM payment WHERE user='$uid' and p_data='$p_data'")or die(mysqli_error($dbcon));
- while($row = mysqli_fetch_assoc($q))
-	 if ($row['method'] == "PerfectMoney") {
-$result = mysqli_query($dbcon, "SELECT balance FROM users WHERE username='$uid'") or die("error here");
-$rz = mysqli_fetch_row($result);
-$balance = $rz[0];
-$a = $row["address"];
-    $url = "https://blockchain.info/q/addressbalance/$a?confirmations=0";
-    $page = _curl($url, '', '');
-        $amount = $page/100000000;
-        if($amount>= $row['amount']){
-						if ($row['state'] == "paid") {
-							        $y = $row['amountusd'];
-		$msg = "<div class='alert alert-dismissible alert-success'><strong>Transaction Received <i class='glyphicon glyphicon-ok'></i></strong><br>An amount of $y$ has been added to your balance.</div>";
-		echo '
-{"stop":"1","time":"'.date("d/m/Y h:i:s a").'","btc":"'.$amount.'","state":"Paid","error":"1","errorTXT":"'.$msg.'"}';
-	echo '
-	
-{"stop":"1","time":"'.date("d/m/Y h:i:s a").'","btc":"'.$amount.'","state":"Paid","error":"1","errorTXT":"<div class="alert alert-dismissible alert-success"><strong>Payment Received! <i class="glyphicon glyphicon-ok"></i></strong><p>An amount of <b>$y$</b> has been added to your balance.</p></div>"}'; }
-			if ($row['state'] == "pending") {
-        $y = $row['amountusd'];
-        $bonus = $y*20/100;
-
-              $x = $balance+$y;
-            $sql = "UPDATE users SET balance=$x WHERE username='$uid'";
-            mysqli_query($dbcon, $sql);
-
-            $sql2 = "INSERT INTO orders(amount,btcamount,username,lrpaidby,lrtrans,ip,state,date) VALUES('$y','$ba','$uid','$a','$a','$ip','Bitcoin',now())";
-            mysqli_query($dbcon, $sql2);
-		$msg = "<div class='alert alert-dismissible alert-success'><strong>Transaction Received <i class='glyphicon glyphicon-ok'></i></strong><br>An amount of <b>$y$</b> has been added to your balance.</div>";
-		echo '
-{"stop":"1","time":"'.date("d/m/Y h:i:s a").'","btc":"'.$amount.'","state":"Paid","error":"1","errorTXT":"'.$msg.'"}';
-            $sql = mysqli_query($dbcon, "UPDATE payment SET state='paid' WHERE p_data='$p_data'");
-		} } else {
-		echo '
-{"stop":"0","time":"'.date("d/m/Y h:i:s a").'","btc":"'.$amount.'","state":"Not Paid","error":"0","errorTXT":"0"}';
-
-} 
-	 }
-?>
-<?php
+include "includes/scripts.php";
 
 
-function _curl($url, $post = "", $sock, $usecookie = false)
-{
-    $ch = curl_init();
-    if ($post) {
-        curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-    }
-    if (!empty($sock)) {
-        curl_setopt($ch, CURLOPT_HTTPPROXYTUNNEL, true);
-        curl_setopt($ch, CURLOPT_PROXYTYPE, CURLPROXY_SOCKS5);
-        curl_setopt($ch, CURLOPT_PROXY, $sock);
-    }
-    curl_setopt($ch, CURLOPT_HEADER, 0);
-    curl_setopt($ch, CURLOPT_TIMEOUT, 60);
-    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 60);
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-    curl_setopt($ch, CURLOPT_USERAGENT,
-        "Mozilla/6.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7.7) Gecko/20050414 Firefox/1.0.3");
-    if ($usecookie) {
-        curl_setopt($ch, CURLOPT_COOKIEJAR, $usecookie);
-        curl_setopt($ch, CURLOPT_COOKIEFILE, $usecookie);
-    }
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    $result = curl_exec($ch);
-    curl_close($ch);
-    return $result;
-}
-function get_string_between($string, $start, $end)
-{
-    $string = " " . $string;
-    $ini = strpos($string, $start);
-    if ($ini == 0)
-        return "";
-    $ini += strlen($start);
-    $len = strpos($string, $end, $ini) - $ini;
-    return substr($string, $ini, $len);
-}
-function VisitorIP()
-{
-    if(isset($_SERVER['HTTP_X_FORWARDED_FOR']))
-        $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
-    else $ip = $_SERVER['REMOTE_ADDR'];
+$uid     = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
+$q = mysqli_query($dbcon, "SELECT resseller FROM users WHERE username='$uid'")or die(mysqli_error());
+          $r = mysqli_fetch_assoc($q);
+		  $reselerif = $r['resseller'];
+       if ($reselerif == "1") { 
+          $uid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
+          $q = mysqli_query($dbcon, "SELECT soldb FROM resseller WHERE username='$uid'")or die(mysqli_error());
+          $r = mysqli_fetch_assoc($q);
+		
+							echo'';
+	   } else { }
+						        ?>
 
-	return trim($ip);
-} 
+<body id="page-top" class=“bg-gray-700”>
+ 
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gray-900 sidebar sidebar-dark accordion" id="accordionSidebar">
+ 
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">TOR2DOORS <sup>ADMIN</sup></div>
+            </a>
+ 
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+ 
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="index.php">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>ADMIN DASHDOARD</span></a>
+            </li>
+ 
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+ 
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Interface
+            </div>
+ 
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>BANKS POST PAGE</span>
+                </a>
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-warning 900 collapse-inner rounded">
+                        <h6 class="collapse-header ">USA BANK+Email Access:</h6>
+                          
+                           
+                    </div>
+                </div>
+            </li>
+ 
+ 
+ 
+ 
+            <li class="nav-item">
+                <a class="nav-link" href="https://tor2doors.xyz/index.php">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span> BUYER BANKS </span></a>
+            </li>
+ 
+ 
+         <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages1" aria-expanded="true" aria-controls="collapsePages1">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>USERS MANAGEMENT</span>
+                </a>
+                <div id="collapsePages1" class="collapse" aria-labelledby="headingPages1" data-parent="#accordionSidebar1">
+                    <div class="bg-warning 900 collapse-inner rounded">
+                        <h6 class="collapse-header ">System:</h6>
+                          
+                                            <a class="collapse-item" href="principal.php">Principal Bank</a>
+
+                                        
+                                            <a class="collapse-item" href="huntington.php">Huntington Bank</a>
+    
+                                            <a class="collapse-item" href="wellsfargo.php">WellsFargo Bank</a>
+                             
+                                        
+                                            <a class="collapse-item" href="nfcu.php">Navy federal credit union</a>
+                          
+                    </div>
+                </div>
+            </li>
+ 
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+ 
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                ALL BANKS POST
+            </div>
+ 
+ 
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-wrench"></i>
+         
+                    <span> USA BANKS </span>
+                </a>
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-warning 900 collapse-inner rounded">
+                        <h6 class="collapse-header ">USA BANK+Email Access:</h6>
+                          
+                                            <a class="collapse-item" href="principalbanks.php">Principal Bank</a>
+
+                                        
+                                            <a class="collapse-item" href="huntingtonbanks.php">Huntington Bank</a>
+
+                                        
+                                            <a class="collapse-item" href="woodforestbanks.php">Woodforest Bank</a>
+
+                                        
+                                            <a class="collapse-item" href="pncbanks.php">PNC Bank</a>
+
+                                        
+                                            <a class="collapse-item" href="citibanks.php">Citi Bank</a>
+
+                                        
+                                            <a class="collapse-item" href="chasebanks.php">Chase Bank</a>
+                               
+                                        
+                                            <a class="collapse-item" href="suntrustbanks.php">Suntrust Bank</a>
+ 
+                                        
+                                            <a class="collapse-item" href="hillsbanks.php">Hills bank</a>
+ 
+                                        
+                                            <a class="collapse-item" href="mttbanks.php">M & T Bank</a>
+ 
+                                        
+                                            <a class="collapse-item" href="wellsfargobanks.php">WellsFargo Bank</a>
+                             
+                                        
+                                            <a class="collapse-item" href="nfcubanks.php">Navy federal credit union</a>
+                          
+                    </div>
+                </div>
+            </li>
+             <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span> CANADA BANKS </span>
+                </a>
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-warning 900 collapse-inner rounded">
+                        <h6 class="collapse-header ">CANADA BANK+Email Access:</h6>
+                          
+                                            <a class="collapse-item" href="principalbanks.php">Principal Bank</a>
+
+                                        
+                                            <a class="collapse-item" href="huntingtonbanks.php">Huntington Bank</a> 
+                                        
+                                            <a class="collapse-item" href="nfcubanks.php">Navy federal credit union</a>
+                          
+                    </div>
+                </div>
+            </li>
 
 
-?>
+             <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span> FUNDSCRIP GIFT CARDS </span>
+                </a>
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-warning 900 collapse-inner rounded">
+                        <h6 class="collapse-header ">SHOPWITHSCRIP LOGS :</h6>
+                          
+                                            <a class="collapse-item" href="usa-shopwithscrip.php">Principal Bank</a>
+
+                                        
+                                            <a class="collapse-item" 
+                    </div>
+                </div>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span> USA BANKS(AN/RN) </span>
+                </a>
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-warning 900 collapse-inner rounded">
+                        <h6 class="collapse-header ">USA BANK+AN:RN:</h6>
+                              
+                                            <a class="collapse-item" href="huntington.php?=an:rn">Navy federal credit union</a>
+                          
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span> EUROPIEAN BANKS </span>
+                </a>
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-warning 900 collapse-inner rounded">
+                        <h6 class="collapse-header ">UK BANK+Email Access:</h6>
+                          
+                                            <a class="collapse-item" href="principal.php">Principal Bank</a>
+
+                                        
+                                            <a class="collapse-item" href="huntington.php">Huntington Bank</a>
+
+                                        
+                                            <a class="collapse-item" href="woodforest.php">Woodforest Bank</a>
+
+                                         
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link" href="deposit.php">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>DEPOSIT MANAGEMENT</span></a>
+            </li>
+ 
+            <!-- Nav Item - Tables -->
+            <li class="nav-item">
+                <a class="nav-link" href="tables.html">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Tables</span></a>
+            </li>
+ 
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+ 
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+ 
+        </ul>
+        <!-- End of Sidebar -->
+ 
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+ 
+            <!-- Main Content -->
+            <div id="content">
+ 
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-dark bg-gray-700 topbar mb-4 static-top shadow">
+ 
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+ 
+                    <!-- Topbar Search -->
+                    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+ 
+ 
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+ 
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-search fa-fw"></i>
+                            </a>
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+                                <form class="form-inline mr-auto w-100 navbar-search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="fas fa-search fa-sm"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+ 
+                        <!-- Nav Item - Alerts -->
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-bell fa-fw"></i>
+                                <!-- Counter - Alerts -->
+                                <span class="badge badge-danger badge-counter">3+</span>
+                            </a>
+                            <!-- Dropdown - Alerts -->
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
+                                <h6 class="dropdown-header">
+                                    Alerts Center
+                                </h6>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-primary">
+                                            <i class="fas fa-file-alt text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">December 12, 2019</div>
+                                        <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-success">
+                                            <i class="fas fa-donate text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">December 7, 2019</div>
+                                        $290.29 has been deposited into your account!
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-warning">
+                                            <i class="fas fa-exclamation-triangle text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">December 2, 2019</div>
+                                        Spending Alert: We've noticed unusually high spending for your account.
+                                    </div>
+                                </a>
+                                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                            </div>
+                        </li>
+ 
+                        <!-- Nav Item - Messages -->
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-envelope fa-fw"></i>
+                                <!-- Counter - Messages -->
+                                <span class="badge badge-danger badge-counter">7</span>
+                            </a>
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
+                                <h6 class="dropdown-header">
+                                    Message Center
+                                </h6>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="https://source.unsplash.com/fn_BT9fwg_E/60x60" alt="">
+                                        <div class="status-indicator bg-success"></div>
+                                    </div>
+                                    <div class="font-weight-bold">
+                                        <div class="text-truncate">Hi there! I am wondering if you can help me with a problem I've been having.</div>
+                                        <div class="small text-gray-500">Emily Fowler · 58m</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="https://source.unsplash.com/AU4VPcFN4LE/60x60" alt="">
+                                        <div class="status-indicator"></div>
+                                    </div>
+                                    <div>
+                                        <div class="text-truncate">I have the photos that you ordered last month, how would you like them sent to you?</div>
+                                        <div class="small text-gray-500">Jae Chun · 1d</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="https://source.unsplash.com/CS2uCrpNzJY/60x60" alt="">
+                                        <div class="status-indicator bg-warning"></div>
+                                    </div>
+                                    <div>
+                                        <div class="text-truncate">Last month's report looks great, I am very happy with the progress so far, keep up the good work!</div>
+                                        <div class="small text-gray-500">Morgan Alvarez · 2d</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="">
+                                        <div class="status-indicator bg-success"></div>
+                                    </div>
+                                    <div>
+                                        <div class="text-truncate">Am I a good boy? The reason I ask is because someone told me that people say this to all dogs, even if they aren't good...</div>
+                                        <div class="small text-gray-500">Chicken the Dog · 2w</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+                            </div>
+                        </li>
+ 
+                        <div class="topbar-divider d-none d-sm-block"></div>
+ 
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">
+ 
+                                    ADMIN
+ 
+                                </span>
+                                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Profile
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Settings
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Activity Log
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
+ 
+                    </ul>
+ 
+                </nav>
+                <!-- End of Topbar -->
+
+ 
+ 
+                <!-- Scroll to Top Button-->
+                <a class="scroll-to-top rounded bg-gray-900" href="#page-top ">
+                    <i class="fas fa-angle-up"></i>
+                </a>
+ 
+ 
+                <!-- Logout Modal-->
+                <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                            <div class="modal-footer">
+                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+ 
+                                <form action="logout.php" method="POST">
+ 
+                                    <button type="submit" name="logout_btn" class="btn btn-primary">Logout</button>
+ 
+                                </form>
+ 
+ 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+ 
+                <!-- Begin Page Content -->
+                <div class="container-fluid bg-gray-700">
